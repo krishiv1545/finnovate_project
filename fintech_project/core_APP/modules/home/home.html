@@ -207,14 +207,7 @@
     </style>
   </head>
   <body>
-    <header>
-      <a class="logo" href="{% url 'landing_page' %}">Finnovate Project 2025</a>
-      <nav>
-        <a href="#">Docs</a>
-        <a href="#">Prototype</a>
-        <a href="#">Contact</a>
-      </nav>
-    </header>
+    {% include 'includes/navbar.html' %}
 
     <main>
       <section class="left-panel">
@@ -245,8 +238,6 @@
       </section>
     </main>
 
-    <footer>
-      © 2025 Finnovate Project @IIT-G — Secure Financial Automation
-    </footer>
+    {% include 'includes/footer.html' %}
   </body>
 </html>

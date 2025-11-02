@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -123,3 +128,12 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AI Configuration
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '')
+GOOGLE_AI_API_KEY = os.getenv('GOOGLE_AI_API_KEY', '')
+COMPOSIO_API_KEY = os.getenv('COMPOSIO_API_KEY', '')
+
+# AI Model Configuration
+AI_MODEL = os.getenv('AI_MODEL', 'gpt-4o-mini')  # Default to OpenAI
+AI_TEMPERATURE = float(os.getenv('AI_TEMPERATURE', '0.3'))

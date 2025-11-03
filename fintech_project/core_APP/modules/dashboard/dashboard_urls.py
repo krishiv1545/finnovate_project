@@ -7,7 +7,7 @@ from .dashboard import (
 )
 
 urlpatterns = [
-    path('', dashboard_view, name='dashboard_view'),
+    path('', dashboard_view, name='dashboard_page'),
     path('api/chat', chat_stream, name='dashboard_chat_stream'),
     path('api/conversations', list_conversations, name='dashboard_conversations'),
     path('api/conversations/<uuid:conv_id>/messages', list_messages, name='dashboard_conversation_messages'),

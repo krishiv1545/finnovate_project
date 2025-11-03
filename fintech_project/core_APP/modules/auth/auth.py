@@ -8,7 +8,7 @@ from django.contrib import messages
 def auth_view(request):
     """Auth view."""
     if request.user.is_authenticated:
-        return redirect("dashboard_view")
+        return redirect("dashboard_page")
     return render(request, 'auth/auth.html')
 
 
@@ -25,7 +25,7 @@ def authenticate_user(request):
         if user is not None:
             print("Authentication successful")
             login(request, user)
-            return redirect("dashboard_view")
+            return redirect("dashboard_page")
         else:
             print("Authentication failed")
             messages.error(request, "Invalid username or password.")

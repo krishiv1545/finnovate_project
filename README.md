@@ -1,84 +1,95 @@
 # IIT-Gn Finnovate 2025 Hackathon
 
-## 🤖 AI-Powered Financial Chatbot
+## For Local:-
 
-This project features **Nirva AI**, a CPA-level accounting assistant with real-time AI capabilities via Google Gemini 2.0 and OpenAI.
+### 1. Place .env parallel to manage.py
 
-## ⚡ Quick Start
-
-### 1. Create Virtual Environment
-
-From root (finnovate_project), run:
-
-```bash
-python -m venv env
-env\Scripts\activate  # Windows
-# or
-source env/bin/activate  # Linux/Mac
+### 2. From root (finnovate_project), run
 ```
-
-### 2. Install Dependencies
-
-```bash
+python -m venv env
+env/scripts/activate
 pip install -r requirements.txt
 ```
 
-### 3. Configure Environment
-
-Create a `.env` file parallel to `manage.py` with your API keys. See `ENV_SETUP.md` for details.
-
-```bash
-# Minimum required: At least ONE AI provider
-OPENAI_API_KEY=sk-...
-# OR
-GOOGLE_AI_API_KEY=AIza...
+### 3. Run migrations
+```
+python fintech_project/manage.py makemigrations
 ```
 
-### 4. Run Migrations
-
-```bash
-python fintech_project/manage.py makemigrations
+### 4. Migrate
+```
 python fintech_project/manage.py migrate
 ```
 
-### 5. Create Superuser
+### 5. Create staticfiles directory: just run the command
+```
+python fintech_project/manage.py collectstatic
+```
 
-```bash
+### 6. Install NGINX
+```
+choco install nginx
+```
+If you have issues, check this
+"C:\ProgramData\chocolatey\lib\nginx\tools\"
+There might be a zip named "nginx-1.29.3.zip" instead of a DIR
+Extract it right there
+Then add "C:\ProgramData\chocolatey\lib\nginx\tools\nginx-1.29.3" to System Variables PATH
+Test with `nginx -v`
+
+### 6. Create superuser
+```
 python fintech_project/manage.py createsuperuser
 ```
 
-### 6. Start Development Server
-
-```bash
-python fintech_project/manage.py runserver
+### 7. To run from finnovate_project>
+```
+python fintech_project/manage.py
 ```
 
-### 7. Access Chatbot
+### 8. Login using admin creds
 
-Visit **http://localhost:8000/dashboard/** and start chatting!
+## FOR PROD:-
 
-## 📚 Documentation
+### 9. (in WSL) 
+```
+cd /mnt/c/Users/krish/Desktop/FINTECH/finnovate_project
+sudo apt install python-is-python3 -y
+pip install -r requirements.txt
+```
+You'll need to restart WSL
+```
+cd /mnt/c/Users/krish/Desktop/FINTECH/finnovate_project/fintech_project
+gunicorn --bind 0.0.0.0:8000 core.wsgi
+```
+Update the paths in your nginx.conf and test it by opening a new WSL terminal and running
+```
+sudo apt install nginx-core
+sudo nginx -t -c /mnt/c/Users/krish/Desktop/FINTECH/finnovate_project/deploy/nginx/nginx.conf
+```
+Test it using
+```
+sudo nginx -t -c /mnt/c/Users/krish/Desktop/FINTECH/finnovate_project/deploy/nginx/nginx.conf
+```
+On one side, you need gunicorn to keep running from fintech_project using 
+```
+gunicorn --bind 0.0.0.0:8000 core.wsgi
+```
+On other side, you need NGINX to keep running using
+```
+sudo nginx -c /mnt/c/Users/krish/Desktop/FINTECH/finnovate_project/deploy/nginx/nginx.conf
+```
+Test using
+```
+curl localhost:8081
+```
+To stop it, use
+```
+sudo nginx -s stop
+```
 
-- **SETUP.md** - Comprehensive setup guide
-- **ENV_SETUP.md** - API key configuration
-- **IMPLEMENTATION.md** - Technical details and migration notes
-
-## ✨ Features
-
-✅ **AI Streaming**: Real-time responses from Google Gemini or OpenAI  
-✅ **CPA Expertise**: Specialized accounting knowledge  
-✅ **Conversation History**: Persistent chat threads with sidebar navigation  
-✅ **New Chat Button**: Start fresh conversations anytime  
-✅ **Markdown Support**: Rich text rendering  
-✅ **Smart Detection**: Balance sheet, GL, and TB query handling  
-✅ **Progressively Enhanced**: Works with or without API keys
-✅ **Responsive Design**: Works on desktop, tablet, and mobile
-
-## 🎯 Try It Out
-
-Ask Nirva anything:
-
-- "Explain the accounting equation"
-- "Convert this General Ledger to Trial Balance"
-- "Show me GL variance analysis"
-- "Validate my balance sheet"
+Also, I kinda shouldn't need to tell you this if you actually read this file
+But we'll be using localhost:8081 now, not port 8000
+Gunicorn listens to 8000
+NGINX listens to 8081
+Please dont bypass NGINX, it is out cute little reverse proxy setup

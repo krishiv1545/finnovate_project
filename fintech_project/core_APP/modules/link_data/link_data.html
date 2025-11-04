@@ -144,6 +144,73 @@
       .styled-table tr:hover {
         background-color: #f9f9f9;
       }
+
+      p {
+        margin: 0;
+      }
+
+      /* Base form layout */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Ensures consistent spacing between all fields */
+      }
+
+      /* Each field wrapper */
+      form div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      /* Input, select, and textarea styling */
+      input,
+      select,
+      textarea {
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.5rem 0.75rem;
+        font-family: inherit;
+        width: 100%; /* Make all fields full width */
+        box-sizing: border-box;
+      }
+
+      /* Label spacing */
+      label {
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+      }
+
+      /* Buttons look uniform */
+      button {
+        padding: 0.6rem 1.2rem;
+        border: none;
+        border-radius: 8px;
+        background: var(--accent);
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        width: fit-content;
+      }
+
+      /* Section field group consistency */
+      .odata-fields,
+      .rfc-fields,
+      .hana-fields {
+        display: flex;
+        flex-direction: column;
+      }
+      .odata-fields div {
+        margin-bottom: 1rem;
+      }
+
+      .rfc-fields div {
+        margin-bottom: 1rem;
+      }
+
+      .hana-fields div {
+        margin-bottom: 1rem;
+      }
     </style>
   </head>
   <body>
@@ -178,7 +245,7 @@
             action="{% url 'link_data_upload' %}"
             enctype="multipart/form-data"
           >
-            {% csrf_token %} {{ form.as_p }}
+            {% csrf_token %} {{ file_form.as_p }}
 
             <button type="submit">Upload File</button>
           </form>
@@ -209,48 +276,61 @@
           </h2>
           <small>Connect directly with SAP ERP systems.</small>
 
-          <form method="post" action="{% url 'link_data_connect_erp' %}">
+          <form
+            method="post"
+            action="{% url 'link_data_connect_erp' %}"
+            class="sap-form"
+          >
             {% csrf_token %}
-            <div class="field">
-              <label for="erp_system">ERP Type</label>
-              <select id="erp_system" name="erp_system">
-                <option value="sap">SAP S/4HANA</option>
-                <option value="oracle">Oracle Financials</option>
-                <option value="tally">Tally ERP</option>
-              </select>
+            <div>
+              {{ sap_form.system_type.label_tag }} {{ sap_form.system_type }}
             </div>
 
-            <div class="field">
-              <label for="endpoint">Endpoint / Host URL</label>
-              <input
-                type="text"
-                id="endpoint"
-                name="endpoint"
-                placeholder="https://sap.adanisolar.in:443/odata/"
-              />
+            <div>
+              {{ sap_form.system_name.label_tag }} {{ sap_form.system_name }}
             </div>
 
-            <div class="field">
-              <label for="client_id">Client ID / Username</label>
-              <input type="text" id="client_id" name="client_id" />
+            <div>
+              {{ sap_form.auth_method.label_tag }} {{ sap_form.auth_method }}
             </div>
 
-            <div class="field">
-              <label for="client_secret">Client Secret / Password</label>
-              <input type="password" id="client_secret" name="client_secret" />
+            <div>
+              {{ sap_form.client_id.label_tag }} {{ sap_form.client_id }}
             </div>
 
-            <div class="field">
-              <label for="table_name">Table / View Name</label>
-              <input
-                type="text"
-                id="table_name"
-                name="table_name"
-                placeholder="E.g., BS_GL_Accounts"
-              />
+            <div>{{ sap_form.username.label_tag }} {{ sap_form.username }}</div>
+
+            <div>{{ sap_form.password.label_tag }} {{ sap_form.password }}</div>
+
+            <!-- ========== ODATA FIELDS ========== -->
+            <div class="odata-fields">
+              <div>{{ sap_form.base_url.label_tag }} {{ sap_form.base_url }}</div>
             </div>
 
-            <button type="submit">Connect ERP</button>
+            <!-- ========== RFC FIELDS ========== -->
+            <div class="rfc-fields" style="display: none">
+              <div>{{ sap_form.ashost.label_tag }} {{ sap_form.ashost }}</div>
+              <div>{{ sap_form.sysnr.label_tag }} {{ sap_form.sysnr }}</div>
+              <div>
+                {{sap_form.language.label_tag }} {{ sap_form.language }}
+              </div>
+            </div>
+
+            <!-- ========== HANA FIELDS ========== -->
+            <div class="hana-fields" style="display: none">
+              <div>
+                {{ sap_form.hana_host.label_tag }} {{ sap_form.hana_host }}
+              </div>
+              <div>
+                {{ sap_form.hana_port.label_tag }} {{ sap_form.hana_port }}
+              </div>
+              <div>{{ sap_form.hana_database.label_tag }} {{ sap_form.hana_database }}</div>
+              <div>
+                {{ sap_form.ssl_mode.label_tag }} {{ sap_form.ssl_mode }}
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Connect ERP</button>
           </form>
         </div>
 
@@ -320,7 +400,9 @@
       </div>
 
       <div class="linked-data-div">
+        <!-- UPLOADED FILES -->
         {% if uploaded_files_qs %}
+        <h2>Uploaded Files</h2>
         <table class="styled-table">
           <thead>
             <tr>
@@ -334,18 +416,68 @@
             {% for file in uploaded_files_qs %}
             <tr>
               <td>{{ file.file.name|slice:"8:"|default:"(No name)" }}</td>
-              <td>{{ file.uploaded_at|date:"d-m-Y" }} ({{ file.uploaded_at|date:"h" }}:{{ file.uploaded_at|date:"m" }})</td>
-              <td>{{ file.data_source|default:"N/A" }}</td>
               <td>
-                <a href="{{ file.file.url }}" target="_blank">View</a>
-                <!-- You can add unlink/delete buttons here too -->
+                {{ file.uploaded_at|date:"d-m-Y" }}
+                ({{ file.uploaded_at|date:"h:i A" }})
+              </td>
+              <td>{{ file.data_source|default:"N/A" }}</td>
+              <td><a href="{{ file.file.url }}" target="_blank">View</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p>No uploaded files found.</p>
+        {% endif %}
+
+        <!-- SAP LINKS -->
+        <h2 style="margin-top:2rem;">Connected ERP Systems</h2>
+        {% if sap_links_qs %}
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>System Name</th>
+              <th>Type</th>
+              <th>Base URL / Host</th>
+              <th>Status</th>
+              <th>Linked On</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for link in sap_links_qs %}
+            <tr>
+              <td>{{ link.system_name }}</td>
+              <td>
+                {% if link.system_type == 'sap_odata' %} OData API
+                {% elif link.system_type == 'sap_rfc' %} RFC/BAPI
+                {% elif link.system_type == 'sap_hana' %} HANA DB
+                {% else %} Unknown {% endif %}
+              </td>
+              <td>
+                {% if link.base_url %} {{ link.base_url }}
+                {% elif link.ashost %} {{ link.ashost }}
+                {% elif link.hana_host %} {{ link.hana_host }}
+                {% else %} — {% endif %}
+              </td>
+              <td>
+                {% if link.status == 'connected' %}
+                Connected
+                {% elif link.status == 'pending' %}
+                Pending
+                {% else %}
+                {{ link.status|title }}
+                {% endif %}
+              </td>
+              <td>
+                {{ link.connected_at|date:"d-m-Y" }}
+                ({{ link.connected_at|date:"h:i A" }})
               </td>
             </tr>
             {% endfor %}
           </tbody>
         </table>
         {% else %}
-        <p>No linked data found.</p>
+        <p>No ERP systems connected yet.</p>
         {% endif %}
       </div>
     </main>
@@ -375,6 +507,38 @@
 
       // Hide initially
       toTopBtn.style.display = "none";
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const systemTypeSelect = document.getElementById("id_system_type");
+        const odataFields = document.querySelectorAll(".odata-fields");
+        const rfcFields = document.querySelectorAll(".rfc-fields");
+        const hanaFields = document.querySelectorAll(".hana-fields");
+
+        function toggleSAPFields(selectedType) {
+          // Hide all
+          [odataFields, rfcFields, hanaFields].forEach((section) => {
+            section.forEach((div) => (div.style.display = "none"));
+          });
+
+          // Show the selected one
+          if (selectedType === "sap_odata") {
+            odataFields.forEach((div) => (div.style.display = "block"));
+          } else if (selectedType === "sap_rfc") {
+            rfcFields.forEach((div) => (div.style.display = "block"));
+          } else if (selectedType === "sap_hana") {
+            hanaFields.forEach((div) => (div.style.display = "block"));
+          }
+        }
+
+        // Initial load
+        toggleSAPFields(systemTypeSelect.value);
+
+        // Listen for dropdown changes
+        systemTypeSelect.addEventListener("change", function () {
+          toggleSAPFields(this.value);
+        });
+      });
     </script>
   </body>
 </html>

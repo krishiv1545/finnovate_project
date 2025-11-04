@@ -26,7 +26,7 @@ python fintech_project/manage.py migrate
 python fintech_project/manage.py collectstatic
 ```
 
-### 6. Install NGINX
+### 6. Install NGINX (SKIP THIS ACTUALLY !!)
 ```
 choco install nginx
 ```
@@ -44,13 +44,14 @@ python fintech_project/manage.py createsuperuser
 
 ### 7. To run from finnovate_project>
 ```
-python fintech_project/manage.py
+python fintech_project/manage.py runserver
 ```
 
 ### 8. Login using admin creds
+The ones you used during createsuperuser cmd
 
 ## FOR PROD:-
-
+Close the server if it is running on Windows terminal, we'll use NGINX+Gunicorn in WSL
 ### 9. (in WSL) 
 ```
 cd /mnt/c/Users/krish/Desktop/FINTECH/finnovate_project

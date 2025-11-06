@@ -1,58 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Login | Finnovate</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
     <style>
-      :root {
-        --bg: #ffffff;
-        --fg: #111827;
-        --subtle: #6b7280;
-        --border: #e5e7eb;
-        --accent: #2563eb;
-        --accent-light: #eff6ff;
-        --radius: 10px;
-        --grid-line: rgba(0, 0, 0, 0.03);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      /* Exact viewport height with safe fallback */
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100vh; /* fallback for older browsers */
-        min-height: 100vh; /* guard against short pages */
-        height: 100dvh; /* dynamic viewport unit for mobile UI changes */
-        font-family: "Inter", system-ui, sans-serif;
-        background: var(--bg);
-        color: var(--fg);
-      } /* [web:29][web:26] */
-
-      header {
-        position: sticky;
-        top: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.2rem 2rem;
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(8px);
-        background: rgba(255, 255, 255, 0.8);
-        z-index: 5;
-      }
-
-      .logo {
-        font-weight: 600;
-        font-size: 1.2rem;
-        color: var(--accent);
-        letter-spacing: 0.2px;
-      }
-
       main {
         /* Ensure the center area spans the viewport for consistent centering */
         min-height: 100%;
@@ -62,16 +16,6 @@
         justify-content: center;
         position: relative;
         overflow: hidden;
-        background: radial-gradient(circle at 30% 40%, #dbeafe 0%, #ffffff 90%);
-      } /* [web:29] */
-
-      .grid {
-        position: absolute;
-        inset: 0;
-        background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
-          linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-        background-size: 40px 40px;
-        z-index: 0;
       }
 
       .login-card {
@@ -172,20 +116,6 @@
 
       .links a:hover {
         text-decoration: underline;
-      }
-
-      footer {
-        text-align: center;
-        padding: 1rem;
-        color: var(--subtle);
-        font-size: 0.85rem;
-        border-top: 1px solid var(--border);
-        background: white;
-      }
-
-      a {
-        text-decoration: none;
-        color: inherit;
       }
     </style>
   </head>

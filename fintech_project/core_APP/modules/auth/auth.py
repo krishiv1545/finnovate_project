@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
 from django.contrib import messages
+from django.contrib.auth import logout
 
 
 def auth_view(request):
@@ -32,3 +33,10 @@ def authenticate_user(request):
             return render(request, "auth/auth.html", status=401)
 
     return render(request, "auth/auth.html")
+
+
+def logout_user(request):
+    """Logout user."""
+    if request.user.is_authenticated:
+        logout(request)
+    return redirect("auth_view")

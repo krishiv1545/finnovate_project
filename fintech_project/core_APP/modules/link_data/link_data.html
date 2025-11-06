@@ -15,6 +15,7 @@
         align-items: start;
         overflow-y: scroll;
         scrollbar-width: thin;
+        font: Arial, sans-serif !important;
       }
 
       .link-data-div {
@@ -304,7 +305,9 @@
 
             <!-- ========== ODATA FIELDS ========== -->
             <div class="odata-fields">
-              <div>{{ sap_form.base_url.label_tag }} {{ sap_form.base_url }}</div>
+              <div>
+                {{ sap_form.base_url.label_tag }} {{ sap_form.base_url }}
+              </div>
             </div>
 
             <!-- ========== RFC FIELDS ========== -->
@@ -324,7 +327,9 @@
               <div>
                 {{ sap_form.hana_port.label_tag }} {{ sap_form.hana_port }}
               </div>
-              <div>{{ sap_form.hana_database.label_tag }} {{ sap_form.hana_database }}</div>
+              <div>
+                {{ sap_form.hana_database.label_tag }} {{ sap_form.hana_database }}
+              </div>
               <div>
                 {{ sap_form.ssl_mode.label_tag }} {{ sap_form.ssl_mode }}
               </div>
@@ -409,7 +414,8 @@
               <th>File Name</th>
               <th>Uploaded On</th>
               <th>Data Source</th>
-              <th>Actions</th>
+              <th>View File</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -417,11 +423,15 @@
             <tr>
               <td>{{ file.file.name|slice:"8:"|default:"(No name)" }}</td>
               <td>
-                {{ file.uploaded_at|date:"d-m-Y" }}
-                ({{ file.uploaded_at|date:"h:i A" }})
+                {{ file.uploaded_at|date:"d-m-Y" }} ({{ file.uploaded_at|date:"h:i A" }})
               </td>
               <td>{{ file.data_source|default:"N/A" }}</td>
               <td><a href="{{ file.file.url }}" target="_blank">View</a></td>
+              <td>
+                {% if file.status == 'pending' %}
+                <button>Pending</button>
+                {% else %} Connected {% endif %}
+              </td>
             </tr>
             {% endfor %}
           </tbody>
@@ -431,7 +441,7 @@
         {% endif %}
 
         <!-- SAP LINKS -->
-        <h2 style="margin-top:2rem;">Connected ERP Systems</h2>
+        <h2 style="margin-top: 2rem">Connected ERP Systems</h2>
         {% if sap_links_qs %}
         <table class="styled-table">
           <thead>
@@ -439,46 +449,62 @@
               <th>System Name</th>
               <th>Type</th>
               <th>Base URL / Host</th>
-              <th>Status</th>
               <th>Linked On</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
             {% for link in sap_links_qs %}
             <tr>
               <td>{{ link.system_name }}</td>
+
               <td>
-                {% if link.system_type == 'sap_odata' %} OData API
-                {% elif link.system_type == 'sap_rfc' %} RFC/BAPI
-                {% elif link.system_type == 'sap_hana' %} HANA DB
-                {% else %} Unknown {% endif %}
-              </td>
-              <td>
-                {% if link.base_url %} {{ link.base_url }}
-                {% elif link.ashost %} {{ link.ashost }}
-                {% elif link.hana_host %} {{ link.hana_host }}
-                {% else %} — {% endif %}
-              </td>
-              <td>
-                {% if link.status == 'connected' %}
-                Connected
-                {% elif link.status == 'pending' %}
-                Pending
+                {% if link.system_type == 'sap_odata' %}
+                  OData API
+                {% elif link.system_type == 'sap_rfc' %}
+                  RFC/BAPI
+                {% elif link.system_type == 'sap_hana' %}
+                  HANA DB
                 {% else %}
-                {{ link.status|title }}
+                  Unknown
                 {% endif %}
               </td>
+
+              <td>
+                {% if link.base_url %}
+                  {{ link.base_url }}
+                {% elif link.ashost %}
+                  {{ link.ashost }}
+                {% elif link.hana_host %}
+                  {{ link.hana_host }}
+                {% else %}
+                  —
+                {% endif %}
+              </td>
+
               <td>
                 {{ link.connected_at|date:"d-m-Y" }}
                 ({{ link.connected_at|date:"h:i A" }})
+              </td>
+
+              <td>
+                {% if link.status == 'pending' %}
+                  <form method="post" action="{% url 'link_sap_erp_to_unified_db' link.id %}">
+                    {% csrf_token %}
+                    <button type="submit">Pending</button>
+                  </form>
+                {% else %}
+                  ✅ Connected
+                {% endif %}
               </td>
             </tr>
             {% endfor %}
           </tbody>
         </table>
         {% else %}
-        <p>No ERP systems connected yet.</p>
+          <p>No ERP systems connected yet.</p>
         {% endif %}
+
       </div>
     </main>
 

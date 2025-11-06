@@ -80,6 +80,7 @@ class UploadedFile(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='uploaded_files')
     file = models.FileField(upload_to='uploads/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(max_length=20, default='pending')
 
     class Meta:
         db_table = 'uploaded_files'
@@ -139,7 +140,7 @@ class SAPLink(models.Model):
         return f"{self.system_name} ({self.system_type})"
     
 
-# MATRIX TIME MOTHERFUC
+# TIME TO BUILD UNIFIED DBs, MOTHERFUC--
 
 # CustomUser (Dept Head)
 #    │
@@ -151,27 +152,64 @@ class SAPLink(models.Model):
 #    └── ResponsibilityMatrix (who reviews what)
 
 
+# https://www.appsruntheworld.com/customers-database/purchases/view/adani-group-india-selects-sap-s-4-hana-for-erp-financial
+
+#                       ┌──────────────────────┐
+#                       │     SAP S/4HANA      │
+#                       │ (Adani Internal ERP) │
+#                       └──────────┬───────────┘
+#                                  │
+#                   Secure OData / API Integration
+#                                  │
+#               ┌──────────────────┴───────────────────┐
+#               │                                      │
+#    ┌─────────────────────┐              ┌────────────────────────────┐
+#    │ Finnovate Backend   │              │  Mock SAP Server:-         │
+#    │ - SAPLink table     │              │  - OData-style endpoints   │
+#    │ - Data ingestion    │              │  - Dummy Adani-style data  │
+#    │ - TrialBalance DB   │              └────────────────────────────┘
+#    │ - AI Validation     │
+#    │ - Dashboards & APIs │
+#    └──────────┬──────────┘
+#               │
+#            Frontend
+
+
 class TrialBalance(models.Model):
+    """Simplified, realistic Trial Balance model aligned with your SAP HANA schema."""
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="trial_balances")
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="trial_balances"
+    )
+
+    # --- GL Information ---
     gl_code = models.CharField(max_length=50)
-    gl_description = models.CharField(max_length=255)
-    period_start = models.DateField()
-    period_end = models.DateField()
-    debit = models.DecimalField(max_digits=15, decimal_places=2, default=0)
-    credit = models.DecimalField(max_digits=15, decimal_places=2, default=0)
-    balance = models.DecimalField(max_digits=15, decimal_places=2, default=0)
-    source_system = models.CharField(max_length=50, default="manual_upload")
-    uploaded_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
-    upload_timestamp = models.DateTimeField(auto_now_add=True)
-    is_reviewed = models.BooleanField(default=False)
+    gl_name = models.CharField(max_length=255)
+    group_gl_code = models.CharField(max_length=50, null=True, blank=True)
+    group_gl_name = models.CharField(max_length=255, null=True, blank=True)
+
+    # --- Financial Data ---
+    amount = models.DecimalField(max_digits=18, decimal_places=2, default=0)
+
+    # --- Financial Statement Grouping ---
+    fs_main_head = models.CharField(max_length=255, null=True, blank=True)
+    fs_sub_head = models.CharField(max_length=255, null=True, blank=True)
+
+    # --- YYYY ---
+    fiscal_year = models.CharField(max_length=10, null=True, blank=True)
+
+    # --- Audit ---
+    added_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         db_table = "trial_balances"
-        ordering = ["-upload_timestamp"]
+        ordering = ["-added_at"]
 
     def __str__(self):
-        return f"{self.user.username} - {self.gl_code}"
+        return f"{self.gl_code} - {self.gl_name} ({self.fs_main_head or 'Uncategorized'})"
 
 
 class ResponsibilityMatrix(models.Model):

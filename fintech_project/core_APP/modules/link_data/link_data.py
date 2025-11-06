@@ -1,4 +1,5 @@
 import logging
+from hdbcli import dbapi
 import os
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
@@ -138,3 +139,64 @@ def link_data_connect_erp(request):
 def link_data_connect_api(request):
     """Connect API."""
     return redirect('link_data_page')
+
+
+@login_required
+def link_sap_erp_to_unified_db(request, saplink_id):
+    """Connect to SAP HANA and fetch data."""
+    user = request.user
+    try:
+        saplink = SAPLink.objects.get(id=saplink_id, link__user=user)
+        
+        if saplink.system_type == 'sap_hana':
+            # Parse hostname (remove port if included)
+            host_name = saplink.hana_host.split(':')[0]
+            port = int(saplink.hana_port)
+            
+            print(f"Connecting to: {host_name}:{port}")
+            
+            # Connection parameters for SAP HANA Cloud
+            connection_params = {
+                'address': host_name,
+                'port': port,
+                'user': saplink.username,
+                'password': saplink.password,
+                'encrypt': True,
+                'sslValidateCertificate': False,  # For development only
+            }
+            
+            # For SAP HANA Cloud, add these parameters
+            if 'hanacloud.ondemand.com' in host_name:
+                connection_params.update({
+                    'sslCryptoProvider': 'openssl',
+                    'sslTrustStore': None,  # Use system trust store
+                })
+            
+            # Connect to SAP HANA
+            conn = dbapi.connect(**connection_params)
+            cursor = conn.cursor()
+            
+            # Execute query
+            cursor.execute("SELECT GL_CODE, GL_NAME, AMOUNT FROM FINNOVATE_ERP.TRIAL_BALANCE ORDER BY GL_CODE LIMIT 5")
+            rows = cursor.fetchall()
+            
+            # Log results
+            print("=== SAMPLE TRIAL BALANCE RECORDS FROM HANA ===")
+            for r in rows:
+                print(r)
+            
+            cursor.close()
+            conn.close()
+            
+            messages.success(request, f"Connected to SAP HANA successfully! {len(rows)} rows fetched.")
+            return redirect('link_data_page')
+            
+    except SAPLink.DoesNotExist:
+        messages.error(request, "SAP Link not found.")
+        return redirect('link_data_page')
+    except Exception as e:
+        import traceback
+        error_details = traceback.format_exc()
+        print("SAP HANA connection error:", error_details)
+        messages.error(request, f"Connection failed: {str(e)}")
+        return redirect('link_data_page')

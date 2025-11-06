@@ -23,12 +23,14 @@ footer {
 
 * {
   box-sizing: border-box;
+  font: Arial, sans-serif !important;
 }
 
 html,
 body {
   height: 100%;
   margin: 0;
+  font: Arial, sans-serif !important;
 }
 
 body {
@@ -38,6 +40,7 @@ body {
   font-family: "Inter", system-ui, sans-serif;
   background: var(--bg);
   color: var(--fg);
+  font: Arial, sans-serif !important;
 }
 
 header {

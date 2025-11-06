@@ -94,3 +94,17 @@ But we'll be using localhost:8081 now, not port 8000
 Gunicorn listens to 8000
 NGINX listens to 8081
 Please dont bypass NGINX, it is out cute little reverse proxy setup
+
+## SAP ERP (HANA 2.0)
+
+### Important Links:-
+https://www.sap.com/products/data-cloud/hana/express-trial.html
+https://tools.hana.ondemand.com/#hanatools
+
+https://account.hanatrial.ondemand.com/trial/#/home/trial
+
+TEST SAP HANA ERP CONNECTION:-
+
+```
+python -c "from hdbcli import dbapi; conn = dbapi.connect(address='ebdc3fa3-fb21-454f-bad4-f569d264fd7c.hana.trial-us10.hanacloud.ondemand.com', port=443, user='DBADMIN', password='AdaniPower@123', encrypt=True, sslValidateCertificate=False); print('Connected!'); conn.close()"
+```

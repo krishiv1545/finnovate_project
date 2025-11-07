@@ -28,6 +28,7 @@ urlpatterns = [
     path('link/', include('core_APP.modules.link_data.link_data_urls')),
     path('tableau/', include('core_APP.modules.tableau.tableau_urls')),
     path('reports/', include('core_APP.modules.reports.reports_urls')),
+    path('department-management/', include('core_APP.modules.department_management.department_management_urls')),
 ]
 
 if settings.DEBUG:

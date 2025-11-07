@@ -7,9 +7,10 @@ import uuid
 
 class CustomUser(AbstractUser):
     USER_TYPE_CHOICES = (
-        (1, 'admin'),
-        (2, 'sub-admin'), # per dept head
-        (3, 'reviewer'),
+        (1, 'Admin'),
+        (2, 'Department Head'), # per dept head
+        (3, 'BUFC'),
+        (4, 'User')
     )
     user_type = models.PositiveSmallIntegerField(choices=USER_TYPE_CHOICES, default=2)
 
@@ -18,6 +19,52 @@ class CustomUser(AbstractUser):
     
     class Meta:
         db_table = 'Users'
+
+
+class Department(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = 'departments'
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return self.name
+
+class ResponsibilityMatrix(models.Model):
+
+    USER_ROLE_CHOICES = (
+        (2, 'Department Head'),
+        (3, 'BUFC'),
+        (4, 'Preparer'),
+        (5, 'Reviewer')
+    )
+    GL_CODE_STATUS_CHOICES = (
+        (1, 'Pending'),
+        (2, 'Done'),
+        (3, 'Approved'),
+        (4, 'Rejected')
+    )
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="responsibility_matrix")
+    department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, blank=True)
+    user_role = models.PositiveSmallIntegerField(choices=USER_ROLE_CHOICES, default=5)
+
+    gl_code = models.CharField(max_length=50, null=True, blank=True)
+    gl_code_status = models.PositiveSmallIntegerField(choices=GL_CODE_STATUS_CHOICES, null=True, blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "responsibility_matrix"
+        unique_together = ("user", "gl_code")
+        ordering = ["user", "gl_code"]
+
+    def __str__(self):
+        return f"{self.user.username} - {self.gl_code}"
 
 
 class Conversation(models.Model):
@@ -277,25 +324,6 @@ class BalanceSheet(models.Model):
 
     def __str__(self):
         return f"{self.BS_PL} - {self.gl_acct} ({self.status})"
-
-
-class ResponsibilityMatrix(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="responsibility_matrix")
-    gl_code = models.CharField(max_length=50)
-    responsible_person = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="responsible_gls")
-    reviewer = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="reviewer_gls")
-    fc = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="fc_gls")
-    department = models.CharField(max_length=100, blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        db_table = "responsibility_matrix"
-        unique_together = ("user", "gl_code")
-        ordering = ["user", "gl_code"]
-
-    def __str__(self):
-        return f"{self.user.username} - {self.gl_code}"
 
 
 class GLSupportingDocument(models.Model):

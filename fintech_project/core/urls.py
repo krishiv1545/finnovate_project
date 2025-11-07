@@ -26,6 +26,7 @@ urlpatterns = [
     path('auth/', include('core_APP.modules.auth.auth_urls')),
     path('dashboard/', include('core_APP.modules.dashboard.dashboard_urls')),
     path('link/', include('core_APP.modules.link_data.link_data_urls')),
+    path('tableau/', include('core_APP.modules.tableau.tableau_urls')),
 ]
 
 if settings.DEBUG:

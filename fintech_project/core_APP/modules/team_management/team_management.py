@@ -5,6 +5,9 @@ from django.db import IntegrityError, transaction
 from django.db.models import Q
 from django.http import HttpResponseForbidden
 from django.shortcuts import redirect, render
+from django.conf import settings
+from django.core.mail import send_mail
+
 
 from core_APP.models import CustomUser, ResponsibilityMatrix, BalanceSheet
 
@@ -171,11 +174,24 @@ def team_management_view(request):
                         request,
                         f"User '{selected_user.get_full_name() or selected_user.username}' added to team successfully.",
                     )
-                    return redirect("team_management_page")
                 except IntegrityError:
                     form.add_error(
                         None, "Unable to add user to team. They may already be in the team."
                     )
+                
+                # Welcome Email
+                try:
+                    send_mail(
+                        subject="Hello from Finnovate Project 2025",
+                        message=f"Hi {selected_user.first_name},\n\nWelcome to Finnovate Project 2025! You were added by {request.user.first_name} {request.user.last_name} from {department} Department.\nWe are excited to have you on board.\n\nBest regards,\nFinnovate Project 2025",
+                        from_email=settings.DEFAULT_FROM_EMAIL,
+                        recipient_list=[selected_user.email],
+                        fail_silently=False,
+                    )
+                except Exception as e:
+                    print(f"Error sending welcome email: {e}")
+
+                return redirect("team_management_page")
             else:
                 messages.error(request, "Please correct the errors below and resubmit.")
         
@@ -239,6 +255,39 @@ def team_management_view(request):
                         request,
                         f"GL Code '{selected_gl_code}' assigned to {selected_user.get_full_name() or selected_user.username} successfully.",
                     )
+
+                    # Info Email
+                    try:
+                        # Get GL Name (if exists)
+                        gl_name = BalanceSheet.objects.filter(gl_acct=selected_gl_code).values_list("gl_account_name", flat=True).first() or "N/A"
+
+                        subject = f"General Ledger Review  — {selected_gl_code}:({gl_name})"
+                        message = f"""
+                        Hi {selected_user.first_name},
+                        You’ve been assigned a new General Ledger (GL) Code in the {department.name} department.
+
+                        Here are the details:
+
+                        GL Code: {selected_gl_code}
+                        GL Name: {gl_name}
+                        GL Review Status: Pending
+
+                        If you believe this was assigned in error, please contact {department} Department Head/SPOC.
+
+                        Best regards,
+                        Finnovate Project 2025
+                        """
+                        # Send the email
+                        send_mail(
+                            subject=subject,
+                            message=message.strip(),
+                            from_email=settings.DEFAULT_FROM_EMAIL,
+                            recipient_list=[selected_user.email],
+                            fail_silently=False,
+                        )
+                    except Exception as e:
+                        print(f"Error sending welcome email: {e}")
+                        
                     return redirect("team_management_page")
                 except CustomUser.DoesNotExist:
                     messages.error(request, "Selected user not found.")

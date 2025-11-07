@@ -5,20 +5,54 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
 from django.conf import settings
+from django.shortcuts import redirect
 import json
 import os
 import time
 import re
-from core_APP.models import Conversation, Message
+from core_APP.models import Conversation, Message, ResponsibilityMatrix
+
 
 logger = logging.getLogger(__name__)
 
 # MCP Session Cache
 mcp_session_cache = {}
 
+
 def dashboard_view(request):
     """Dashboard view."""
-    return render(request, 'dashboard/dashboard.html')
+
+    if not request.user.is_authenticated:
+        return redirect("landing_page")
+    print("Dashboard view for User: ", request.user.id)
+    if request.user.user_type == 1:
+        # Admin
+        return render(request, 'dashboard/dashboard.html')
+    elif request.user.user_type in [2, 3]:
+        # Tower Lead and Finance Controller
+        return render(request, 'dashboard/dashboard.html')
+    elif request.user.user_type == 4:
+        # User
+        user_responsibility_matrix_record = ResponsibilityMatrix.objects.filter(user=request.user).first()
+        if user_responsibility_matrix_record:
+    
+            if user_responsibility_matrix_record.user_role == 4:
+                # Preparer
+                print("Preparer")
+                return render(request, 'dashboard/dashboard_t3.html')
+            elif user_responsibility_matrix_record.user_role == 5:
+                # Reviewer
+                print("Reviewer")
+                return render(request, 'dashboard/dashboard_t3.html')
+            else:
+                print("Unknown user role")
+                return redirect("auth_view")
+        else:
+            print("User responsibility matrix record not found")
+            return redirect("auth_view")
+    else:
+        print("Unknown user type")
+        return redirect("auth_view")
 
 
 def get_mcp_client(user_email, conversation_id):

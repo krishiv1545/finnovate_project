@@ -34,6 +34,24 @@
       </span>
     </div>
     {% endif %}
+
+      {% if user.user_type == 4 %}
+          <div
+            class="stick-thingy-idk"
+            style="font-size: large; color: #999; padding-inline: 1rem"
+          >
+            |
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-weight: 500"
+              >{{ user.first_name }} {{ user.last_name }}</span
+            >
+            <span style="font-size: 0.75rem; color: #999; margin-top: 0.1rem">
+              User
+            </span>
+          </div>
+      {% endif %}
+
     {% endif %}
   </div>
   <nav style="display: flex; flex-direction: row; align-items: center">

@@ -208,7 +208,7 @@ class TrialBalance(models.Model):
 
     # --- GL Information ---
     gl_code = models.CharField(max_length=50)
-    gl_name = models.CharField(max_length=255)
+    gl_name = models.CharField(max_length=255, null=True, blank=True)
     group_gl_code = models.CharField(max_length=50, null=True, blank=True)
     group_gl_name = models.CharField(max_length=255, null=True, blank=True)
 
@@ -242,28 +242,28 @@ class BalanceSheet(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name="trial_balances"
+        related_name="balance_sheets"
     )    
-    BS_PL = models.CharField(max_length=10)
-    status = models.CharField(max_length=50)
-    gl_acct = models.CharField(max_length=20, verbose_name="G/L Account Code")
-    gl_account_name = models.CharField(max_length=100, verbose_name="G/L Account Name")
-    main_head = models.CharField(max_length=100)
-    sub_head = models.CharField(max_length=100)
-    cml = models.CharField(max_length=20, verbose_name="Criticality (C/M/L)")
-    frequency = models.CharField(max_length=20)
-    responsible_department = models.CharField(max_length=50)
-    department_spoc = models.CharField(max_length=100)
-    department_reviewer = models.CharField(max_length=100)
-    query_type_action_points = models.TextField(verbose_name="Query Type / Action Points", blank=True, null=True)
+    BS_PL = models.CharField(max_length=10, null=True, blank=True)
+    status = models.CharField(max_length=50, null=True, blank=True)
+    gl_acct = models.CharField(max_length=20)
+    gl_account_name = models.CharField(max_length=100, null=True, blank=True)
+    main_head = models.CharField(max_length=100, null=True, blank=True)
+    sub_head = models.CharField(max_length=100, null=True, blank=True)
+    cml = models.CharField(max_length=20, null=True, blank=True)
+    frequency = models.CharField(max_length=20, null=True, blank=True)
+    responsible_department = models.CharField(max_length=50, null=True, blank=True)
+    department_spoc = models.CharField(max_length=100, null=True, blank=True)
+    department_reviewer = models.CharField(max_length=100, null=True, blank=True)
+    query_type_action_points = models.TextField(blank=True, null=True)
     working_needed = models.TextField(blank=True, null=True)
-    confirmation_type = models.CharField(max_length=100, verbose_name="Confirmation (Internal / External)")
-    recon_status = models.CharField(max_length=100, verbose_name="Reconciliation Status")
-    variance_percent = models.CharField(max_length=50, verbose_name="% Variance")
-    flag_color = models.CharField(max_length=20, verbose_name="Flag (Green / Red)")
-    report_type = models.CharField(max_length=100)
-    analysis_required = models.CharField(max_length=10)
-    review_checkpoint_abex = models.CharField(max_length=500, verbose_name="Review Checkpoint at ABEX", blank=True, null=True)
+    confirmation_type = models.CharField(max_length=100, null=True, blank=True)
+    recon_status = models.CharField(max_length=100, null=True, blank=True)
+    variance_percent = models.CharField(max_length=50, null=True, blank=True)
+    flag_color = models.CharField(max_length=20, null=True, blank=True)
+    report_type = models.CharField(max_length=100, null=True, blank=True)
+    analysis_required = models.CharField(max_length=10, null=True, blank=True)
+    review_checkpoint_abex = models.CharField(max_length=500, blank=True, null=True)
     
     # --- YYYY ---
     fiscal_year = models.CharField(max_length=10, null=True, blank=True)
@@ -273,9 +273,6 @@ class BalanceSheet(models.Model):
 
     class Meta:
         db_table = 'balance_sheet'
-        app_label = 'finnovate_erp'
-        verbose_name = "Balance Sheet Entry"
-        verbose_name_plural = "Balance Sheet Entries"
 
     def __str__(self):
         return f"{self.BS_PL} - {self.gl_acct} ({self.status})"

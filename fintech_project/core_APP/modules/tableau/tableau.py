@@ -9,4 +9,5 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def tableau_view(request):
     """Link Data view."""
-    return render(request, 'tableau/tableau.html')
+    context = {}
+    return render(request, 'tableau/tableau.html', context=context)

@@ -49,6 +49,7 @@
     >
       |
     </div>
+    {% if user.user_type == 1 %}
     <a
       href="{% url 'link_data_page' %}"
       style="color: var(--subtle); text-decoration: none; font-weight: 500"
@@ -61,9 +62,9 @@
       |
     </div>
     <a
-      href="{% url 'reports_page' %}"
+      href="{% url 'tableau_page' %}"
       style="color: var(--subtle); text-decoration: none; font-weight: 500"
-      >Reports</a
+      >Tableau</a
     >
     <div
       class="stick-thingy-idk"
@@ -71,10 +72,11 @@
     >
       |
     </div>
+    {% endif %}
     <a
-      href="{% url 'tableau_page' %}"
+      href="{% url 'reports_page' %}"
       style="color: var(--subtle); text-decoration: none; font-weight: 500"
-      >Tableau</a
+      >Reports</a
     >
     <div
       class="stick-thingy-idk"

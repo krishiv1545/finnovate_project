@@ -24,7 +24,7 @@
         padding: 2rem;
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.75rem;
         height: 100%;
         overflow-y: auto;
         margin-right: 1rem;
@@ -46,7 +46,7 @@
       form {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.75rem;
         flex-shrink: 0;
       }
 
@@ -67,7 +67,7 @@
       select {
         border: 1px solid var(--border);
         border-radius: 8px;
-        padding: 0.65rem 0.5rem;
+        padding: 0.65rem 0.75rem;
         font: inherit;
         background: #f8fafc;
         transition: border 0.2s ease, box-shadow 0.2s ease;
@@ -108,7 +108,7 @@
       }
 
       .message {
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1rem;
         border-radius: 8px;
         font-size: 0.95rem;
       }
@@ -131,7 +131,7 @@
         margin: 0;
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.75rem;
       }
 
       .team-member {
@@ -145,6 +145,8 @@
       }
 
       .team-member-name {
+        display: flex;
+        justify-content: space-between;
         font-weight: 600;
         color: #0f172a;
         font-size: 0.95rem;
@@ -152,12 +154,21 @@
 
       .team-member-role {
         font-size: 0.8rem;
-        color: #64748b;
+        color: #8997aa;
+        border: 2px solid #8997aa;
+        padding:1px 3px;
+        border-radius: 100px;
       }
 
       .team-member-email {
-        font-size: 0.5rem;
+        font-size: 0.75rem;
         color: var(--subtle);
+      }
+
+      .team-member-gl-codes {
+        font-size: 0.75rem;
+        color: #2563eb;
+        margin-top: 0.25rem;
       }
 
       .empty-state {
@@ -177,7 +188,7 @@
 
       .search-form {
         display: flex;
-        gap: 0.5rem;
+        gap: 0.75rem;
         align-items: center;
         flex-direction: row;
       }
@@ -186,7 +197,7 @@
         flex: 1;
         border: 1px solid var(--border);
         border-radius: 8px;
-        padding: 0.65rem 0.5rem;
+        padding: 0.65rem 0.75rem;
         font: inherit;
         background: #f8fafc;
       }
@@ -268,6 +279,20 @@
           justify-content: center;
           gap: 1.5rem;
       }
+
+      .gl-assignment-form {
+        background: #f1f5f9;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--border);
+      }
+
+      .gl-assignment-form h3 {
+        margin: 0 0 1rem 0;
+        font-size: 0.95rem;
+        color: #0f172a;
+      }
     </style>
   </head>
   <body>
@@ -276,10 +301,53 @@
     <main>
       <div class="grid"></div>
 
-      <!-- Left Panel: Team List -->
+      <!-- Left Panel: Team List & GL Assignment -->
       <section class="panel-1">
-        <h2>Team Members</h2>
-        <p>Members of {{ department.name }}</p>
+        <h2>{{ department.name }} Members</h2>
+
+        <!-- GL Code Assignment Form -->
+          <form method="post" novalidate>
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="assign_gl">
+
+            <div class="field-wrapper">
+              <div class="field">
+                <label for="id_user_id">{{ gl_form.user_id.label }}</label>
+                <select name="user_id" id="id_user_id" required>
+                  <option value="">---------</option>
+                  {% for member in team_members %}
+                  <option value="{{ member.user.id }}">
+                    {% with full_name=member.user.get_full_name %}
+                      {% if full_name %}{{ full_name }}{% else %}{{ member.user.username }}{% endif %}
+                    {% endwith %}: {{ member.user.email }}
+                  </option>
+                  {% endfor %}
+                </select>
+                {% if gl_form.user_id.errors %}
+                <small style="color: #dc2626">{{ gl_form.user_id.errors|striptags }}</small>
+                {% endif %}
+              </div>
+
+              <div class="field">
+                <label for="id_gl_code">{{ gl_form.gl_code.label }}</label>
+                <select name="gl_code" id="id_gl_code" required>
+                  <option value="">---------</option>
+                  {% for gl_code_value, gl_code_display in gl_form.gl_code.field.choices %}
+                    {% if gl_code_value %}
+                    <option value="{{ gl_code_value }}">
+                      {{ gl_code_display }}
+                    </option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+                {% if gl_form.gl_code.errors %}
+                <small style="color: #dc2626">{{ gl_form.gl_code.errors|striptags }}</small>
+                {% endif %}
+              </div>
+            </div>
+
+            <button type="submit">Assign General Ledger</button>
+          </form>
 
         {% if team_members %}
         <ul class="team-list">
@@ -287,11 +355,15 @@
           <li class="team-member">
             <div class="team-member-name">
               {% with full_name=member.user.get_full_name %}
-                {% if full_name %}{{ full_name }}{% else %}{{ member.user.username }}{% endif %}
+                {% if full_name %}{{ full_name }} <span class="team-member-role">{{ member.user_role }}</span>{% else %}{{ member.user.username }} <span class="team-member-role">{{ member.user_role }}</span>{% endif %}
               {% endwith %}
             </div>
-            <div class="team-member-role">{{ member.user_role }}</div>
             <div class="team-member-email">{{ member.user.email }}</div>
+            {% if member.gl_codes %}
+            <div class="team-member-gl-codes">
+              <strong>Assigned GL Codes:</strong> {{ member.gl_codes|join:", " }}
+            </div>
+            {% endif %}
           </li>
           {% endfor %}
         </ul>
@@ -304,7 +376,7 @@
 
       <!-- Right Panel: Add Team Members -->
       <section class="panel-1" style="margin-right:0; padding-bottom: 2rem;">
-        <h2>Add Team Member</h2>
+        <h2>Add Member to {{ department.name }}</h2>
         <p>Select a user and assign them a role in your department.</p>
 
         {% if messages %}
@@ -317,6 +389,7 @@
 
         <form method="post" novalidate>
           {% csrf_token %}
+          <input type="hidden" name="form_type" value="add_member">
 
           <div class="field-wrapper">
             <div class="field">

@@ -6,7 +6,7 @@ from django.db.models import Q
 from django.http import HttpResponseForbidden
 from django.shortcuts import redirect, render
 
-from core_APP.models import CustomUser, ResponsibilityMatrix
+from core_APP.models import CustomUser, ResponsibilityMatrix, BalanceSheet
 
 
 class AddTeamMemberForm(forms.Form):
@@ -25,6 +25,33 @@ class AddTeamMemberForm(forms.Form):
         label="Assign Role",
         help_text="Select Preparer/Maker or Reviewer role.",
     )
+
+
+class AssignGLCodeForm(forms.Form):
+    user_id = forms.ChoiceField(
+        label="Select User",
+        choices=[],
+    )
+    gl_code = forms.ChoiceField(
+        label="Select GL Code",
+        choices=[],
+    )
+
+    def __init__(self, *args, **kwargs):
+        team_members = kwargs.pop('team_members', None)
+        gl_codes_list = kwargs.pop('gl_codes_list', None)
+        super().__init__(*args, **kwargs)
+        
+        if team_members:
+            # Create choices from team members
+            user_choices = [
+                (str(member['user'].id), f"{member['user'].get_full_name() or member['user'].username}: {member['user'].email}")
+                for member in team_members
+            ]
+            self.fields['user_id'].choices = [('', '---------')] + user_choices
+        
+        if gl_codes_list:
+            self.fields['gl_code'].choices = [('', '---------')] + gl_codes_list
 
 
 @login_required
@@ -52,29 +79,33 @@ def team_management_view(request):
         )
         return redirect("dashboard_page")
 
-    # Get unique team members from ResponsibilityMatrix for this department
-    # Get all responsibility entries, then get unique users
-    responsibility_entries = ResponsibilityMatrix.objects.filter(
-        department=department
-    ).exclude(user=request.user).select_related("user")
-    
-    # Get unique user IDs
-    unique_user_ids = responsibility_entries.values_list("user_id", flat=True).distinct()
-    
-    # Get the users and annotate with their role from ResponsibilityMatrix
+   # Get unique team members from ResponsibilityMatrix for this department
+    responsibility_entries = (
+        ResponsibilityMatrix.objects.filter(department=department)
+        .exclude(user=request.user)
+        .select_related("user")
+    )
+
+    # Get unique user IDs (SQLite-safe)
+    unique_user_ids = {entry.user_id for entry in responsibility_entries}
+
+    # Get the users and annotate with their role and GL codes
     team_members = []
     for user_id in unique_user_ids:
-        # Get the first responsibility entry for this user to get role info
-        resp_entry = responsibility_entries.filter(user_id=user_id).first()
+        user_entries = responsibility_entries.filter(user_id=user_id)
+        resp_entry = user_entries.first()
         if resp_entry:
+            gl_codes = user_entries.filter(gl_code__isnull=False).values_list("gl_code", flat=True)
             team_members.append({
                 'user': resp_entry.user,
                 'user_role': resp_entry.get_user_role_display(),
                 'user_role_code': resp_entry.user_role,
+                'gl_codes': list(gl_codes) if gl_codes else [],
             })
-    
+
     # Sort by name
     team_members.sort(key=lambda x: (x['user'].first_name or '', x['user'].last_name or ''))
+
 
     # Get available users (user_type 4) that are not already in the team
     existing_user_ids = [member['user'].id for member in team_members]
@@ -91,43 +122,138 @@ def team_management_view(request):
             Q(username__icontains=search_query) |
             Q(email__icontains=search_query)
         )
+    
+    # Prepare GL codes list for the form (from all users in the department's balance sheets)
+    gl_codes_list = []
+    
+    # Get unique GL codes from all balance sheets in this department
+    unique_gl_codes = BalanceSheet.objects.filter(
+        responsible_department=department
+    ).values_list('gl_acct', flat=True).distinct()
+    
+    for gl_code in unique_gl_codes:
+        # Get the first BalanceSheet entry for this GL code in the department
+        bs = BalanceSheet.objects.filter(
+            responsible_department=department,
+            gl_acct=gl_code
+        ).first()
+        if bs:
+            display_name = f"{bs.gl_acct} - {bs.gl_account_name or 'N/A'}"
+            gl_codes_list.append((bs.gl_acct, display_name))
+    
+    # Sort by GL code
+    gl_codes_list.sort(key=lambda x: x[0])
 
+    # Handle form submissions
     if request.method == "POST":
-        form = AddTeamMemberForm(request.POST)
-        # Update queryset to only show available users
-        form.fields["user"].queryset = available_users
+        form_type = request.POST.get('form_type')
+        
+        if form_type == 'add_member':
+            form = AddTeamMemberForm(request.POST)
+            form.fields["user"].queryset = available_users
+            gl_form = AssignGLCodeForm(team_members=team_members, gl_codes_list=gl_codes_list)
 
-        if form.is_valid():
-            selected_user = form.cleaned_data["user"]
-            user_role = int(form.cleaned_data["user_role"])
+            if form.is_valid():
+                selected_user = form.cleaned_data["user"]
+                user_role = int(form.cleaned_data["user_role"])
 
-            try:
-                with transaction.atomic():
-                    ResponsibilityMatrix.objects.create(
-                        user=selected_user,
-                        department=department,
-                        user_role=user_role,
-                        gl_code=None,
-                        gl_code_status=None,
+                try:
+                    with transaction.atomic():
+                        ResponsibilityMatrix.objects.create(
+                            user=selected_user,
+                            department=department,
+                            user_role=user_role,
+                            gl_code=None,
+                            gl_code_status=None,
+                        )
+
+                    messages.success(
+                        request,
+                        f"User '{selected_user.get_full_name() or selected_user.username}' added to team successfully.",
                     )
+                    return redirect("team_management_page")
+                except IntegrityError:
+                    form.add_error(
+                        None, "Unable to add user to team. They may already be in the team."
+                    )
+            else:
+                messages.error(request, "Please correct the errors below and resubmit.")
+        
+        elif form_type == 'assign_gl':
+            gl_form = AssignGLCodeForm(request.POST, team_members=team_members, gl_codes_list=gl_codes_list)
+            form = AddTeamMemberForm()
+            form.fields["user"].queryset = available_users
 
-                messages.success(
-                    request,
-                    f"User '{selected_user.get_full_name() or selected_user.username}' added to team successfully.",
-                )
-                return redirect("team_management_page")
-            except IntegrityError:
-                form.add_error(
-                    None, "Unable to add user to team. They may already be in the team."
-                )
-        else:
-            messages.error(request, "Please correct the errors below and resubmit.")
+            if gl_form.is_valid():
+                selected_user_id = gl_form.cleaned_data["user_id"]
+                selected_gl_code = gl_form.cleaned_data["gl_code"]
+                
+                try:
+                    # Get the user object
+                    selected_user = CustomUser.objects.get(id=selected_user_id)
+                    
+                    # Check if user already has this GL code assigned
+                    existing_gl_entry = ResponsibilityMatrix.objects.filter(
+                        user=selected_user,
+                        gl_code=selected_gl_code
+                    ).first()
+                    
+                    if existing_gl_entry:
+                        messages.error(request, f"This GL code is already assigned to {selected_user.get_full_name() or selected_user.username}.")
+                        return redirect("team_management_page")
+                    
+                    with transaction.atomic():
+                        # Check if user has a record with no gl_code in this department
+                        existing_entry = ResponsibilityMatrix.objects.filter(
+                            user=selected_user,
+                            department=department,
+                            gl_code__isnull=True
+                        ).first()
+                        
+                        if existing_entry:
+                            # Update existing record
+                            existing_entry.gl_code = selected_gl_code
+                            existing_entry.gl_code_status = 1  # Pending
+                            existing_entry.save()
+                        else:
+                            # Create new record with gl_code
+                            # Get the user's role from their existing entries
+                            user_role_entry = ResponsibilityMatrix.objects.filter(
+                                user=selected_user,
+                                department=department
+                            ).first()
+                            
+                            if user_role_entry:
+                                ResponsibilityMatrix.objects.create(
+                                    user=selected_user,
+                                    department=department,
+                                    user_role=user_role_entry.user_role,
+                                    gl_code=selected_gl_code,
+                                    gl_code_status=1,  # Pending
+                                )
+                            else:
+                                messages.error(request, "Unable to find user role for assignment.")
+                                return redirect("team_management_page")
+                    
+                    messages.success(
+                        request,
+                        f"GL Code '{selected_gl_code}' assigned to {selected_user.get_full_name() or selected_user.username} successfully.",
+                    )
+                    return redirect("team_management_page")
+                except CustomUser.DoesNotExist:
+                    messages.error(request, "Selected user not found.")
+                except Exception as e:
+                    messages.error(request, f"Error assigning GL code: {str(e)}")
+            else:
+                messages.error(request, "Please correct the errors in the GL assignment form.")
     else:
         form = AddTeamMemberForm()
         form.fields["user"].queryset = available_users
+        gl_form = AssignGLCodeForm(team_members=team_members, gl_codes_list=gl_codes_list)
 
     context = {
         "form": form,
+        "gl_form": gl_form,
         "team_members": team_members,
         "department": department,
         "available_users": available_users,

@@ -142,11 +142,14 @@ def link_data_connect_api(request):
 
 
 @login_required
-def link_sap_erp_to_unified_db(request, saplink_id):
+def link_sap_erp_to_unified_db(request, saplink_id, table_name):
     """Connect to SAP HANA and fetch data."""
     user = request.user
     try:
+        # table_name can be trial_balance or balance_sheet
         saplink = SAPLink.objects.get(id=saplink_id, link__user=user)
+        if saplink.status.get(table_name) != 'success':
+            return redirect('link_data_page')
         
         if saplink.system_type == 'sap_hana':
             # Parse hostname (remove port if included)
@@ -176,20 +179,18 @@ def link_sap_erp_to_unified_db(request, saplink_id):
             # Connect to SAP HANA
             conn = dbapi.connect(**connection_params)
             cursor = conn.cursor()
-            
-            # Execute query
-            cursor.execute("SELECT GL_CODE, GL_NAME, AMOUNT FROM FINNOVATE_ERP.TRIAL_BALANCE ORDER BY GL_CODE LIMIT 5")
-            rows = cursor.fetchall()
-            
-            # Log results
-            print("=== SAMPLE TRIAL BALANCE RECORDS FROM HANA ===")
-            for r in rows:
-                print(r)
-            
+            cursor.execute(f"""
+                SELECT COLUMN_NAME, DATA_TYPE_NAME
+                FROM SYS.TABLE_COLUMNS
+                WHERE SCHEMA_NAME = '{saplink.hana_database}'
+                AND TABLE_NAME = '{table_name}'
+                ORDER BY POSITION
+            """)
+            columns = [{"name": r[0], "type": r[1]} for r in cursor.fetchall()]
             cursor.close()
             conn.close()
-            
-            messages.success(request, f"Connected to SAP HANA successfully! {len(rows)} rows fetched.")
+            # return columns
+            # messages.success(request, f"Connected to SAP HANA successfully! {len(rows)} rows fetched.")
             return redirect('link_data_page')
             
     except SAPLink.DoesNotExist:

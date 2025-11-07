@@ -8,7 +8,8 @@ import uuid
 class CustomUser(AbstractUser):
     USER_TYPE_CHOICES = (
         (1, 'admin'),
-        (2, 'user'),
+        (2, 'sub-admin'), # per dept head
+        (3, 'reviewer'),
     )
     user_type = models.PositiveSmallIntegerField(choices=USER_TYPE_CHOICES, default=2)
 

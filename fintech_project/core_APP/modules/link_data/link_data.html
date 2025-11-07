@@ -414,6 +414,7 @@
               <th>File Name</th>
               <th>Uploaded On</th>
               <th>Data Source</th>
+              <th>File Type</th>
               <th>View File</th>
               <th>Status</th>
             </tr>
@@ -426,10 +427,11 @@
                 {{ file.uploaded_at|date:"d-m-Y" }} ({{ file.uploaded_at|date:"h:i A" }})
               </td>
               <td>{{ file.data_source|default:"N/A" }}</td>
+              <td>{% if file.table_type == 'trial_balance' %}Trial Balance{% elif file.table_type == 'balance_sheet' %}Balance Sheet{% else %}Unknown{% endif %}</td>
               <td><a href="{{ file.file.url }}" target="_blank">View</a></td>
               <td>
                 {% if file.status == 'pending' %}
-                <button>Pending</button>
+                <button>Connect</button>
                 {% else %} Connected {% endif %}
               </td>
             </tr>
@@ -488,13 +490,21 @@
               </td>
 
               <td>
-                {% if link.status == 'pending' %}
-                  <form method="post" action="{% url 'link_sap_erp_to_unified_db' link.id %}">
+                {% if link.status.trial_balance == 'pending' %}
+                  <form method="post" action="{% url 'link_sap_erp_to_unified_db' link.id 'trial_balance' %}" style="margin-bottom: 1rem">
                     {% csrf_token %}
-                    <button type="submit">Pending</button>
+                    <button type="submit">Connect Trial Balance</button>
                   </form>
                 {% else %}
-                  ✅ Connected
+                  Connected
+                {% endif %}
+                {% if link.status.balance_sheet == 'pending' %}
+                  <form method="post" action="{% url 'link_sap_erp_to_unified_db' link.id 'balance_sheet' %}">
+                    {% csrf_token %}
+                    <button type="submit">Connect Balance Sheet</button>
+                  </form>
+                {% else %}
+                  Connected
                 {% endif %}
               </td>
             </tr>

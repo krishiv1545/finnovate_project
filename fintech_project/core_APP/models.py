@@ -76,11 +76,20 @@ class LinkedData(models.Model):
 
 
 class UploadedFile(models.Model):
+    TABLE_TYPE_CHOICES = [
+        ("trial_balance", "Trial Balance"),
+        ("balance_sheet", "Balance Sheet"),
+    ]
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='uploaded_files')
     file = models.FileField(upload_to='uploads/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20, default='pending')
+
+    table_type = models.CharField(
+        max_length=50,
+        choices=TABLE_TYPE_CHOICES,
+    )
 
     class Meta:
         db_table = 'uploaded_files'
@@ -130,7 +139,11 @@ class SAPLink(models.Model):
 
     connected_at = models.DateTimeField(auto_now_add=True)
     last_synced_at = models.DateTimeField(blank=True, null=True)
-    status = models.CharField(max_length=20, default='pending')
+    status = models.JSONField(
+        default=dict,
+        blank=True,
+        null=True
+    )
 
     class Meta:
         db_table = 'sap_erp_links'
@@ -139,6 +152,14 @@ class SAPLink(models.Model):
     def __str__(self):
         return f"{self.system_name} ({self.system_type})"
     
+    def save(self, *args, **kwargs):
+        if not self.status or not isinstance(self.status, dict):
+            self.status = {
+                "trial_balance": "pending",
+                "balance_sheet": "pending"
+            }
+        super().save(*args, **kwargs)
+
 
 # TIME TO BUILD UNIFIED DBs, MOTHERFUC--
 

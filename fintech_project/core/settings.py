@@ -139,6 +139,10 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '')
 GOOGLE_AI_API_KEY = os.getenv('GOOGLE_AI_API_KEY', '')
 COMPOSIO_API_KEY = os.getenv('COMPOSIO_API_KEY', '')
 
+# Agentic chatbot integration (Next.js bridge)
+CHATBOT_API_BASE_URL = os.getenv('CHATBOT_API_BASE_URL', 'http://localhost:3000')
+CHATBOT_INTERNAL_TOKEN = os.getenv('CHATBOT_INTERNAL_TOKEN', '')
+
 # AI Model Configuration
 AI_MODEL = os.getenv('AI_MODEL', 'gpt-4o-mini')  # Default to OpenAI
 AI_TEMPERATURE = float(os.getenv('AI_TEMPERATURE', '0.3'))

@@ -76,11 +76,20 @@ class LinkedData(models.Model):
 
 
 class UploadedFile(models.Model):
+    TABLE_TYPE_CHOICES = [
+        ("trial_balance", "Trial Balance"),
+        ("balance_sheet", "Balance Sheet"),
+    ]
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='uploaded_files')
     file = models.FileField(upload_to='uploads/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20, default='pending')
+
+    table_type = models.CharField(
+        max_length=50,
+        choices=TABLE_TYPE_CHOICES,
+    )
 
     class Meta:
         db_table = 'uploaded_files'
@@ -130,7 +139,11 @@ class SAPLink(models.Model):
 
     connected_at = models.DateTimeField(auto_now_add=True)
     last_synced_at = models.DateTimeField(blank=True, null=True)
-    status = models.CharField(max_length=20, default='pending')
+    status = models.JSONField(
+        default=dict,
+        blank=True,
+        null=True
+    )
 
     class Meta:
         db_table = 'sap_erp_links'
@@ -139,6 +152,14 @@ class SAPLink(models.Model):
     def __str__(self):
         return f"{self.system_name} ({self.system_type})"
     
+    def save(self, *args, **kwargs):
+        if not self.status or not isinstance(self.status, dict):
+            self.status = {
+                "trial_balance": "pending",
+                "balance_sheet": "pending"
+            }
+        super().save(*args, **kwargs)
+
 
 # TIME TO BUILD UNIFIED DBs, MOTHERFUC--
 
@@ -187,7 +208,7 @@ class TrialBalance(models.Model):
 
     # --- GL Information ---
     gl_code = models.CharField(max_length=50)
-    gl_name = models.CharField(max_length=255)
+    gl_name = models.CharField(max_length=255, null=True, blank=True)
     group_gl_code = models.CharField(max_length=50, null=True, blank=True)
     group_gl_name = models.CharField(max_length=255, null=True, blank=True)
 
@@ -204,12 +225,57 @@ class TrialBalance(models.Model):
     # --- Audit ---
     added_at = models.DateTimeField(auto_now_add=True)
 
+    # --- Supporting Docx ---
+    supporting_document = models.FileField(upload_to="supporting_documents/", null=True, blank=True)
+
     class Meta:
         db_table = "trial_balances"
         ordering = ["-added_at"]
 
     def __str__(self):
         return f"{self.gl_code} - {self.gl_name} ({self.fs_main_head or 'Uncategorized'})"
+    
+
+class BalanceSheet(models.Model):
+    """Simplified, realistic Balance Sheet model aligned with your SAP HANA schema."""
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="balance_sheets"
+    )    
+    BS_PL = models.CharField(max_length=10, null=True, blank=True)
+    status = models.CharField(max_length=50, null=True, blank=True)
+    gl_acct = models.CharField(max_length=20)
+    gl_account_name = models.CharField(max_length=100, null=True, blank=True)
+    main_head = models.CharField(max_length=100, null=True, blank=True)
+    sub_head = models.CharField(max_length=100, null=True, blank=True)
+    cml = models.CharField(max_length=20, null=True, blank=True)
+    frequency = models.CharField(max_length=20, null=True, blank=True)
+    responsible_department = models.CharField(max_length=50, null=True, blank=True)
+    department_spoc = models.CharField(max_length=100, null=True, blank=True)
+    department_reviewer = models.CharField(max_length=100, null=True, blank=True)
+    query_type_action_points = models.TextField(blank=True, null=True)
+    working_needed = models.TextField(blank=True, null=True)
+    confirmation_type = models.CharField(max_length=100, null=True, blank=True)
+    recon_status = models.CharField(max_length=100, null=True, blank=True)
+    variance_percent = models.CharField(max_length=50, null=True, blank=True)
+    flag_color = models.CharField(max_length=20, null=True, blank=True)
+    report_type = models.CharField(max_length=100, null=True, blank=True)
+    analysis_required = models.CharField(max_length=10, null=True, blank=True)
+    review_checkpoint_abex = models.CharField(max_length=500, blank=True, null=True)
+    
+    # --- YYYY ---
+    fiscal_year = models.CharField(max_length=10, null=True, blank=True)
+
+    # --- Audit ---
+    added_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = 'balance_sheet'
+
+    def __str__(self):
+        return f"{self.BS_PL} - {self.gl_acct} ({self.status})"
 
 
 class ResponsibilityMatrix(models.Model):

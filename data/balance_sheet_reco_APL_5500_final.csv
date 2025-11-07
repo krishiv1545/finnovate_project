@@ -1,0 +1,3518 @@
+BS/PL,Status,G/L Acct,G/L Account Number,Main Head,Sub head,C/M/L,Frequency,Responsible Department,Departement SPOC,Departement Reviewer,Maker,Checker,Query type / Action points,Working Needed,"Confirmation
+(Internal / External)",Recon / Non Recon,% Variance," Flag
+(Green / Red) ",Type of Report, Analysis Requrired ,Review Check point at ABEX
+BS,Assets,11100110,Stk of Raw Mat-Dom,Inventories,Inventories - Raw-materials,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Classification of Inventory between Opex and Capex
+2. Old Non moving inventories lying and Provision for Non Moving Inventories, if any","1. Inventory Ageing report
+2. Working for Inventory reclassification
+3. NMI provision working",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Inventory report,Yes,Amount tallied with Inventory listing and ageing
+BS,Assets,11100115,BPC-Stk of Raw Mat,Inventories,Inventories - Raw-materials,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reclassification GL,Supporting working required for reclassification entries,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,No,Amount tallied with Inventory listing and ageing
+BS,Assets,11100200,Stk of Cap Inv-Dom,Capital Work in Progress,CWIP,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Classification of Inventory between Opex and Capex
+2. Old Non moving inventories lying and Provision for Non Moving Inventories, if any
+3. Direct assets not capitalised and parked in inventories","1. Inventory Ageing report
+2. Working for Inventory reclassification
+3. To ensure capitalisation of Direct Assets as per Group Guidelines",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Inventory report,Yes,"Direct Assets not capitalised as per Group Guidelines, apart amount tallied with Inventory listing and ageing"
+BS,Assets,11100400,Stk of S&S-Dom,Inventories,Inventories - Stores and Spares,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Classification of Inventory between Opex and Capex
+2. Old Non moving inventories lying and Provision for Non Moving Inventories, if any","1. Inventory Ageing report
+2. Working for Inventory reclassification
+3. NMI provision working",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Inventory report,Yes,Amount tallied with Inventory listing and ageing
+BS,Assets,11100410,BPC-Stk of S&S,Inventories,Inventories - Stores and Spares,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reclassification GL,Supporting working required for reclassification entries,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,No,Amount tallied with Inventory listing and ageing
+BS,Assets,11100500,Stk of S&S-For,Inventories,Inventories - Stores and Spares,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Classification of Inventory between Opex and Capex
+2. Old Non moving inventories lying and Provision for Non Moving Inventories, if any","1. Inventory Ageing report
+2. Working for Inventory reclassification
+3. NMI provision working",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Inventory report,Yes,Amount tallied with Inventory listing and ageing
+BS,Assets,11100600,Stk of Opr Sup-Dom,Inventories,Inventories - Stores and Spares,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Classification of Inventory between Opex and Capex
+2. Old Non moving inventories lying and Provision for Non Moving Inventories, if any","1. Inventory Ageing report
+2. Working for Inventory reclassification
+3. NMI provision working",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Inventory report,Yes,Amount tallied with Inventory listing and ageing
+BS,Assets,11102260,Stk of Trd Good-Dom,Inventories,Inventroy - Stock in Trade,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Classification of Inventory between Opex and Capex
+2. Old Non moving inventories lying and Provision for Non Moving Inventories, if any","1. Inventory Ageing report
+2. Working for Inventory reclassification
+3. NMI provision working",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Inventory report,Yes,Amount tallied with Inventory listing and ageing
+BS,Assets,11105150,BPC-Stk of Cap Inv,Capital Work in Progress,CWIP,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Classification of Inventory between Opex and Capex
+2. Old Non moving inventories lying and Provision for Non Moving Inventories, if any
+3. Direct assets not capitalised and parked in inventories","1. Inventory Ageing report
+2. Working for Inventory reclassification
+3. To ensure capitalisation of Direct Assets as per Group Guidelines",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Inventory report,Yes,"Direct Assets not capitalised as per Group Guidelines, apart amount tallied with Inventory listing and ageing"
+BS,Assets,11200010,Biz Partner-Loan,Other Current Liabilities,Other Current Liabilities and Other Payables,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances,There shall not be any balances,Nil Balance,Reconciliation GL,Not Applicable,Green,Working,No,No Balance
+BS,Assets,11200020,Biz Partner-LC,Short Term Borrowings,Unsecured Trade Credit - Banks,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances,There shall not be any balances,Nil Balance,Reconciliation GL,Not Applicable,Green,Working,No,No Balance
+BS,Assets,11200030,Biz Partner-FD,Cash and Cash Equivalent,Fixed Deposit 3 months or less,Critical,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances,There shall not be any balances,Nil Balance,Reconciliation GL,Not Applicable,Green,Working,No,No Balance
+BS,Assets,11200040,Biz Partner-Equity,Current Investments,Invt in Mutual Fund_Quoted,Critical,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances,There shall not be any balances,Nil Balance,Reconciliation GL,Not Applicable,Green,Working,No,No Balance
+BS,Assets,11200100,Debtors-Domestic,Trade Receivables,Trade Receivables_Unsecured_6 months or less,Medium,Quarterly,O2C,Hardik Chauhan,Chandresh Lumbhani,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Aged receivables ,"1. Schedule III Ageing Report
+2. BU remarks for Aged Items",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Assets,11210900,Debtors-Grp Co,Trade Receivables,Trade Receivables_Unsecured_6 months or less,Medium,Quarterly,O2C,Hardik Chauhan,Chandresh Lumbhani,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Aged receivables ,"1. Schedule III Ageing Report
+2. BU remarks for Aged Items",Internal - Balance Confirmation,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Assets,11211950,Clrg-ISU (SD),Trade Receivables,Trade Receivables_Unsecured_6 months or less,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reclassification GL,Supporting working required for reclassification entries,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,11220100,DEBTORS RECLASS ADJ,Trade Receivables,Trade Receivables_Unsecured_6 months or less,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reclassification GL,Supporting working required for reclassification entries,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,11221150,Unbilled Receivable,Other Current Financial Assets,Unbilled Receivables,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,"1. Unbilled reconciliation 
+2. Mail of BU for passing entry along with working 
+3. Mail sent to BU for review and confirmation",Working / Documents based,Non Reconciliation GL,Not Applicable, Green ,Working,Yes,Amount tallied with corporate cost allocation file
+BS,Assets,11290100,DEBTORS FOREX ADJ,Trade Receivables,Trade Receivables_Unsecured_6 months or less,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reclassification GL,Supporting working required for reclassification entries,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,11290300,OTHER CURR ASSETS-NC,Other Non Current Assets,Advances for Business Acquisitions,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",BU remarks for respective line items,"1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Assets,11290820,Debotrs-Non Trade,Other Current Financial Assets,Other Current Financial Assets,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reclassification GL,Supporting working required for reclassification entries,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,11290900,Debtors-Power,Trade Receivables,Trade Receivables_Unsecured_6 months or less,Medium,Quarterly,O2C,Hardik Chauhan,Chandresh Lumbhani,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Aged receivables ,"1. Schedule III Ageing Report
+2. BU remarks for Aged Items",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Assets,11300400,FURNITURE LOAN,Current Loans,Loan to Employee,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Actions for negative balances if any, 
+2. Employee transfer in out to be confirm with HR SSC MIS for respective month. ","1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU HR 
+4. Pending clearing if any",Working / Documents based,Reconciliation GL,Not Applicable,Red,Working,Yes,No Balance
+BS,Assets,11300600,MARRIAGE LOAN,Current Loans,Loan to Employee,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Actions for negative balances if any, 
+2. Employee transfer in out to be confirm with HR SSC MIS for respective month. ","1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU HR 
+4. Pending clearing if any",Working / Documents based,Reconciliation GL,Not Applicable,Red,Working,Yes,No Balance
+BS,Assets,11300650,Loans to Staff,Current Loans,Loan to Employee,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Actions for negative balances if any, 
+2. Employee transfer in out to be confirm with HR SSC MIS for respective month. ","1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU HR 
+4. Pending clearing if any",Working / Documents based,Reconciliation GL,Not Applicable,Red,Working,Yes,Appropriate remarks from BU HR not available
+BS,Assets,11300800,PERSONAL LOAN,Current Loans,Loan to Employee,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Actions for negative balances if any, 
+2. Employee transfer in out to be confirm with HR SSC MIS for respective month. ","1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU HR 
+4. Pending clearing if any",Working / Documents based,Reconciliation GL,Not Applicable,Red,Working,Yes,No Balance
+BS,Assets,11301750,Clrg-Emp Foreign Adv,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Assets,11302100,Adv agnst Exps,Other Current Assets,Adv. Recover in Kind,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",BU remarks for respective line items,"1. BU Score card  
+2. Appropriate remarks from BU, Pending clearing if any",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Assets,11302200,Adv agnst Capex,Other Non Current Assets,Capital Advances,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",BU remarks for respective line items,"1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Assets,11303000,Dep with Vend-Other,Other Current Financial Assets,"Deposit to Vendor, Customer & Others",Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. BU remarks for each line items
+2. Comliance with Ind AS 
+3. CNC classification correctness
+4. Adherence to Agreement","1. End dates of deposits 
+2. Signed documents
+3. Breakups
+4. Confirmations and workings",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,End dates of deposits not available
+BS,Assets,11303100,Dep with Gov Authrty,Other Current Financial Assets,"Deposit to Vendor, Customer & Others",Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. BU remarks for each line items
+2. Comliance with Ind AS 
+3. CNC classification correctness
+4. Adherence to Agreement","1. End dates of deposits 
+2. Signed documents
+3. Breakups
+4. Confirmations and workings",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,End dates of deposits not available
+BS,Assets,11303300,Dep with Vend-Rent,Other Current Financial Assets,"Deposit to Vendor, Customer & Others",Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. BU remarks for each line items
+2. Comliance with Ind AS 
+3. CNC classification correctness
+4. Adherence to Agreement","1. End dates of deposits 
+2. Signed documents
+3. Breakups
+4. Confirmations and workings",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,End dates of deposits not available
+BS,Assets,11304100,Prepaid Expenses,Other Current Assets,Prepaid Expenses,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,1. Balance sheet break up working,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,11304200,Prepaid Insurance,Other Current Assets,Prepaid Expenses,Medium,Quarterly,TRM,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,1. Balance sheet break up working,Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,Amount not tallied with workings
+BS,Assets,11305200,Adv Rcvrb C&K NC,Other Non Current Assets,Adv. Recover in Kind_LT,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reclassification GL,Supporting working required for reclassification entries,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,11305250,Adv Rcvrb C&K NC Adj,Other Current Assets,Adv. Recover in Kind,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reclassification GL,Supporting working required for reclassification entries,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,11312410,Duty Pd by Suplr,Other Current Assets,Adv. Recover in Kind,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reclassification GL,Supporting working required for reclassification entries,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,11312420,Duty Pd by Suplr Adj,Other Current Assets,Adv. Recover in Kind,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reclassification GL,Supporting working required for reclassification entries,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,11312500,Serv Tax Bld Rcvbl,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Should be clear the balances.
+BS,Assets,11312510,ST Rcvbl-Refund,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Should be clear the balances.
+BS,Assets,11312600,EC on ST Bld Rcvbl,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Should be clear the balances.
+BS,Assets,11312610,EC ST Rcvbl-Refund,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Should be clear the balances.
+BS,Assets,11312700,HEC on ST Bld Rcvbl,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Should be clear the balances.
+BS,Assets,11312710,HEC ST Rcvbl-Refund,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Should be clear the balances.
+BS,Assets,11313500,Service Tax Rcvbl-RC,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,No Balance
+BS,Assets,11313680,KK Cess Rcvbl,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,No Balance
+BS,Assets,11313690,KK Cess Rcvbl-RC,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,No Balance
+BS,Assets,11314000,ADV PMNT INCOME TAX,Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,Updated 26AS reconciliation not available
+BS,Assets,11314230,Rcvbl-TDS (07-08),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,No Balance
+BS,Assets,11314240,Rcvbl-TDS (08-09),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,No Balance
+BS,Assets,11314290,Rcvbl-TDS (09-10),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,Updated 26AS reconciliation not available
+BS,Assets,11314300,Taxes Under Protest,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Amount tallied with GST receivable reco
+BS,Assets,11314310,Rcvbl-TDS (10-11),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,No Balance
+BS,Assets,11314330,Rcvbl-TDS (11-12),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,No Balance
+BS,Assets,11314350,Rcvbl-TDS (12-13),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,Updated 26AS reconciliation not available
+BS,Assets,11314370,Rcvbl-TDS (13-14),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,No Balance
+BS,Assets,11314390,Rcvbl-TDS (15-16),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,Updated 26AS reconciliation not available
+BS,Assets,11314440,Rcvbl-TDS (16-17),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Reconciliation,No,Amount tallied with 26AS reconciliation
+BS,Assets,11314450,Rcvbl-TDS (17-18),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Reconciliation,No,Amount tallied with 26AS reconciliation
+BS,Assets,11314460,Rcvbl-TDS (18-19),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,Updated 26AS reconciliation not available
+BS,Assets,11314470,Rcvbl-TDS (19-20),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Updated 26AS reconciliation not available
+BS,Assets,11314480,Rcvbl-TDS (20-21),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Updated 26AS reconciliation not available
+BS,Assets,11314810,Advance-IT (09-10),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,Updated 26AS reconciliation not available
+BS,Assets,11314830,Advance-IT (11-12),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,Updated 26AS reconciliation not available
+BS,Assets,11314850,Advance-IT (13-14),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,Updated 26AS reconciliation not available
+BS,Assets,11315000,VAT ITC Rcvbl,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,No Balance
+BS,Assets,11315630,GST Cess Rcvbl,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,No Balance
+BS,Assets,11315660,TRM-IGST Rcvbl,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,No Balance
+BS,Assets,11316100,Advance for Land,Other Non Current Assets,Capital Advances,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",BU remarks for respective line items,"1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Assets,11316200,Staff Imprest,Other Current Assets,Advance to Employee,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Actions for negative balances if any, 
+2. Employee transfer in out to be confirm with HR SSC MIS for respective month.","1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Assets,11316920,TRM-L&A Group-ST,Current Loans,Loan to Related parties,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Arms length Justification for rate of interest
+2. Terms and Conditions are not prejudicial to the Interest of Company
+3. Recoverability assessment","1. Loan Agreement
+2. Balance confirmation",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable,Red,Working,Yes,Agreement not available
+BS,Assets,11316930,TRM-L&A GROUP- LT,Non Current Loans,Loan to Related parties_LT,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Arms length Justification for rate of interest
+2. Terms and Conditions are not prejudicial to the Interest of Company
+3. Recoverability assessment","1. Loan Agreement
+2. Balance confirmation",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable,Red,Working,Yes,Agreement not available
+BS,Assets,11318000,Rcvbl-Interest,Other Current Financial Assets,Interest accrued but not due (Interest Receivable),Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. GL balance should match with working
+2. Reversal of Interest accrued in case of acquired entities (for matured deposits)
+3. Completeness of Interest booking
+4. Proper TDS recevivable accounting","1. TMR report
+2. Confirmations","Internal - Balance Confirmation
+External - Balance Confirmation",Non Reconciliation GL,Not Applicable,Red,Working,Yes,No Balance
+BS,Assets,11318160,Int Acc & Due,Other Non Current Financial Assets,Interest accrued but not due_LT,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. GL balance should match with working
+2. Reversal of Interest accrued in case of acquired entities (for matured deposits)
+3. Completeness of Interest booking
+4. Proper TDS recevivable accounting","1. TMR report
+2. Confirmations","Internal - Balance Confirmation
+External - Balance Confirmation",Non Reconciliation GL,Not Applicable,Red,Working,Yes,TRM calculations not available
+BS,Assets,11318200,Int Acc & Due Rcvbl,Other Current Financial Assets,Interest accrued but not due (Interest Receivable),Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. GL balance should match with working
+2. Reversal of Interest accrued in case of acquired entities (for matured deposits)
+3. Completeness of Interest booking
+4. Proper TDS recevivable accounting","1. TMR report
+2. Confirmations","Internal - Balance Confirmation
+External - Balance Confirmation",Non Reconciliation GL,Not Applicable,Red,Working,Yes,TRM calculations not available
+BS,Assets,11318510,Recvbl-TCS-0.1%,Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Updated 26AS reconciliation not available
+BS,Assets,11318600,Retention Money,Trade Receivables,Trade Receivables_Unsecured_6 months or less,Medium,Quarterly,O2C,Hardik Chauhan,Chandresh Lumbhani,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Aged receivables ,"1. Schedule III Ageing Report
+2. BU remarks for Aged Items",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Assets,11318890,BPC-Dep with Vendors,Other Current Financial Assets,"Deposit to Vendor, Customer & Others",Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. GL balance should match with working
+2. Approval as per DOA",Working and approvals,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,11319000,Rcvbl-Other Miscell,Other Current Financial Assets,Other Current Financial Assets,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. GL balance should match with working
+2. Approval as per DOA",Working and approvals,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,11371000,IndAS-Loan to Relate,Non Current Loans,Loan to Related parties_LT,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Arms length Justification for rate of interest
+2. Terms and Conditions are not prejudicial to the Interest of Company
+3. Recoverability assessment","1. Loan Agreement
+2. Balance confirmation",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable,Red,Working,Yes,Agreement not available
+BS,Assets,11371120,TRM-L&A Sec Grp_LT,Non Current Loans,Sec Loan to Related parties_LT,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Arms length Justification for rate of interest
+2. Terms and Conditions are not prejudicial to the Interest of Company
+3. Recoverability assessment","1. Loan Agreement
+2. Balance confirmation",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable,Red,Working,Yes,Agreement not available
+BS,Assets,11371190,Rcvbl-TDS (21-22),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Updated 26AS reconciliation not available
+BS,Assets,11371200,Clrg-GST Rcvbl,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT / TRM,Viral Unadkat / Poojan Shah,Amit Shah / Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Working not available
+BS,Assets,11371224,CGST Rcvbl-Gujarat,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount tallied with GST receivable reco
+BS,Assets,11371324,SGST Rcvbl-Gujarat,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount tallied with GST receivable reco
+BS,Assets,11371424,IGST Rcvbl-Gujarat,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount tallied with GST receivable reco
+BS,Assets,11371426,IGST Revrsal-180Days,Other Current Assets,Balances with Government Authorities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reconciliation of balances as per books Vs as per tax records,"Working, reconciliation and confirmation with tax records of outstanding amount",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount tallied with GST receivable reco
+BS,Assets,11381470,Rcvbl TDS 194Q,Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Updated 26AS reconciliation not available
+BS,Assets,11381480,Rcvbl TDS 194Q (ISU),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable, Red ,Reconciliation, Yes ,Updated 26AS reconciliation not available
+BS,Assets,11381920,Rcvbl-TDS (22-23),Other Non Current Assets,Advance Income tax_LT,Medium,Quarterly,DT,Shruti Shah,Amol Parikh,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Balance as per GL should match with balance as per tax records / MIS, actions to take for deviations if any",Reconciliation with 26AS / Reconciliation of balance as per books Vs as per tax records,External - Government Authority,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Updated 26AS reconciliation not available
+BS,Assets,11550470,SBI 44714 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11550471,SBI 44714 In Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11550472,SBI 44714 Out Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11550473,SBI 44714 Misc Dr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11550474,SBI 44714 Misc Cr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11552180,PNB 48087 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount matched with BRS
+BS,Assets,11555010,AXIS-61454 - Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555030,ICICI 10421 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount matched with BRS
+BS,Assets,11555031,ICICI 10421 In Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555032,ICICI 10421 Out Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555033,ICICI 10421 Misc Dr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555034,ICICI 10421 Misc Cr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555040,Yes 00058 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount matched with BRS
+BS,Assets,11555041,Yes 00058 In Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555042,Yes 00058 Out Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555043,Yes 00058 Misc Dr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555044,Yes 00058 Misc Cr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555080,Axis 44323 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount matched with BRS
+BS,Assets,11555081,Axis 44323 In Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555082,Axis 44323 Out Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount matched with BRS
+BS,Assets,11555083,Axis 44323 Misc Dr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount matched with BRS
+BS,Assets,11555084,Axis 44323 Misc Cr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount matched with BRS
+BS,Assets,11555090,SBI 77841 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount matched with BRS
+BS,Assets,11555091,SBI 77841 In Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555092,SBI 77841 Out Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555093,SBI 77841 Misc Dr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555094,SBI 77841 Misc Cr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount matched with BRS
+BS,Assets,11555100,ICICI-TR-14059 -MAIN,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555140,SBI 13987 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555200,AXIS 66857 - Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555260,AXIS-4218050 - MAIN,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555310,SBI 66394 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555510,SBI 23724 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555520,SBI 11419 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555600,SBI - 39223 - MAIN,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555610,UCO - 00380 - MAIN,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555630,IDBI 00028 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount matched with BRS
+BS,Assets,11555631,IDBI 00028 In Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555632,IDBI 0028 Out Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555633,IDBI 0028 Misc Dr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555634,IDBI 0028 Misc Cr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555640,IDBI 375103-125 MAIN,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555650,Corp 18373 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555670,SBIEQPIII30429040852,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555730,BOI-00237-Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555740,DENA BANK-11060-Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555750,Alahbd 50298 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555760,PNB 00785 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555770,ICICI BANK-A/C-01577,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555780,Axis 31265 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount matched with BRS
+BS,Assets,11555781,Axis 31265 In Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555782,Axis 31265 Out Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555783,Axis 31265 Misc Dr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555784,Axis 31265 Misc Cr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555810,Deutsch 6000 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555870,KOTAK-000213-MAIN,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555880,SBI-01420 - MAIN,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11555890,INSND-93221-MAIN,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11556170,IDBI 06989 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11556171,IDBI 06989 In Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11556172,IDBI 06989 Out Pmt,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11556173,IDBI 06989 Misc Dr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11556174,IDBI 06989 Misc Cr,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11599650,Axis 65361 Main,Cash and Cash Equivalent,Current Account,Critical,Monthly,BRS,Nilesh Jadav,Maulik Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Cash and Bank GL - Open item < 15 days,Bank Reconciliation Statement,External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No Balance
+BS,Assets,11641110,FD-MM (Others),Bank Balances,Margin Money,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Reconciliation differences with Bank
+2. CNC classification correctness
+3. GL Balance vs TMR balance reconciliation (for acquired entities)
+4. Interest Conversion in FD to match with Bank FDR confirmation
+5. Proper TDS receivable accounting 
+6. Proper classification of Margin / Investment FDs for correct GL","1. Bank Confirmation
+2. Reconciliation working of GL vs TMR",External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Red,Confirmation,Yes,Bank Confirmation not available
+BS,Assets,11641180,FD-MM (DSRA),Bank Balances,Margin Money,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Reconciliation differences with Bank
+2. CNC classification correctness
+3. GL Balance vs TMR balance reconciliation (for acquired entities)
+4. Interest Conversion in FD to match with Bank FDR confirmation
+5. Proper TDS receivable accounting 
+6. Proper classification of Margin / Investment FDs for correct GL","1. Bank Confirmation
+2. Reconciliation working of GL vs TMR",External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Red,Confirmation,Yes,Bank Confirmation not available
+BS,Assets,12101900,Investment in NSC,Non Current Investment,Non Current Invt Govt Securities_Unquoted,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Balance shall match with Demat and Secretarial records
+2. Appropriate approvals shall be there
+3. Shall match with Holding Structure","1. Demat Statement
+2. Board Approval
+3. Secretarial Records",External - Demat Statement,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Secretarial Documents not available
+BS,Assets,12102050,Inv EqSh Sub NC Unq,Non Current Investment,Invt Subsidiary_Unquoted_LT,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Balance shall match with Demat and Secretarial records
+2. Appropriate approvals shall be there
+3. Shall match with Holding Structure","1. Demat Statement
+2. Board Approval
+3. Secretarial Records",External - Demat Statement,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Secretarial Documents not available
+BS,Assets,12102100,Inv Perpetual Sec NC,Non Current Investment,Invt Subsidiary_Unquoted_LT,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Balance shall match with Secretarial records
+2. Appropriate approvals shall be there","1. Board Approval
+2. Secretarial Records",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Secretarial Documents not available
+BS,Assets,12103050,Inv EqSh Ass NC Unq,Non Current Investment,Invt Associate_Unquoted_LT,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Balance shall match with Secretarial records
+2. Appropriate approvals shall be there","1. Board Approval
+2. Secretarial Records",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Secretarial Documents not available
+BS,Assets,12103090,LT Inv.-Deb/Bond-Unq,Non Current Investment,Investment - Debentures / Bond_Quoted_LT,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Balance shall match with Demat and Secretarial records
+2. Appropriate approvals shall be there
+3. Shall match with Holding Structure","1. Demat Statement
+2. Board Approval
+3. Secretarial Records",External - Demat Statement,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Secretarial Documents not available
+BS,Assets,12103200,IndAS-Deem Inv Subs,Non Current Investment,Invt Subsidiary_Unquoted_LT,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Ind AS compliant working,Working as per Ind AS ,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,12200200,Land (Free Hold),"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12200300,Land (Lease Hold),"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12200500,Building,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12200600,Computer Hardware,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12200700,Computer Software,Intangible Assets,Intangible Assets,Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV Assets clearing from FAR",Fixed asset register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12200900,Office Equipment,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12201000,Plant & Machinery,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12201100,Furniture & Fixtures,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12201200,Vehicles,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12202100,Electrical Fittings,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12210000,Capital WIP,Capital Work in Progress,CWIP,Critical,Monthly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Review with BU 
+2. Remarks for the capex items with expected date of capitalisation 
+3. Action for non moving items
+4. Opex nature expenses to be transferred to PnL","1. CWIP Reco with remarks
+2. CWIP Ageing Report",Working / Documents based,Reconciliation GL,Not Applicable,Red,Working,Yes,Remarks from BU is pending (Quarterly certification practice to adopt)
+BS,Assets,12211000,Stk of Prj Mat-Dom,Capital Work in Progress,CWIP,Critical,Monthly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Classification of Inventory between Opex and Capex
+2. Old Non moving inventories lying and Provision for Non Moving Inventories, if any
+3. Direct assets not capitalised and parked in inventories","1. Inventory Ageing report
+2. Working for Inventory reclassification
+3. To ensure capitalisation of Direct Assets as per Group Guidelines",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Inventory report,Yes,"Direct Assets not capitalised as per Group Guidelines, apart amount tallied with Inventory listing and ageing"
+BS,Assets,12211200,Prov. for Cont.Stock,Capital Work in Progress,CWIP,Critical,Monthly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Classification of Inventory between Opex and Capex
+2. Old Non moving inventories lying and Provision for Non Moving Inventories, if any
+3. Direct assets not capitalised and parked in inventories","1. Inventory Ageing report
+2. Working for Inventory reclassification
+3. To ensure capitalisation of Direct Assets as per Group Guidelines",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Inventory report,Yes,No Balance
+BS,Assets,12211300,Prov. for Cont.Stock,Capital Work in Progress,CWIP,Critical,Monthly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Classification of Inventory between Opex and Capex
+2. Old Non moving inventories lying and Provision for Non Moving Inventories, if any
+3. Direct assets not capitalised and parked in inventories","1. Inventory Ageing report
+2. Working for Inventory reclassification
+3. To ensure capitalisation of Direct Assets as per Group Guidelines",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Inventory report,Yes,No Balance
+BS,Assets,12220300,AD-Land (Lease Hold),"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12220500,AD-Building,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12220600,AD-Computer Hardware,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12220700,AD-Computer Software,Intangible Assets,Intangible Assets,Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV Assets clearing from FAR",Fixed asset register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12220900,AD-Office Equipment,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12221000,AD-Plant & Machnry,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12221100,AD-Frntre & Fxtre,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12221200,AD-Vehicles,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12222100,AD-Electrical Ftng,"Property, plant and equipment","Property, plant and equipment",Medium,Quarterly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Incorrect asset class 
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Nil WDV assets to clear from FAR",Fixed Asset Register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12222900,ACQ. D/P-CAP-CWIP,Other Non Current Assets,Capital Advances,Medium,Quarterly,R2R,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Clearing GL,Not Applicable,Working / Documents based,Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,12222910,ACQ. D/P-CAP-CLG,Other Non Current Assets,Capital Advances,Low,Half Yearly,R2R,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Clearing GL,Not Applicable,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Assets,12224000,IndAS-AD-RoU Leases,Intangible Assets,Right of Use of Leases,Medium,Quarterly,R2R - FA,Sanjay Raval / Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. New lease agreements
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Interest and Payment terms",Fixed asset register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12224050,IndAS-RoU of Leases,Intangible Assets,Right of Use of Leases,Medium,Quarterly,R2R - FA,Sanjay Raval / Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. New lease agreements
+2. Depreciation key 
+3. Useful life and retirement as per DOA
+4. Interest and Payment terms",Fixed asset register,Working / Documents based,Reconciliation GL,Not Applicable,Green,Fixed asset report,Yes,Amount tallied with Fixed Asset Register
+BS,Assets,12230000,Exp During Const,Capital Work in Progress,CWIP,Critical,Monthly,R2R - FA,Sanjay Raval,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Classification of Inventory between Opex and Capex
+2. Old Non moving inventories lying and Provision for Non Moving Inventories, if any
+3. Direct assets not capitalised and parked in inventories","1. Inventory Ageing report
+2. Working for Inventory reclassification
+3. To ensure capitalisation of Direct Assets as per Group Guidelines",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Inventory report,Yes,No Balance
+BS,Assets,12300100,Def Tax Assets,Deferred Tax Liabilities,Deferred Tax Assets,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. GL balance should match with working
+2. Tax positions shall be validated with BU team",Deferred tax working,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with Deferred tax workings
+BS,Liabilities,21100100,Creditors-Domestic,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Old Payables
+2. Clearing not done
+3. Wrong Special GL Indicator Used
+4. Opex / capex classification","1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any
+4. Schedule III compliant ageing report",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Liabilities,21100600,Creditors-Foreign,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Old Payables
+2. Clearing not done
+3. Wrong Special GL Indicator Used
+4. Opex / capex classification","1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any
+4. Schedule III compliant ageing report",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Liabilities,21100700,Creditors-Grp Co,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Old Payables
+2. Clearing not done
+3. Wrong Special GL Indicator Used
+4. Opex / capex classification","1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any
+4. Schedule III compliant ageing report",Internal - Balance Confirmation,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Liabilities,21100800,Creditors-Employees,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Old Payables
+2. Clearing not done
+3. Wrong Special GL Indicator Used
+4. Opex / capex classification","1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any
+4. Schedule III compliant ageing report",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Liabilities,21100980,Creditors-Credt Card,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",BU Remarks against each line items,"1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any
+4. Schedule III compliant ageing report",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Liabilities,21101000,BPC-Creditors-Exps,Trade Payables,Trade Payables,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reclassification GL,Supporting working required for reclassification entries,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Liabilities,21101010,BPC-Creditors-Cptl,Other Current Financial Liabilities,Payable for Fixed Assets,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reclassification GL,Supporting working required for reclassification entries,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,No,Amount tallied with workings
+BS,Liabilities,21101300,Dep from Customers,Other Current Liabilities,Other Current Liabilities and Other Payables,Medium,Quarterly,O2C,Hardik Chauhan,Chandresh Lumbhani,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Remarks from BU for each line items
+2. Supported by Documents
+3. Ind AS compliance","1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Liabilities,21102000,Pybl-Statutory,Other Current Liabilities,Statutory liabilities,Critical,Monthly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",BU Remarks for Items pending clearing,"1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Liabilities,21103100,Pybl-PF Emplye Cntr,Other Current Liabilities,Statutory liabilities,Critical,Monthly,R2R,Vinod Kumar Nakum,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Liabilities,21103400,Pybl-PF Emplyr Cntr,Other Current Liabilities,Statutory liabilities,Critical,Monthly,R2R,Vinod Kumar Nakum,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Liabilities,21103500,Pybl-LWF,Other Current Liabilities,Statutory liabilities,Critical,Monthly,R2R,Vinod Kumar Nakum,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Liabilities,21103600,Pybl-Salary,Trade Payables,Trade Payables,Critical,Monthly,R2R,Vinod Kumar Nakum,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances,There shall not be any balances,Nil Balance,Non Reconciliation GL,Not Applicable,Green,Working,No,No Balance
+BS,Liabilities,21103620,Pybl-Benevolent Fund,Trade Payables,Trade Payables,Medium,Quarterly,R2R,Vinod Kumar Nakum,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances,There shall not be any balances,Nil Balance,Non Reconciliation GL,Not Applicable,Red,Working,Yes,There shall be nil balance
+BS,Liabilities,21103640,SALARY DEDU FRM EMPL,Trade Payables,Trade Payables,Medium,Quarterly,R2R,Vinod Kumar Nakum,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances,There shall not be any balances,Nil Balance,Non Reconciliation GL,Not Applicable,Red,Working,Yes,There shall be nil balance
+BS,Liabilities,21103660,Pybl-Medical Insure,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Liabilities,21103680,Pybl-Imprest,Other Current Financial Liabilities,Payable for Fixed Assets,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,BU Score card,Yes,Amount payable < 30 days
+BS,Liabilities,21103700,Pybl-NPS,Trade Payables,Trade Payables,Critical,Monthly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Liabilities,21103710,Township Welfre Fund,Trade Payables,Trade Payables,Low,Half Yearly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Balance confirmation from site team - to ensure equal contribution from employer. ,To check equal contribution each month,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Equal contribution done
+BS,Liabilities,21110400,Pybl-Retention Money,Other Current Financial Liabilities,Retention Money,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Amount outstanding shall be as per agreement
+2. BU remarks against each line items","1. Confirmation
+2. Supported by Agreement
+3. Breakup and listing",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Agreement not available
+BS,Liabilities,21110600,Hold for Oth Recvres,Other Current Financial Liabilities,Payable for Fixed Assets,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Amount outstanding shall be as per agreement
+2. BU remarks against each line items","1. Confirmation
+2. Supported by Agreement
+3. Breakup and listing",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Liabilities,21118000,CREDITORS FOREX ADJ,Trade Payables,Trade Payables,Low,Half Yearly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,Forex revaluation working,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Liabilities,21119101,GRIR-Capital Inv-Dom,Other Current Financial Liabilities,Payable for Fixed Assets,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,BU Score card,Yes,Amount payable < 30 days
+BS,Liabilities,21119103,GRIR-Project Mat-Dom,Other Current Financial Liabilities,Payable for Fixed Assets,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,BU Score card,Yes,Amount payable < 30 days
+BS,Liabilities,21119105,GRIR-S&S-Dom,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,BU Score card,No,No Balance
+BS,Liabilities,21119108,GRIR-Opr Sup-Dom,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,BU Score card,Yes,Amount payable < 30 days
+BS,Liabilities,21119111,GRIR-RM,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,BU Score card,Yes,Amount payable < 30 days
+BS,Liabilities,21119119,GRIR-Traded Goods,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,BU Score card,Yes,Amount payable < 30 days
+BS,Liabilities,21119200,GRIR-Others,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,BU Score card,Yes,Amount payable < 30 days
+BS,Liabilities,21119201,Clrg-Credit Card,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21119302,Clrg-Freight RM,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21119310,Clrg-Coal Hnd Chrgs,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21119550,Clrg-TCS Payable,Other Current Liabilities,Statutory liabilities,Critical,Monthly,O2C,Hardik Chauhan,Chandresh Lumbhani,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21119760,Pybl-Travel Expenses,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Liabilities,21119990,Clrg-TDS Provision,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Liabilities,21120100,Pybl-Bonus,Trade Payables,Trade Payables,Medium,Quarterly,R2R,Vinod Kumar Nakum,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Gl balance should match with HR SSC working,"1. Working
+2. Immidiate reversal entry of bonus paid with F & F
+3. To exchange debit credit notes on HY basis for bonus - transfer in out employee ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Working not available, Reversal entry not done for F&F employees and Debit / Credit note pending for transfer in/out"
+BS,Liabilities,21120110,Pybl-Superannuation,Trade Payables,Trade Payables,Critical,Monthly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Liabilities,21130500,Adv frm Custmr,Other Current Liabilities,Advance From Customer,Medium,Quarterly,O2C,Hardik Chauhan,Chandresh Lumbhani,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. BU remarks for each open aged advances
+2. Periodic clearing","1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any",Internal - Balance Confirmation,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Liabilities,21130510,Debtors-Cr Bal,Other Current Liabilities,Advance From Customer,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Reclassification GL,Supporting working required for reclassification entries,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Liabilities,21170100,Pybl TDS 192,Other Current Liabilities,Statutory liabilities,Critical,Monthly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21170200,Pybl TDS 194A,Other Current Liabilities,Statutory liabilities,Critical,Monthly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21170300,Pybl TDS 194C,Other Current Liabilities,Statutory liabilities,Critical,Monthly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21170500,Pybl TDS 194I,Other Current Liabilities,Statutory liabilities,Critical,Monthly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21170600,Pybl TDS 194J,Other Current Liabilities,Statutory liabilities,Critical,Monthly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21170700,Pybl TDS 195,Other Current Liabilities,Statutory liabilities,Critical,Monthly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21170900,Pybl TCS 206C,Other Current Liabilities,Statutory liabilities,Critical,Monthly,O2C,Hardik Chauhan,Chandresh Lumbhani,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21174040,GST Cess Pybl,Other Current Liabilities,Statutory liabilities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Statutory and other payables - Reconciliation required for balances with statutory records,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Working,No,Amount payable < 30 days
+BS,Liabilities,21175510,Pybl-Fraction Share,Other Current Liabilities,Other Current Liabilities and Other Payables,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances. Transfer to Investor protection fund if balance is more than 7 years.,There shall not be any balances,Nil Balance,Non Reconciliation GL,Not Applicable,Green,Working,No,Remarks from BU is pending
+BS,Liabilities,21175600,Pybl-Professionl Tax,Other Current Liabilities,Statutory liabilities,Critical,Monthly,R2R,Vinod Kumar Nakum,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Liabilities,21180100,Clrg-Business Area,Other Current Liabilities,Other Current Liabilities and Other Payables,Low,Half Yearly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances,There shall not be any balances,Nil Balance,Non Reconciliation GL,Not Applicable,Green,Working,No,No Balance
+BS,Liabilities,21180210,Clrg-Emp Foreign Exp,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GRIR / Clearing GL - No balance more than 30 days. Site comment and review with BU,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Liabilities,21180230,Pybl-Sdxo Meal Vchr,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Liabilities,21190350,Dep Frm Vend-EMD,Other Current Liabilities,Other Current Liabilities and Other Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Remarks from BU for each line items
+2. Supported by Documents
+3. Ind AS compliance","1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Liabilities,21190860,Trade Payable Adjust,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Liabilities,21192000,Relief Fund Payable,Trade Payables,Trade Payables,Low,Half Yearly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,No,No Balance
+BS,Liabilities,21193020,IndAS-Gua Inc NC,Other Non Current Financial Liabilities,Other Payables_LT,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,Working,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Liabilities,21193030,IndAS-Gua Inc Cur,Other Current Liabilities,Other Financials Current Liabilities_BG,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,GL balance should match with working,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Liabilities,21193100,IndAS-Fin Liab Cur,Other Current Liabilities,Other Current Liabilities and Other Payables,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,GL balance should match with working,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+BS,Liabilities,21194224,CGST Pybl-Gujarat,Other Current Liabilities,Statutory liabilities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Statutory and other payables - Reconciliation required for balances with statutory records,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Working,No,Amount payable < 30 days
+BS,Liabilities,21194324,SGST Pybl-Gujarat,Other Current Liabilities,Statutory liabilities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Statutory and other payables - Reconciliation required for balances with statutory records,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Working,No,Amount payable < 30 days
+BS,Liabilities,21194424,IGST Pybl-Gujarat,Other Current Liabilities,Statutory liabilities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Statutory and other payables - Reconciliation required for balances with statutory records,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Working,No,No Balance
+BS,Liabilities,21194620,CGST Pybl-R-Jhrkhnd,Other Current Liabilities,Statutory liabilities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Statutory and other payables - Reconciliation required for balances with statutory records,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21194624,CGST Pybl-R-Gujarat,Other Current Liabilities,Statutory liabilities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Statutory and other payables - Reconciliation required for balances with statutory records,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21194720,SGST Pybl-R-Jhrkhnd,Other Current Liabilities,Statutory liabilities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Statutory and other payables - Reconciliation required for balances with statutory records,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21194724,SGST Pybl-R-Gujarat,Other Current Liabilities,Statutory liabilities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Statutory and other payables - Reconciliation required for balances with statutory records,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21194824,IGST Pybl-R-Gujarat,Other Current Liabilities,Statutory liabilities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Statutory and other payables - Reconciliation required for balances with statutory records,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21195100,Clrg-GST Pybl,Other Current Liabilities,Statutory liabilities,Critical,Monthly,IDT,Alpesh Gohil / Poojan Shah,Haresh Bhuva,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Statutory and other payables - Reconciliation required for balances with statutory records,"No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",External - Government Authority,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21199120,Pybl-TCSBld-206C(1H),Other Current Liabilities,Statutory liabilities,Critical,Monthly,O2C,Hardik Chauhan,Chandresh Lumbhani,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21199140,Pybl-TCS-206C(1H),Other Current Liabilities,Statutory liabilities,Critical,Monthly,O2C,Hardik Chauhan,Chandresh Lumbhani,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21199180,GST Hold-Vendor,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",BU remarks for each line items,"1. BU Score card 
+2. Balance sheet breakups 
+3. Appropriate remarks from BU, Pending clearing if any
+4. Schedule III compliant ageing report",Working / Documents based,Reconciliation GL,Not Applicable,Red,BU Score card,Yes,Remarks from BU is pending
+BS,Liabilities,21199618,BPC-PyblTCSBilled,Other Current Liabilities,Statutory liabilities,Critical,Monthly,O2C,Saurin Gandhi,"Vikrant Shah
+","Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount payable < 30 days
+BS,Liabilities,21199640,Pybl TDS 194Q,Other Current Liabilities,Statutory liabilities,Critical,Monthly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Excess payment made in April, subsequently adjusted against liabilities"
+BS,Liabilities,21200100,Prov for Gratuity,Short Term Provisions,Provision for Gratuity,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance matching with working / actuarial report,"1. Actuarial Valuation report
+2. Working",External - Actuarial Report,Non Reconciliation GL,Not Applicable,Green,Actuarial report / working,Yes,Amount tallied with Actuarial working
+BS,Liabilities,21200200,Prov for Leave Encsh,Short Term Provisions,Provision for Leave Encashment,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance matching with working / actuarial report,"1. Actuarial Valuation report
+2. Working",External - Actuarial Report,Non Reconciliation GL,Not Applicable,Green,Actuarial report / working,Yes,Amount tallied with Actuarial working
+BS,Liabilities,21200210,Prov Lv Encsh NC,Long Term Provisions,Provision for Leave Encashment_LT,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance matching with working / actuarial report,"1. Actuarial Valuation report
+2. Working",External - Actuarial Report,Non Reconciliation GL,Not Applicable,Green,Actuarial report / working,Yes,Amount tallied with Actuarial working
+BS,Liabilities,21210100,Prov for Expenses,Trade Payables,Trade Payables,Critical,Monthly,B2P / R2R / TRM,Mahesh Vadher / Saurin Gandhi / Bhumik Darji,Amit Gosai / Vikrant Shah ,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Provisions - (a) Monthly provisions to be reversed on next day
+(b) clearing of yearly provisions by May month of next Financial year","1. Working along with Supporting
+2. Party wise Listing 
+3. Schedule III compliant Ageing report",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Working not available
+BS,Liabilities,21210180,Pybl-Car Lease Rent,Trade Payables,Trade Payables,Medium,Quarterly,B2P,Mahesh Vadher,Amit Gosai,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Amount o/s for > 30 days, no reconciliation available"
+BS,Liabilities,21210200,Int Acc but not Due,Other Current Financial Liabilities,Interest accrued but not due,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. GL balance should match with working
+2. Reversal of Interest accrued in case of acquired entities
+3. Completeness of Interest booking","1. TMR report
+2. Confirmations","Internal - Balance Confirmation
+External - Balance Confirmation",Non Reconciliation GL,Not Applicable,Red,Working,Yes,Working not available
+BS,Liabilities,21210400,Prov for Exps (Grp),Trade Payables,Trade Payables,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","Provisions - (a) Monthly provisions to be reversed on next day
+(b) clearing of yearly provisions by May month of next Financial year","1. Working along with Supporting
+2. Party wise Listing 
+3. Schedule III compliant Ageing report",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable,Red,Reconciliation,Yes,Working not available
+BS,Liabilities,21299100,Tkover-Initial Stock,#N/A,#N/A,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances,There shall not be any balances,Nil Balance,Non Reconciliation GL,Not Applicable,Red,Working,Yes,There shall be nil balance
+BS,Liabilities,21299200,Tkover-Assets,#N/A,#N/A,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances,There shall not be any balances,Nil Balance,Non Reconciliation GL,Not Applicable,Red,Working,Yes,There shall be nil balance
+BS,Liabilities,21299300,Tkover-Custmr Op Bal,#N/A,#N/A,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances,There shall not be any balances,Nil Balance,Non Reconciliation GL,Not Applicable,Red,Working,Yes,There shall be nil balance
+BS,Liabilities,21299400,Tkover-Vendor Op Bal,#N/A,#N/A,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances,There shall not be any balances,Nil Balance,Non Reconciliation GL,Not Applicable,Red,Working,Yes,There shall be nil balance
+BS,Liabilities,21299600,Tkover-Expense,#N/A,#N/A,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",There shall not be any balances,There shall not be any balances,Nil Balance,Non Reconciliation GL,Not Applicable,Red,Working,Yes,There shall be nil balance
+BS,Liabilities,22100410,TRM-SEC LOANS-BANKS,Long Term Borrowings,Secured - Term Loans - Banks_LT,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Balance shall match with Bank Confirmation
+2. CNC classification based on substance over legal form (conversion into RTL)","1. Agreement with Bank
+2. TMR reporting and working
+3. Balance Confirmation",External - Bank Confirmation,Non Reconciliation GL,Not Applicable, Red ,Confirmation, Yes ,Agreement not available
+BS,Liabilities,22100510,TRM-SEC LOANS-BANKS,Long Term Borrowings,Secured - Term Loans - Banks_LT,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Balance shall match with Bank Confirmation
+2. CNC classification based on substance over legal form (conversion into RTL)","1. Agreement with Bank
+2. TMR reporting and working
+3. Balance Confirmation",External - Bank Confirmation,Non Reconciliation GL,Not Applicable, Red ,Confirmation, Yes ,Agreement not available
+BS,Liabilities,22101510,SECURED RUP-TL CUR,Other Current Financial Liabilities,Secured - Term Loan - Bank_Current,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Balance shall match with Bank Confirmation
+2. CNC classification based on substance over legal form (conversion into RTL)","1. Agreement with Bank
+2. TMR reporting and working
+3. Balance Confirmation",External - Bank Confirmation,Non Reconciliation GL,Not Applicable, Red ,Confirmation, Yes ,Agreement not available
+BS,Liabilities,22101550,SECUREDRUP-TLANK ADJ,Long Term Borrowings,Secured - Term Loans - Banks_LT,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Balance shall match with Bank Confirmation
+2. CNC classification based on substance over legal form (conversion into RTL)","1. Agreement with Bank
+2. TMR reporting and working
+3. Balance Confirmation",External - Bank Confirmation,Non Reconciliation GL,Not Applicable, Red ,Confirmation, Yes ,Agreement not available
+BS,Liabilities,22200110,TRM-USL-ICD-ST,Short Term Borrowings,Unsecured Loans and Advances - Others,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Arms length Justification for rate of interest
+2. Interest conversion into ICD on maturity
+3. ICD rollover without repayment","1. Loan Agreement
+2. Balance confirmation",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with Agreement and Confirmation
+BS,Liabilities,22200130,TRM-USL-ICD-LT,Long Term Borrowings,Unsecured Loans Others_LT,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Arms length Justification for rate of interest
+2. Interest conversion into ICD on maturity
+3. ICD rollover without repayment","1. Loan Agreement
+2. Balance confirmation",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with Agreement and Confirmation
+BS,Liabilities,22200960,TRM-L&A GROUP- ST,Short Term Borrowings,Unsecured loans - Related Parties,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Arms length Justification for rate of interest
+2. Interest conversion into ICD on maturity
+3. ICD rollover without repayment","1. Loan Agreement
+2. Balance confirmation",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable,Red,Working,Yes,Agreement not available
+BS,Liabilities,22200970,TRM-L&A GROUP- LT,Long Term Borrowings,Unsecured loans from Related Parties_LT,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Arms length Justification for rate of interest
+2. Interest conversion into ICD on maturity
+3. ICD rollover without repayment","1. Loan Agreement
+2. Balance confirmation",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with Agreement and Confirmation
+BS,Liabilities,22400100,Def Tax Liabilities,Deferred Tax Liabilities,Deferred Tax Liability,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. GL balance should match with working
+2. Tax positions shall be validated with BU team",Deferred tax working,Working / Documents based,Non Reconciliation GL,Not Applicable, Green ,Working, Yes ,Amount tallied with Deferred tax workings
+BS,Equity,31100100,Equity Share Capital,Share Capital,Equity Share Capital,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Balance shall be reconciled with Secretarial Records,Woking and Board resolution for Movement if any during the current year,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount tallied with secretarial records
+BS,Equity,31105300,IndAS-Deem Inv Equty,Share Capital,Deemed equity contribution,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Balance shall be reconciled with Secretarial Records,Woking and Board resolution for Movement if any during the current year,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,Amount tallied with secretarial records
+BS,Equity,31105500,Perpetual Securities,Unsecured Perpetual Securities,Unsecured Perpetual Securities,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",Amount shall match as per Agreement,"1. Perpetual Agreement
+2. Balance Confirmation",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with Agreement and Confirmation
+BS,Equity,34100100,General Reserve,Other Equity,General Reserve,Low,Half Yearly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,working for movement if any during the current year,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,No movement during the period
+BS,Equity,34100110,Capital Reserve,Other Equity,Capital Reserve,Low,Half Yearly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,working for movement if any during the current year,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,No movement during the period
+BS,Equity,34100200,Equity Share Prem,Other Equity,Securities Premium - Equity,Low,Half Yearly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,working for movement if any during the current year,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with secretarial records
+BS,Equity,34100800,Balance in P&L a/c,Other Equity,Retained Earnings,Low,Half Yearly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,working for movement if any during the current year,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No movement during the period
+BS,Equity,34100900,Retained Earnings,Other Equity,Retained Earnings,Low,Half Yearly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,working for movement if any during the current year,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No movement during the period
+BS,Equity,34101100,Distru-Preptual Secu,Other Equity,Retained Earnings,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)","1. Distribution shall be made at the rate mentioned in Agreement
+2. Proper Approval shall be placed","1. Board Resolution
+2. Working",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable,Red,Working,Yes,Secretarial Documents not available
+BS,Equity,34103000,IndAS-Retaind Ern Ad,Other Equity,Retained Earnings,Low,Half Yearly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,working for movement if any during the current year,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No movement during the period
+BS,Equity,34103030,IndAS-Oth Compre Inc,Other Equity,Retained Earnings,Low,Half Yearly,R2R,Saurin Gandhi,Vikrant Shah,"Saurin Gandhi 
+(30071519)","Vikrant Shah
+(30021767)",GL balance should match with working,working for movement if any during the current year,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Reconciliation,Yes,No movement during the period
+BS,Assets,11305100,Dep to Dr/Cr NC,Other Non Current Financial Assets,"Deposit to Vendor, Customer & Others_LT",,,R2R,Saurin Gandhi,Vikrant Shah,,,,,,,,,,,
+BS,Assets,11371130,TRM-L&A Sec Grp-Curr,Current Loans,Loan to Related parties,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"1. Arms length Justification for rate of interest
+2. Terms and Conditions are not prejudicial to the Interest of Company
+3. Recoverability assessment","1. Loan Agreement
+2. Balance confirmation",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable," 2,20,68,056.00 ",Red,Yes,Agreement not available,,
+BS,Assets,11371140,TRM-L&A Sec Grp_Non,Non Current Loans,Sec Loan to Related parties_LT,Medium,Quarterly,TRM,Viral Unadkat,Amit Shah,"1. Arms length Justification for rate of interest
+2. Terms and Conditions are not prejudicial to the Interest of Company
+3. Recoverability assessment","1. Loan Agreement
+2. Balance confirmation",Internal - Balance Confirmation,Non Reconciliation GL,Not Applicable," 51,93,64,575.00 ",Red,Yes,Agreement not available,,
+BS,Assets,11641160,Margin Money NC,Other Non Current Financial Assets,Margin Money_LT,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,,,"1. Reconciliation differences with Bank
+2. CNC classification correctness
+3. GL Balance vs TMR balance reconciliation (for acquired entities)
+4. Interest Conversion in FD to match with Bank FDR confirmation
+5. Proper TDS receivable accounting 
+6. Proper classification of Margin / Investment FDs for correct GL","1. Bank Confirmation
+2. Reconciliation working of GL vs TMR",External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Red,Confirmation,Yes,Bank Confirmation not available
+BS,Assets,11641170,Margin Money NC Adj,Bank Balances,Margin Money,Critical,Monthly,TRM,Viral Unadkat,Amit Shah,,,"1. Reconciliation differences with Bank
+2. CNC classification correctness
+3. GL Balance vs TMR balance reconciliation (for acquired entities)
+4. Interest Conversion in FD to match with Bank FDR confirmation
+5. Proper TDS receivable accounting 
+6. Proper classification of Margin / Investment FDs for correct GL","1. Bank Confirmation
+2. Reconciliation working of GL vs TMR",External - Bank Confirmation,Non Reconciliation GL,Not Applicable,Red,Confirmation,Yes,Bank Confirmation not available
+BS,Liabilities,21101650,BPC-Dep from Vendors,Other Current Financial Liabilities,Others,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,,,GL balance should match with working,Working,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,,,
+BS,Liabilities,21174140,Dr. Bal. Ele Dut Adj,Other Current Liabilities,Statutory liabilities,Critical,Monthly,R2R,Saurin Gandhi,Vikrant Shah,,,"Statutory and other payables - Only closing month balance should be there, reconciliation required for any other pending items (< 30 days)","No balance >30 days, if any supported with proper reconciliation and reasons for pendency. ",Working / Documents based,Non Reconciliation GL,Not Applicable,Red,Working,Yes,"Excess payment made in April, subsequently adjusted against liabilities"
+BS,Liabilities,21190600,Other Liab NC,Other Non Current Financial Liabilities,Others,Medium,Quarterly,R2R,Saurin Gandhi,Vikrant Shah,,,GL balance should match with working,Working,Working / Documents based,Non Reconciliation GL,Not Applicable,Green,Working,Yes,Amount tallied with workings
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,

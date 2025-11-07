@@ -150,7 +150,7 @@ def link_sap_erp_to_unified_db(request, saplink_id):
         
         if saplink.system_type == 'sap_hana':
             # Parse hostname (remove port if included)
-            host_name = saplink.hana_host.split(':')[0]
+            host_name = saplink.hana_host[:4]
             port = int(saplink.hana_port)
             
             print(f"Connecting to: {host_name}:{port}")

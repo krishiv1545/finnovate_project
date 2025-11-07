@@ -48,7 +48,7 @@ python fintech_project/manage.py runserver
 ```
 
 ### 8. Login using admin creds
-The ones you used during createsuperuser cmd
+Th ones you used during createsuperuser cmd
 
 ## FOR PROD:-
 Close the server if it is running on Windows terminal, we'll use NGINX+Gunicorn in WSL

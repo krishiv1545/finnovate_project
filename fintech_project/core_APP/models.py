@@ -204,12 +204,60 @@ class TrialBalance(models.Model):
     # --- Audit ---
     added_at = models.DateTimeField(auto_now_add=True)
 
+    # --- Supporting Docx ---
+    supporting_document = models.FileField(upload_to="supporting_documents/", null=True, blank=True)
+
     class Meta:
         db_table = "trial_balances"
         ordering = ["-added_at"]
 
     def __str__(self):
         return f"{self.gl_code} - {self.gl_name} ({self.fs_main_head or 'Uncategorized'})"
+    
+
+class BalanceSheet(models.Model):
+    """Simplified, realistic Balance Sheet model aligned with your SAP HANA schema."""
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="trial_balances"
+    )    
+    BS_PL = models.CharField(max_length=10)
+    status = models.CharField(max_length=50)
+    gl_acct = models.CharField(max_length=20, verbose_name="G/L Account Code")
+    gl_account_name = models.CharField(max_length=100, verbose_name="G/L Account Name")
+    main_head = models.CharField(max_length=100)
+    sub_head = models.CharField(max_length=100)
+    cml = models.CharField(max_length=20, verbose_name="Criticality (C/M/L)")
+    frequency = models.CharField(max_length=20)
+    responsible_department = models.CharField(max_length=50)
+    department_spoc = models.CharField(max_length=100)
+    department_reviewer = models.CharField(max_length=100)
+    query_type_action_points = models.TextField(verbose_name="Query Type / Action Points", blank=True, null=True)
+    working_needed = models.TextField(blank=True, null=True)
+    confirmation_type = models.CharField(max_length=100, verbose_name="Confirmation (Internal / External)")
+    recon_status = models.CharField(max_length=100, verbose_name="Reconciliation Status")
+    variance_percent = models.CharField(max_length=50, verbose_name="% Variance")
+    flag_color = models.CharField(max_length=20, verbose_name="Flag (Green / Red)")
+    report_type = models.CharField(max_length=100)
+    analysis_required = models.CharField(max_length=10)
+    review_checkpoint_abex = models.CharField(max_length=500, verbose_name="Review Checkpoint at ABEX", blank=True, null=True)
+    
+    # --- YYYY ---
+    fiscal_year = models.CharField(max_length=10, null=True, blank=True)
+
+    # --- Audit ---
+    added_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = 'balance_sheet'
+        app_label = 'finnovate_erp'
+        verbose_name = "Balance Sheet Entry"
+        verbose_name_plural = "Balance Sheet Entries"
+
+    def __str__(self):
+        return f"{self.BS_PL} - {self.gl_acct} ({self.status})"
 
 
 class ResponsibilityMatrix(models.Model):

@@ -339,7 +339,7 @@ class GLReview(models.Model):
     reviewer = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
     status = models.PositiveSmallIntegerField(choices=GL_CODE_STATUS_CHOICES, default=1)
     reconciliation_notes = models.TextField(blank=True, null=True)
-    reviewed_at = models.DateTimeField(auto_now_add=True)
+    reviewed_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     class Meta:
         db_table = "gl_reviews"
@@ -351,11 +351,9 @@ class GLReview(models.Model):
 
 class GLSupportingDocument(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    trial_balance = models.ForeignKey(TrialBalance, on_delete=models.CASCADE, related_name="supporting_docs")
-    uploaded_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
+    gl_review = models.ForeignKey(GLReview, on_delete=models.CASCADE, related_name="supporting_documents", null=True, blank=True)
     file = models.FileField(upload_to="gl_supporting/")
     uploaded_at = models.DateTimeField(auto_now_add=True)
-    description = models.TextField(blank=True, null=True)
 
     class Meta:
         db_table = "gl_supporting_documents"

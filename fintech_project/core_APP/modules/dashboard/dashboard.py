@@ -10,7 +10,7 @@ import json
 import os
 import time
 import re
-from core_APP.models import Conversation, Message, ResponsibilityMatrix
+from core_APP.models import Conversation, Message
 
 
 logger = logging.getLogger(__name__)
@@ -33,27 +33,10 @@ def dashboard_view(request):
         return render(request, 'dashboard/dashboard.html')
     elif request.user.user_type == 4:
         # User
-        user_responsibility_matrix_record = ResponsibilityMatrix.objects.filter(user=request.user).first()
-        if user_responsibility_matrix_record:
-    
-            if user_responsibility_matrix_record.user_role == 4:
-                # Preparer
-                print("Preparer")
-                return render(request, 'dashboard/dashboard_t3.html')
-            elif user_responsibility_matrix_record.user_role == 5:
-                # Reviewer
-                print("Reviewer")
-                return render(request, 'dashboard/dashboard_t3.html')
-            else:
-                print("Unknown user role")
-                return redirect("auth_view")
-        else:
-            print("User responsibility matrix record not found")
-            return redirect("auth_view")
+        return render(request, 'dashboard/dashboard.html')
     else:
-        print("Unknown user type")
-        return redirect("auth_view")
-
+        return render(request, 'dashboard/dashboard.html')
+    
 
 def get_mcp_client(user_email, conversation_id):
     """

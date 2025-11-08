@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.db import transaction
 from django.views.decorators.http import require_http_methods
 import logging
-from core_APP.models import BalanceSheet, ResponsibilityMatrix, TrialBalance, GLReview, GLSupportingDocument
+from core_APP.models import BalanceSheet, ResponsibilityMatrix, TrialBalance, GLReview, GLSupportingDocument,   ReviewTrail
 from django.utils import timezone
 
 logger = logging.getLogger(__name__)
@@ -116,7 +116,7 @@ def gl_reviews_view(request):
         user_role=5
     ).select_related('department').order_by('gl_code')
     
-    def prepare_gl_data(assignments):
+    def prepare_gl_data(assignments, is_preparer=False):
         """Helper function to prepare GL data with supporting documents."""
         gl_data = []
         for assignment in assignments:
@@ -125,25 +125,50 @@ def gl_reviews_view(request):
                 gl_acct=assignment.gl_code
             ).first()
             
-            # Get or create TrialBalance for this GL code
-            trial_balance = TrialBalance.objects.filter(
-                user=request.user,
-                gl_code=assignment.gl_code
-            ).first()
+            # For Preparer: find TrialBalance by user and GL code
+            # For Reviewer: find TrialBalance by GL code only (could be created by preparer)
+            if is_preparer:
+                trial_balance = TrialBalance.objects.filter(
+                    user=request.user,
+                    gl_code=assignment.gl_code
+                ).first()
+            else:
+                # Reviewer: find any TrialBalance with this GL code
+                trial_balance = TrialBalance.objects.filter(
+                    gl_code=assignment.gl_code
+                ).first()
             
             # Get GLReview if exists
+            # For Preparer: find review by this user
+            # For Reviewer: find any review for this GL code (created by preparer)
             gl_review = None
             supporting_docs = []
             if trial_balance:
-                gl_review = GLReview.objects.filter(
-                    trial_balance=trial_balance,
-                    reviewer=request.user
-                ).first()
+                if is_preparer:
+                    gl_review = GLReview.objects.filter(
+                        trial_balance=trial_balance,
+                        reviewer=request.user
+                    ).first()
+                else:
+                    # Reviewer: find any GLReview for this GL code
+                    gl_review = GLReview.objects.filter(
+                        trial_balance=trial_balance
+                    ).first()
                 
                 if gl_review:
                     supporting_docs = GLSupportingDocument.objects.filter(
                         gl_review=gl_review
                     ).order_by('-uploaded_at')
+            
+            # Get status from the assignment, but also check if there's a GLReview
+            # If GLReview exists, use its status; otherwise use assignment status
+            status_code = assignment.gl_code_status or 1
+            status_display = assignment.get_gl_code_status_display() if assignment.gl_code_status else 'Pending'
+            
+            # If GLReview exists, use its status
+            if gl_review:
+                status_code = gl_review.status
+                status_display = gl_review.get_status_display()
             
             # Format assigned date
             assigned_on = assignment.created_at
@@ -155,8 +180,8 @@ def gl_reviews_view(request):
                 'gl_name': balance_sheet.gl_account_name if balance_sheet else 'N/A',
                 'department': assignment.department.name if assignment.department else 'N/A',
                 'user_role': assignment.get_user_role_display(),
-                'status': assignment.get_gl_code_status_display() if assignment.gl_code_status else 'Pending',
-                'status_code': assignment.gl_code_status or 1,
+                'status': status_display,
+                'status_code': status_code,
                 'assigned_on': assigned_on_formatted,
                 'assigned_on_datetime': assigned_on,
                 'trial_balance_id': str(trial_balance.id) if trial_balance else None,
@@ -173,8 +198,8 @@ def gl_reviews_view(request):
             })
         return gl_data
     
-    preparer_gls = prepare_gl_data(preparer_assignments)
-    reviewer_gls = prepare_gl_data(reviewer_assignments)
+    preparer_gls = prepare_gl_data(preparer_assignments, is_preparer=True)
+    reviewer_gls = prepare_gl_data(reviewer_assignments, is_preparer=False)
     
     context = {
         'preparer_gls': preparer_gls,
@@ -259,14 +284,10 @@ def upload_gl_supporting_document(request):
 
 @login_required
 @require_http_methods(["POST"])
-def submit_gl_review(request):
+def submit_gl_review_preparer(request):
     """
     Submit a GL review for an assigned GL code.
-    Only accessible by user_type 4 (Preparer/Reviewer).
     """
-    if request.user.user_type != 4:
-        messages.error(request, "You do not have permission to submit GL reviews.")
-        return redirect("gl_reviews_page")
     
     assignment_id = request.POST.get('assignment_id')
     gl_code = request.POST.get('gl_code')
@@ -284,14 +305,12 @@ def submit_gl_review(request):
         # Verify the assignment belongs to the user
         assignment = ResponsibilityMatrix.objects.get(
             id=assignment_id,
-            user=request.user,
             gl_code=gl_code
         )
         
         # Find or create a TrialBalance entry for this GL code
         # We need to link GLReview to TrialBalance, so we'll find or create one
         trial_balance = TrialBalance.objects.filter(
-            user=request.user,
             gl_code=gl_code
         ).first()
         
@@ -329,6 +348,15 @@ def submit_gl_review(request):
             # Update ResponsibilityMatrix status
             assignment.gl_code_status = 2  # Done
             assignment.save()
+
+            # Also mark in ReviewTrail
+            review_trail = ReviewTrail.objects.create(
+                reviewer=request.user,
+                reviewer_responsibility_matrix=assignment,
+                gl_review=gl_review,
+                previous_trail=None,
+            )
+            review_trail.save()
         
         messages.success(
             request,

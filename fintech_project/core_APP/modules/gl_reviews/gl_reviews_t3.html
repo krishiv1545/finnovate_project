@@ -555,13 +555,17 @@
                   {% endif %}
                 </td>
                 <td>
+                  {% if gl.status == "Awaiting Approval" %}
                   <a
                     href="#"
                     class="action-link"
                     onclick="openReviewModal('{{ gl.assignment_id }}', '{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')"
                   >
                     Submit Review
+                  {% else %}
+                  WAIT
                   </a>
+                  {% endif %}
                 </td>
               </tr>
               {% endfor %}
@@ -645,7 +649,7 @@
         <form
           id="reviewForm"
           method="post"
-          action="{% url 'submit_gl_review' %}"
+          action="{% url 'submit_gl_review_preparer' %}"
         >
           {% csrf_token %}
           <input

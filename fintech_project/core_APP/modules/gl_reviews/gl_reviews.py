@@ -8,102 +8,147 @@ from core_APP.models import BalanceSheet, ResponsibilityMatrix, TrialBalance, GL
 from django.utils import timezone
 from django.conf import settings
 from django.core.mail import send_mail
+from core_APP.models import GLReview
 
 
 logger = logging.getLogger(__name__)
 
 @login_required
 def gl_reviews_view(request):
-    """GL Reviews page - shows both Preparer and Reviewer GLs side by side."""
+    """GL Reviews page - shows both Preparer and Reviewer GLs side by side or single FC/Head view."""
 
-    if request.user.user_type != 4:
-        messages.error(request, "You do not have permission to access this page.")
-        return redirect("dashboard_page")
-    
-    # Get Preparer GLs (user_role = 4)
-    preparer_assignments = ResponsibilityMatrix.objects.filter(
-        user=request.user,
-        gl_code__isnull=False,
-        user_role=4
-    ).select_related('department').order_by('gl_code')
-    
-    # Get Reviewer GLs (user_role = 5)
-    reviewer_assignments = ResponsibilityMatrix.objects.filter(
-        user=request.user,
-        gl_code__isnull=False,
-        user_role=5
-    ).select_related('department').order_by('gl_code')
-    
-    def prepare_gl_data(assignments, is_preparer=False):
-        """Helper function to prepare GL data with supporting documents."""
-        gl_data = []
-        for assignment in assignments:
-            # Get GL details from BalanceSheet
-            balance_sheet = BalanceSheet.objects.filter(
-                gl_acct=assignment.gl_code
-            ).first()
-            
-            # For Preparer: find TrialBalance by user and GL code
-            # For Reviewer: find TrialBalance by GL code only (could be created by preparer)
-            if is_preparer:
-                trial_balance = TrialBalance.objects.filter(
-                    user=request.user,
-                    gl_code=assignment.gl_code
-                ).first()
-            else:
-                # Reviewer: find any TrialBalance with this GL code
-                trial_balance = TrialBalance.objects.filter(
-                    gl_code=assignment.gl_code
-                ).first()
-            
-            # Get GLReview if exists
-            # For Preparer: find review by this user
-            # For Reviewer: find any review for this GL code (created by preparer)
-            gl_review = None
-            supporting_docs = []
-            if trial_balance:
+    # -------------------------------
+    # USER TYPE 4: Preparer/Reviewer
+    # -------------------------------
+    if request.user.user_type == 4:
+        # Get Preparer GLs (user_role = 4)
+        preparer_assignments = ResponsibilityMatrix.objects.filter(
+            user=request.user,
+            gl_code__isnull=False,
+            user_role=4
+        ).select_related('department').order_by('gl_code')
+
+        # Get Reviewer GLs (user_role = 5)
+        reviewer_assignments = ResponsibilityMatrix.objects.filter(
+            user=request.user,
+            gl_code__isnull=False,
+            user_role=5
+        ).select_related('department').order_by('gl_code')
+
+        def prepare_gl_data(assignments, is_preparer=False):
+            """Helper to prepare GL data with linked reviews and documents."""
+            gl_data = []
+            for assignment in assignments:
+                balance_sheet = BalanceSheet.objects.filter(gl_acct=assignment.gl_code).first()
+
                 if is_preparer:
-                    gl_review = GLReview.objects.filter(
-                        trial_balance=trial_balance,
-                        reviewer=request.user
+                    trial_balance = TrialBalance.objects.filter(
+                        user=request.user,
+                        gl_code=assignment.gl_code
                     ).first()
                 else:
-                    # Reviewer: find any GLReview for this GL code
-                    gl_review = GLReview.objects.filter(
-                        trial_balance=trial_balance
-                    ).first()
-                
+                    trial_balance = TrialBalance.objects.filter(gl_code=assignment.gl_code).first()
+
+                gl_review = None
+                supporting_docs = []
+                if trial_balance:
+                    if is_preparer:
+                        gl_review = GLReview.objects.filter(
+                            trial_balance=trial_balance,
+                            reviewer=request.user
+                        ).first()
+                    else:
+                        gl_review = GLReview.objects.filter(trial_balance=trial_balance).first()
+
+                    if gl_review:
+                        supporting_docs = GLSupportingDocument.objects.filter(
+                            gl_review=gl_review
+                        ).order_by('-uploaded_at')
+
+                status_code = assignment.gl_code_status or 1
+                status_display = assignment.get_gl_code_status_display() if assignment.gl_code_status else 'Pending'
+
                 if gl_review:
-                    supporting_docs = GLSupportingDocument.objects.filter(
-                        gl_review=gl_review
-                    ).order_by('-uploaded_at')
-            
-            # Get status from the assignment, but also check if there's a GLReview
-            # If GLReview exists, use its status; otherwise use assignment status
-            status_code = assignment.gl_code_status or 1
-            status_display = assignment.get_gl_code_status_display() if assignment.gl_code_status else 'Pending'
-            
-            # If GLReview exists, use its status
-            if gl_review:
-                status_code = gl_review.status
-                status_display = gl_review.get_status_display()
-            
-            # Format assigned date
-            assigned_on = assignment.created_at
+                    status_code = gl_review.status
+                    status_display = gl_review.get_status_display()
+
+                assigned_on = assignment.created_at
+                assigned_on_formatted = assigned_on.strftime("%B %d, %Y at %I:%M %p") if assigned_on else 'N/A'
+
+                gl_code = assignment.gl_code
+                trial_bal_field = TrialBalance.objects.filter(gl_code=gl_code).first()
+                gl_rev = GLReview.objects.filter(trial_balance=trial_bal_field).first()
+
+                gl_data.append({
+                    'assignment_id': str(assignment.id),
+                    'gl_code': assignment.gl_code,
+                    'gl_name': balance_sheet.gl_account_name if balance_sheet else 'N/A',
+                    'department': assignment.department.name if assignment.department else 'N/A',
+                    'user_role': assignment.get_user_role_display(),
+                    'status': status_display,
+                    'status_code': status_code,
+                    'assigned_on': assigned_on_formatted,
+                    'assigned_on_datetime': assigned_on,
+                    'reconciliation_notes': gl_rev.reconciliation_notes if gl_review else 'N/A',
+                    'trial_balance_id': str(trial_balance.id) if trial_balance else None,
+                    'gl_review_id': str(gl_review.id) if gl_review else None,
+                    'supporting_documents': [
+                        {
+                            'id': str(doc.id),
+                            'file_name': doc.file.name.split('/')[-1] if doc.file else 'Unknown',
+                            'file_url': doc.file.url if doc.file else '#',
+                            'uploaded_at': doc.uploaded_at.strftime("%B %d, %Y at %I:%M %p") if doc.uploaded_at else 'N/A',
+                        }
+                        for doc in supporting_docs
+                    ],
+                })
+            return gl_data
+
+        preparer_gls = prepare_gl_data(preparer_assignments, is_preparer=True)
+        reviewer_gls = prepare_gl_data(reviewer_assignments, is_preparer=False)
+
+        return render(
+            request,
+            'gl_reviews/gl_reviews_t3.html',
+            {'preparer_gls': preparer_gls, 'reviewer_gls': reviewer_gls}
+        )
+
+    # -------------------------------
+    # USER TYPE 2 or 3: FC / Department Head
+    # -------------------------------
+    if request.user.user_type in [2, 3]:
+        # Fetch all GLReviews assigned to this reviewer
+        gl_reviews_qs = GLReview.objects.filter(
+            reviewer=request.user
+        ).select_related('trial_balance', 'trial_balance__user').order_by('-reviewed_at')
+
+        gl_reviews = []
+        for review in gl_reviews_qs:
+            trial_balance = review.trial_balance
+            assignment = ResponsibilityMatrix.objects.filter(
+                gl_code=trial_balance.gl_code
+            ).select_related('department').first()
+
+            balance_sheet = BalanceSheet.objects.filter(
+                gl_acct=trial_balance.gl_code
+            ).first()
+
+            supporting_docs = GLSupportingDocument.objects.filter(
+                gl_review=review
+            ).order_by('-uploaded_at')
+
+            assigned_on = assignment.created_at if assignment else None
             assigned_on_formatted = assigned_on.strftime("%B %d, %Y at %I:%M %p") if assigned_on else 'N/A'
-            
-            gl_data.append({
-                'assignment_id': str(assignment.id),
-                'gl_code': assignment.gl_code,
+            print("ASSIGNMENT ID: ", str(assignment.id) if assignment else None)
+            gl_reviews.append({
+                'assignment_id': str(assignment.id) if assignment else None,
+                'gl_code': trial_balance.gl_code,
                 'gl_name': balance_sheet.gl_account_name if balance_sheet else 'N/A',
-                'department': assignment.department.name if assignment.department else 'N/A',
-                'user_role': assignment.get_user_role_display(),
-                'status': status_display,
-                'status_code': status_code,
+                'department': assignment.department.name if assignment and assignment.department else 'N/A',
+                'status': review.get_status_display(),
+                'status_code': review.status,
                 'assigned_on': assigned_on_formatted,
-                'assigned_on_datetime': assigned_on,
-                'trial_balance_id': str(trial_balance.id) if trial_balance else None,
-                'gl_review_id': str(gl_review.id) if gl_review else None,
+                "reconciliation_notes": review.reconciliation_notes,
                 'supporting_documents': [
                     {
                         'id': str(doc.id),
@@ -114,16 +159,10 @@ def gl_reviews_view(request):
                     for doc in supporting_docs
                 ],
             })
-        return gl_data
-    
-    preparer_gls = prepare_gl_data(preparer_assignments, is_preparer=True)
-    reviewer_gls = prepare_gl_data(reviewer_assignments, is_preparer=False)
-    
-    context = {
-        'preparer_gls': preparer_gls,
-        'reviewer_gls': reviewer_gls,
-    }
-    return render(request, 'gl_reviews/gl_reviews_t3.html', context)
+
+        print(f"[INFO] {request.user} — GL Reviews fetched: {len(gl_reviews)}")
+
+        return render(request, 'gl_reviews/gl_reviews_t2.html', {'gl_reviews': gl_reviews})
 
 
 @login_required
@@ -313,22 +352,6 @@ def submit_gl_review_reviewer(request):
         messages.error(request, "Reconciliation notes are required.")
         return redirect("gl_reviews_page")
     
-    assignment = ResponsibilityMatrix.objects.get(
-        id=assignment_id,
-        gl_code=gl_code
-    )
-    if action == 'approve':
-        assignment.gl_code_status = 3  # Approved
-        # get FC
-        fc = ResponsibilityMatrix.objects.filter(
-            user_role=3,
-            department=assignment.department
-        ).first()
-        print("FC: ", fc.id)
-    else:
-        assignment.gl_code_status = 4  # Rejected
-    assignment.save()
-
     trial_balance = TrialBalance.objects.filter(
         gl_code=gl_code
     ).first()
@@ -356,7 +379,23 @@ def submit_gl_review_reviewer(request):
         return redirect("gl_reviews_page")
     print("FOUND PREVIOUS TRAIL:", previous_trail.id)
     
-    gl_review.status = 3 if action == 'approve' else 4  # Approved or Rejected
+    assignment = ResponsibilityMatrix.objects.get(
+        id=assignment_id,
+        gl_code=gl_code
+    )
+    if action == 'approve':
+        assignment.gl_code_status = 3  # Approved
+        # get FC
+        fc = ResponsibilityMatrix.objects.filter(
+            user_role=3,
+            department=assignment.department
+        ).first()
+        print("FC: ", fc.id)
+    else:
+        assignment.gl_code_status = 4  # Rejected
+
+    assignment.save()
+    
     gl_review.reconciliation_notes = reconciliation_notes
     if action == 'approve':
         # fc is responsibility mat

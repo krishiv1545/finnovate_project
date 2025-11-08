@@ -446,6 +446,7 @@
                 <th>Dept.</th>
                 <th>Assigned On</th>
                 <th>Status</th>
+                <th>Reconciliation</th>
                 <th>Supporting Documents</th>
                 <th>Action</th>
               </tr>
@@ -463,6 +464,9 @@
                   >
                     {{ gl.status }}
                   </span>
+                </td>
+                <td>
+                    {{ gl.reconciliation_notes }}
                 </td>
                 <td>
                   {% if gl.supporting_documents %} {% for doc in gl.supporting_documents %}
@@ -543,6 +547,7 @@
                 <th>Department</th>
                 <th>Assigned On</th>
                 <th>Status</th>
+                <th>Reconciliation</th>
                 <th>Supporting Documents</th>
                 <th>Action</th>
               </tr>
@@ -560,6 +565,9 @@
                   >
                     {{ gl.status }}
                   </span>
+                </td>
+                <td>
+                    {{ gl.reconciliation_notes }}
                 </td>
                 <td>
                   {% if gl.supporting_documents %} {% for doc in gl.supporting_documents %}

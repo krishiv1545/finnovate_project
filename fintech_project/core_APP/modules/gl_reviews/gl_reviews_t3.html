@@ -281,6 +281,24 @@
         background: #d1d5db;
       }
 
+      .btn-reject {
+        background: #dc3545;
+        color: white;
+      }
+
+      .btn-reject:hover {
+        background: #bb2d3b;
+      }
+
+      .btn-approve {
+        background: #28a745;
+        color: white;
+      }
+
+      .btn-approve:hover {
+        background: #218838;
+      }
+
       .panel {
         background: #ffffff;
         border: 1px solid var(--border);
@@ -559,12 +577,12 @@
                   <a
                     href="#"
                     class="action-link"
-                    onclick="openReviewModal('{{ gl.assignment_id }}', '{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')"
+                    onclick="openReviewModalTwo('{{ gl.assignment_id }}', '{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')"
                   >
-                    Submit Review
-                  {% else %}
-                  WAIT
+                    Review
                   </a>
+                  {% else %}
+                  <span style="color: #6b7280;">Cant Take Action</span>
                   {% endif %}
                 </td>
               </tr>
@@ -639,7 +657,7 @@
       </div>
     </div>
 
-    <!-- Review Modal -->
+    <!-- Preparer Review Modal -->
     <div id="reviewModal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
@@ -684,15 +702,75 @@
       </div>
     </div>
 
+    
+    <!-- Reviewer Approval/Rejection Modal -->
+    <div id="reviewModalTwo" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Review GL Submission</h3>
+          <p id="modalGlInfoTwo"></p>
+        </div>
+        <form
+          id="reviewFormTwo"
+          method="post"
+          action="{% url 'submit_gl_review_reviewer' %}"
+        >
+          {% csrf_token %}
+          <input
+            type="hidden"
+            id="assignmentIdTwo"
+            name="assignment_id"
+            value=""
+          />
+          <input type="hidden" id="glCodeTwo" name="gl_code" value="" />
+
+          <div class="form-group">
+            <label for="reconciliation_notes_two">Review Comments *</label>
+            <textarea
+              id="reconciliation_notes_two"
+              name="reconciliation_notes"
+              placeholder="Enter your review comments, feedback, or reasons for approval/rejection..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="closeReviewModalTwo()"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              name="action"
+              value="reject"
+              class="btn btn-reject"
+            >
+              Reject
+            </button>
+            <button
+              type="submit"
+              name="action"
+              value="approve"
+              class="btn btn-approve"
+            >
+              Approve
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     {% include 'base/footer.html' %}
 
     <script>
+      // Upload Modal Functions
       function openUploadModal(assignmentId, glCode, glName) {
         document.getElementById("uploadAssignmentId").value = assignmentId;
         document.getElementById("uploadGlCode").value = glCode;
-        document.getElementById(
-          "uploadModalGlInfo"
-        ).textContent = `GL Code: ${glCode} - ${glName}`;
+        document.getElementById("uploadModalGlInfo").textContent = `GL Code: ${glCode} - ${glName}`;
         document.getElementById("uploadModal").classList.add("active");
       }
 
@@ -701,12 +779,11 @@
         document.getElementById("uploadForm").reset();
       }
 
+      // Preparer Review Modal Functions
       function openReviewModal(assignmentId, glCode, glName) {
         document.getElementById("assignmentId").value = assignmentId;
         document.getElementById("glCode").value = glCode;
-        document.getElementById(
-          "modalGlInfo"
-        ).textContent = `GL Code: ${glCode} - ${glName}`;
+        document.getElementById("modalGlInfo").textContent = `GL Code: ${glCode} - ${glName}`;
         document.getElementById("reviewModal").classList.add("active");
       }
 
@@ -715,22 +792,37 @@
         document.getElementById("reviewForm").reset();
       }
 
-      // Close modals on outside click
-      document
-        .getElementById("uploadModal")
-        .addEventListener("click", function (e) {
-          if (e.target === this) {
-            closeUploadModal();
-          }
-        });
+      // Reviewer Approval/Rejection Modal Functions
+      function openReviewModalTwo(assignmentId, glCode, glName) {
+        document.getElementById("assignmentIdTwo").value = assignmentId;
+        document.getElementById("glCodeTwo").value = glCode;
+        document.getElementById("modalGlInfoTwo").textContent = `GL Code: ${glCode} - ${glName}`;
+        document.getElementById("reviewModalTwo").classList.add("active");
+      }
 
-      document
-        .getElementById("reviewModal")
-        .addEventListener("click", function (e) {
-          if (e.target === this) {
-            closeReviewModal();
-          }
-        });
+      function closeReviewModalTwo() {
+        document.getElementById("reviewModalTwo").classList.remove("active");
+        document.getElementById("reviewFormTwo").reset();
+      }
+
+      // Close modals on outside click
+      document.getElementById("uploadModal").addEventListener("click", function (e) {
+        if (e.target === this) {
+          closeUploadModal();
+        }
+      });
+
+      document.getElementById("reviewModal").addEventListener("click", function (e) {
+        if (e.target === this) {
+          closeReviewModal();
+        }
+      });
+
+      document.getElementById("reviewModalTwo").addEventListener("click", function (e) {
+        if (e.target === this) {
+          closeReviewModalTwo();
+        }
+      });
     </script>
   </body>
 </html>

@@ -6,93 +6,11 @@ from django.views.decorators.http import require_http_methods
 import logging
 from core_APP.models import BalanceSheet, ResponsibilityMatrix, TrialBalance, GLReview, GLSupportingDocument,   ReviewTrail
 from django.utils import timezone
+from django.conf import settings
+from django.core.mail import send_mail
+
 
 logger = logging.getLogger(__name__)
-
-
-# @login_required
-# def reports_view(request):
-#     """Static reports landing page."""
-
-#     # Static data mirroring the RACI-style matrix shown in the reference image
-#     roles = [
-#         {"label": "Project Lead", "name": "Anne"},
-#         {"label": "Internal Recruiter", "name": "John"},
-#         {"label": "Hiring Manager", "name": "Natasha"},
-#         {"label": "Stakeholder 4", "name": "Steven"},
-#         {"label": "Stakeholder 5", "name": "Sarah"},
-#         {"label": "Stakeholder 8", "name": "Allison"},
-#     ]
-
-#     raw_tasks = [
-#         {
-#             "title": "Task 1",
-#             "caption": "Defining the job role",
-#             "assignments": ["A", "A", "R", "I", "R", "A"],
-#         },
-#         {
-#             "title": "Task 2",
-#             "caption": "Creating a requisition",
-#             "assignments": ["A", "R", "I", "C", "I", "A"],
-#         },
-#         {
-#             "title": "Task 3",
-#             "caption": "Writing the job ad",
-#             "assignments": ["C", "A", "C", "A", "C", "C"],
-#         },
-#         {
-#             "title": "Task 4",
-#             "caption": "Posting the job ad",
-#             "assignments": ["C", "R", "I", "R", "I", "C"],
-#         },
-#         {
-#             "title": "Task 5",
-#             "caption": "Promote the position on the company channels",
-#             "assignments": ["C", "A", "I", "R", "I", "C"],
-#         },
-#         {
-#             "title": "Task 6",
-#             "caption": "Advertise the position internally",
-#             "assignments": ["I", "A", "R", "C", "R", "I"],
-#         },
-#         {
-#             "title": "Task 7",
-#             "caption": "Review applications",
-#             "assignments": ["A", "I", "R", "I", "R", "A"],
-#         },
-#         {
-#             "title": "Task 8",
-#             "caption": "Candidate screening",
-#             "assignments": ["C", "I", "C", "I", "C", "C"],
-#         },
-#     ]
-
-#     matrix_rows = []
-#     for task in raw_tasks:
-#         cells = []
-#         for role, assignment in zip(roles, task["assignments"]):
-#             cells.append(
-#                 {
-#                     "assignment": assignment,
-#                     "role_label": f"{role['label']} — {role['name']}",
-#                 }
-#             )
-
-#         matrix_rows.append(
-#             {
-#                 "title": task["title"],
-#                 "caption": task["caption"],
-#                 "cells": cells,
-#             }
-#         )
-
-#     context = {
-#         "roles": roles,
-#         "tasks": matrix_rows,
-#     }
-#     return render(request, 'reports/reports.html', context)
-
-
 
 @login_required
 def gl_reviews_view(request):
@@ -355,6 +273,9 @@ def submit_gl_review_preparer(request):
                 reviewer_responsibility_matrix=assignment,
                 gl_review=gl_review,
                 previous_trail=None,
+                gl_code=gl_code,
+                gl_name=BalanceSheet.objects.filter(gl_acct=gl_code).values_list('gl_account_name', flat=True).first() or '',
+                reconciliation_notes=reconciliation_notes
             )
             review_trail.save()
         
@@ -369,6 +290,118 @@ def submit_gl_review_preparer(request):
         logger.error(f"Error submitting GL review: {str(e)}")
         messages.error(request, f"Error submitting review: {str(e)}")
     
+    return redirect("gl_reviews_page")
+
+
+@login_required
+@require_http_methods(["POST"])
+def submit_gl_review_reviewer(request):
+    """
+    Submit a GL review for an assigned GL code.
+    """
+    assignment_id = request.POST.get("assignment_id")
+    gl_code = request.POST.get("gl_code")
+    reconciliation_notes = request.POST.get("reconciliation_notes")
+    action = request.POST.get("action")  # either 'approve' or 'reject'
+
+    
+    if not assignment_id or not gl_code:
+        messages.error(request, "Missing required information.")
+        return redirect("gl_reviews_page")
+    
+    if not reconciliation_notes:
+        messages.error(request, "Reconciliation notes are required.")
+        return redirect("gl_reviews_page")
+    
+    assignment = ResponsibilityMatrix.objects.get(
+        id=assignment_id,
+        gl_code=gl_code
+    )
+    if action == 'approve':
+        assignment.gl_code_status = 3  # Approved
+        # get FC
+        fc = ResponsibilityMatrix.objects.filter(
+            user_role=3,
+            department=assignment.department
+        ).first()
+        print("FC: ", fc.id)
+    else:
+        assignment.gl_code_status = 4  # Rejected
+    assignment.save()
+
+    trial_balance = TrialBalance.objects.filter(
+        gl_code=gl_code
+    ).first()
+    if not trial_balance:
+        print("TRIAL BALANCE NOT FOUND")
+        messages.error(request, "Trial balance not found.")
+        return redirect("gl_reviews_page")
+    print("FOUND TRIAL BALANCE:", trial_balance.id)
+    
+    gl_review = GLReview.objects.filter(
+        trial_balance=trial_balance,
+    ).first()
+
+    if not gl_review:
+        print("GL REVIEW NOT FOUND")
+        messages.error(request, "GL review not found.")
+        return redirect("gl_reviews_page")
+    
+    previous_trail = ReviewTrail.objects.filter(
+        gl_review=gl_review
+    ).order_by('-created_at').first()
+    if not previous_trail:
+        print("PREVIOUS TRAIL NOT FOUND")
+        messages.error(request, "Previous trail not found.")
+        return redirect("gl_reviews_page")
+    print("FOUND PREVIOUS TRAIL:", previous_trail.id)
+    
+    gl_review.status = 3 if action == 'approve' else 4  # Approved or Rejected
+    gl_review.reconciliation_notes = reconciliation_notes
+    if action == 'approve':
+        # fc is responsibility mat
+        gl_review.reviewer = fc.user
+    else:
+        gl_review.reviewer = previous_trail.reviewer
+    gl_review.save()
+
+    review_trail = ReviewTrail.objects.create(
+        reviewer=request.user,
+        reviewer_responsibility_matrix=assignment,
+        gl_review=gl_review,
+        previous_trail=previous_trail,
+        reconciliation_notes=reconciliation_notes,
+        gl_code=gl_code,
+    )
+    review_trail.save()
+
+    messages.success(
+        request,
+        f"GL Review submitted successfully for GL Code {gl_code}. Status updated to '{assignment.gl_code_status}'."
+    )
+
+    if action == 'approve':
+        # send mail to FC
+        fc_email = fc.user.email
+        send_mail(
+            'GL Review Available',
+            f'GL Review for GL Code {gl_code} is available for your approval.',
+            settings.EMAIL_HOST_USER,
+            [fc_email],
+            fail_silently=False,
+        )
+    # find next
+    else:
+        # mail previous
+        prev_reviewer = previous_trail.reviewer
+        send_mail(
+            'GL Review Rejected',
+            f'Your GL Review for GL Code {gl_code} has been rejected.',
+            settings.EMAIL_HOST_USER,
+            [prev_reviewer.email],
+            fail_silently=False,
+        )
+
     return redirect("gl_reviews_page")
 
 

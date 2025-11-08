@@ -391,7 +391,12 @@ class ReviewTrail(models.Model):
         related_name="next_trails"
     )
 
+    gl_code = models.CharField(max_length=50, null=True, blank=True)
+    gl_name = models.CharField(max_length=255, null=True, blank=True)
+    reconciliation_notes = models.TextField(null=True, blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
+        db_table = "review_trails"
         ordering = ["-created_at"]

@@ -33,6 +33,7 @@ class Department(models.Model):
     def __str__(self):
         return self.name
 
+
 class ResponsibilityMatrix(models.Model):
 
     USER_ROLE_CHOICES = (
@@ -325,6 +326,28 @@ class BalanceSheet(models.Model):
     def __str__(self):
         return f"{self.BS_PL} - {self.gl_acct} ({self.status})"
 
+class GLReview(models.Model):
+    GL_CODE_STATUS_CHOICES = (
+        (1, 'Pending'),
+        (2, 'Awaiting Approval'),
+        (3, 'Approved'),
+        (4, 'Rejected')
+    )
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    trial_balance = models.ForeignKey(TrialBalance, on_delete=models.CASCADE, related_name="reviews")
+    reviewer = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
+    status = models.PositiveSmallIntegerField(choices=GL_CODE_STATUS_CHOICES, default=1)
+    reconciliation_notes = models.TextField(blank=True, null=True)
+    reviewed_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "gl_reviews"
+        ordering = ["-reviewed_at"]
+
+    def __str__(self):
+        return f"{self.trial_balance.gl_code} - {self.status}"
+    
 
 class GLSupportingDocument(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -342,45 +365,35 @@ class GLSupportingDocument(models.Model):
         return f"Support for {self.trial_balance.gl_code}"
 
 
-class GLReview(models.Model):
-    STATUS_CHOICES = [
-        ("pending", "Pending"),
-        ("in_review", "In Review"),
-        ("approved", "Approved"),
-        ("rejected", "Rejected"),
-    ]
-
+class ReviewTrail(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    trial_balance = models.ForeignKey(TrialBalance, on_delete=models.CASCADE, related_name="reviews")
-    reviewer = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="pending")
-    comments = models.TextField(blank=True, null=True)
-    reviewed_at = models.DateTimeField(blank=True, null=True)
+    reviewer = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="review_trails"
+    )
+    reviewer_responsibility_matrix = models.ForeignKey(
+        "ResponsibilityMatrix",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="review_trails"
+    )
+    gl_review = models.ForeignKey(
+        "GLReview",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="review_trails"
+    )
+    previous_trail = models.ForeignKey(
+        "self",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="next_trails"
+    )
 
-    class Meta:
-        db_table = "gl_reviews"
-        ordering = ["-reviewed_at"]
-
-    def __str__(self):
-        return f"{self.trial_balance.gl_code} - {self.status}"
-
-
-class ValidationLog(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    trial_balance = models.ForeignKey(TrialBalance, on_delete=models.CASCADE, related_name="validation_logs")
-    rule_name = models.CharField(max_length=255)
-    message = models.TextField()
-    severity = models.CharField(max_length=20, choices=[
-        ("info", "Info"),
-        ("warning", "Warning"),
-        ("error", "Error"),
-    ])
     created_at = models.DateTimeField(auto_now_add=True)
-    resolved = models.BooleanField(default=False)
 
     class Meta:
-        db_table = "validation_logs"
         ordering = ["-created_at"]
-
-    def __str__(self):
-        return f"{self.rule_name} - {self.trial_balance.gl_code}"

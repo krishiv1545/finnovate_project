@@ -26,17 +26,6 @@ python fintech_project/manage.py migrate
 python fintech_project/manage.py collectstatic
 ```
 
-### 6. Install NGINX (SKIP THIS ACTUALLY !!)
-```
-choco install nginx
-```
-If you have issues, check this
-"C:\ProgramData\chocolatey\lib\nginx\tools\"
-There might be a zip named "nginx-1.29.3.zip" instead of a DIR
-Extract it right there
-Then add "C:\ProgramData\chocolatey\lib\nginx\tools\nginx-1.29.3" to System Variables PATH
-Test with `nginx -v`
-
 ### 6. Create superuser
 ```
 python fintech_project/manage.py createsuperuser
@@ -89,8 +78,7 @@ To stop it, use
 sudo nginx -s stop
 ```
 
-Also, I kinda shouldn't need to tell you this if you actually read this file
-But we'll be using localhost:8081 now, not port 8000
+We'll be using localhost:8081 now, not port 8000
 Gunicorn listens to 8000
 NGINX listens to 8081
 Please dont bypass NGINX, it is out cute little reverse proxy setup
@@ -107,4 +95,24 @@ TEST SAP HANA ERP CONNECTION:-
 
 ```
 python -c "from hdbcli import dbapi; conn = dbapi.connect(address='ebdc3fa3-fb21-454f-bad4-f569d264fd7c.hana.trial-us10.hanacloud.ondemand.com', port=443, user='DBADMIN', password='AdaniPower@123', encrypt=True, sslValidateCertificate=False); print('Connected!'); conn.close()"
+```
+
+## RAG SETUP
+
+### 1. Get ElasticSearch Docker Image to access ElasticSearch OSS
+
+```
+docker rm -f es-rag
+
+docker run -d `
+  --name es-rag `
+  -p 9200:9200 `
+  -e "discovery.type=single-node" `
+  -e "xpack.security.enabled=false" `
+  -e "ES_JAVA_OPTS=-Xms2g -Xmx2g" `
+  docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+```
+Test
+```
+curl http://localhost:9200
 ```

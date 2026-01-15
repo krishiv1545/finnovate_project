@@ -6,3 +6,5 @@ composio-core>=0.5.0
 python-dotenv>=1.0.0
 gunicorn
 hdbcli
+numpy
+elasticsearch

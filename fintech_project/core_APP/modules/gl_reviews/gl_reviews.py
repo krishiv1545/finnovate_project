@@ -13,6 +13,7 @@ from core_APP.models import GLReview
 
 logger = logging.getLogger(__name__)
 
+
 @login_required
 def gl_reviews_view(request):
     """GL Reviews page - shows both Preparer and Reviewer GLs side by side or single FC/Head view."""
@@ -163,6 +164,22 @@ def gl_reviews_view(request):
         print(f"[INFO] {request.user} — GL Reviews fetched: {len(gl_reviews)}")
 
         return render(request, 'gl_reviews/gl_reviews_t2.html', {'gl_reviews': gl_reviews})
+
+
+@login_required
+def upload_gl_supporting_document(request, document_id):
+    if request.method != 'POST':
+        logger.error(request, "Invalid request method.")
+        return redirect("gl_reviews_page")
+    
+    try:
+        document = GLSupportingDocument.objects.get(id=document_id)
+        document.delete()
+        messages.success(request, "Document removed successfully.")
+    except GLSupportingDocument.DoesNotExist:
+        logger.error(request, "Document not found.")
+    
+    return redirect("gl_reviews_page")
 
 
 @login_required

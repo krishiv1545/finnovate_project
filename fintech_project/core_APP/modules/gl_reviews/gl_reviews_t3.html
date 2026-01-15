@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'base.css' %}" />
     <link rel="stylesheet" href="{% static 'output.css' %}" />
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
       main {
@@ -469,14 +470,28 @@
                     {{ gl.reconciliation_notes }}
                 </td>
                 <td>
-                  {% if gl.supporting_documents %} {% for doc in gl.supporting_documents %}
-                  <a href="{{ doc.file_url }}" class="file-link" target="_blank"
-                    >{{ doc.file_name }}</a
-                  >
-                  {% endfor %} {% else %}
-                  <span style="color: var(--subtle); font-size: 0.8rem"
-                    >No documents</span
-                  >
+                  {% if gl.supporting_documents %}
+                    {% for doc in gl.supporting_documents %}
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                      <a href="{{ doc.file_url }}" class="file-link" target="_blank"
+                        >{{ doc.file_name }}</a
+                      >
+                      <form action="{% url 'remove_gl_supporting_document' doc.id %}"
+                            method="post"
+                            style="margin: 0;">
+                        {% csrf_token %}
+                        <button type="submit"
+                                class="text-danger"
+                                onclick="return confirm('Are you sure you want to delete this document?')">
+                          <i class="fa-solid fa-trash" style="margin-left: 0.5rem"></i>
+                        </button>
+                      </form>
+                    </div>
+                    {% endfor %}
+                  {% else %}
+                    <span style="color: var(--subtle); font-size: 0.8rem"
+                      >No documents</span
+                    >
                   {% endif %}
                 </td>
                 <td>
@@ -505,17 +520,22 @@
                     <span style="color: #2563eb; font-weight: 500;">✔ Approved</span>
 
                   {% elif gl.status_code == 4 %}
-                    <span style="color: #dc2626; font-weight: 500;">❌ Rejected — Rework Required</span>
-                    <br />
                     <a
                       href="#"
-                      class="action-link"
+                      class="action-link status-badge status-pending"
                       onclick="openUploadModal('{{ gl.assignment_id }}', '{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')"
-                      style="margin-top: 0.5rem; display: inline-block"
                     >
                       Re-Upload Document
                     </a>
-
+                    <br />
+                    <a
+                      href="#"
+                      class="action-link status-badge status-approved"
+                      onclick="openReviewModal('{{ gl.assignment_id }}', '{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')"
+                      style="margin-top: 0.5rem; display: inline-block; color: #2563eb"
+                    >
+                      Re-Submit Review
+                    </a>
                   {% else %}
                     <span style="color: #6b7280;">Not Started</span>
                   {% endif %}

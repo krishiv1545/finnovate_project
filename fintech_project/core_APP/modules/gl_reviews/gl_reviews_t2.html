@@ -422,6 +422,13 @@
       tbody tr:hover td {
         background: #f8fafc;
       }
+
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
     </style>
   </head>
 
@@ -498,5 +505,66 @@
           </table>
           {% endif %}
 
+    {% include 'base/footer.html' %}
+
+<script>
+      // Upload Modal Functions
+      function openUploadModal(assignmentId, glCode, glName) {
+        document.getElementById("uploadAssignmentId").value = assignmentId;
+        document.getElementById("uploadGlCode").value = glCode;
+        document.getElementById("uploadModalGlInfo").textContent = `GL Code: ${glCode} - ${glName}`;
+        document.getElementById("uploadModal").classList.add("active");
+      }
+
+      function closeUploadModal() {
+        document.getElementById("uploadModal").classList.remove("active");
+        document.getElementById("uploadForm").reset();
+      }
+
+      // Preparer Review Modal Functions
+      function openReviewModal(assignmentId, glCode, glName) {
+        document.getElementById("assignmentId").value = assignmentId;
+        document.getElementById("glCode").value = glCode;
+        document.getElementById("modalGlInfo").textContent = `GL Code: ${glCode} - ${glName}`;
+        document.getElementById("reviewModal").classList.add("active");
+      }
+
+      function closeReviewModal() {
+        document.getElementById("reviewModal").classList.remove("active");
+        document.getElementById("reviewForm").reset();
+      }
+
+      // Reviewer Approval/Rejection Modal Functions
+      function openReviewModalTwo(assignmentId, glCode, glName) {
+        document.getElementById("assignmentIdTwo").value = assignmentId;
+        document.getElementById("glCodeTwo").value = glCode;
+        document.getElementById("modalGlInfoTwo").textContent = `GL Code: ${glCode} - ${glName}`;
+        document.getElementById("reviewModalTwo").classList.add("active");
+      }
+
+      function closeReviewModalTwo() {
+        document.getElementById("reviewModalTwo").classList.remove("active");
+        document.getElementById("reviewFormTwo").reset();
+      }
+
+      // Close modals on outside click
+      document.getElementById("uploadModal").addEventListener("click", function (e) {
+        if (e.target === this) {
+          closeUploadModal();
+        }
+      });
+
+      document.getElementById("reviewModal").addEventListener("click", function (e) {
+        if (e.target === this) {
+          closeReviewModal();
+        }
+      });
+
+      document.getElementById("reviewModalTwo").addEventListener("click", function (e) {
+        if (e.target === this) {
+          closeReviewModalTwo();
+        }
+      });
+    </script>
   </body>
 </html>

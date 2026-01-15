@@ -276,6 +276,53 @@
   #submitMappingBtn:hover {
     background-color: #1e4fb9;
   }
+
+  /* Base */
+.open-map-modal{
+  appearance: none;
+  border: none;
+  border-radius: 10px;
+  padding: .42rem .9rem;
+  font: 13px/1.25 system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(0,0,0,.15);
+  transition: background-color .15s ease, transform .02s ease, box-shadow .15s ease;
+  white-space: normal;         /* allow wrap for long labels */
+  max-width: 16ch;             /* keeps tidy in tables */
+}
+
+/* Variant: Trial Balance (warm) */
+.open-map-modal.trial-balance{
+  background: #a0a162;
+}
+.open-map-modal.trial-balance:hover{ background:#bfc08f; }
+.open-map-modal.trial-balance:active{ background:#bfc08f; transform: translateY(1px); }
+
+/* Variant: Balance Sheet (teal) */
+.open-map-modal.balance-sheet{
+  background: #0f766e;
+}
+.open-map-modal.balance-sheet:hover{ background:#2ca59b; }
+.open-map-modal.balance-sheet:active{ background:#2ca59b; transform: translateY(1px); }
+
+/* Focus + disabled (both) */
+.open-map-modal:focus-visible{
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+}
+.open-map-modal[disabled]{
+  opacity: .55;
+  cursor: not-allowed;
+  filter: grayscale(.15);
+}
+
+.connected {
+  border: 1px solid green;
+  padding-inline: 1rem;
+  border-radius: var(--radius);
+}
 </style>
   </head>
   <body>
@@ -496,7 +543,7 @@
               <td>
                 {% if file.status == 'pending' %}
                 <button>Connect</button>
-                {% else %} Connected {% endif %}
+                {% else %} <span class="connected">Connected</span> {% endif %}
               </td>
             </tr>
             {% endfor %}
@@ -556,7 +603,7 @@
               <td>
                 {% if link.status.trial_balance == 'pending' %}
                   <button
-                    class="open-map-modal"
+                    class="open-map-modal trial-balance"
                     data-saplink-id="{{ link.id }}"
                     data-table-name="trial_balance"
                     style="margin-bottom:0.5rem"
@@ -564,19 +611,19 @@
                     Connect Trial Balance
                   </button>
                 {% else %}
-                  Connected
+                  <span class="connected">Connected</span>
                 {% endif %}
 
                 {% if link.status.balance_sheet == 'pending' %}
                   <button
-                    class="open-map-modal"
+                    class="open-map-modal balance-sheet"
                     data-saplink-id="{{ link.id }}"
                     data-table-name="balance_sheet"
                   >
                     Connect Balance Sheet
                   </button>
                 {% else %}
-                  Connected
+                  <span class="connected">Connected</span>
                 {% endif %}
               </td>
             </tr>

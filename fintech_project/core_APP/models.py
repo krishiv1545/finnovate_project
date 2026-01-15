@@ -326,6 +326,7 @@ class BalanceSheet(models.Model):
     def __str__(self):
         return f"{self.BS_PL} - {self.gl_acct} ({self.status})"
 
+
 class GLReview(models.Model):
     GL_CODE_STATUS_CHOICES = (
         (1, 'Pending'),

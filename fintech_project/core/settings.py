@@ -135,13 +135,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # AI Configuration
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '')
 GOOGLE_AI_API_KEY = os.getenv('GOOGLE_AI_API_KEY', '')
-COMPOSIO_API_KEY = os.getenv('COMPOSIO_API_KEY', '')
-
-# AI Model Configuration
-AI_MODEL = os.getenv('AI_MODEL', 'gpt-4o-mini')  # Default to OpenAI
-AI_TEMPERATURE = float(os.getenv('AI_TEMPERATURE', '0.3'))
 
 # Email Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -151,3 +145,7 @@ EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "True").lower() in ("true", "1", "yes
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# ElasticSearch
+ELASTIC_URL = os.getenv("ELASTIC_URL", "http://localhost:9200")
+ELASTIC_INDEX = os.getenv("ELASTIC_INDEX", "rag_docs")

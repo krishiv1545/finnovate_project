@@ -1,0 +1,20 @@
+from django.urls import path
+from .gl_reviews import (
+    gl_reviews_view, 
+    balance_sheet_view, 
+    upload_gl_supporting_document, 
+    submit_gl_review_preparer, 
+    submit_gl_review_reviewer,
+    upload_gl_supporting_document,
+)
+
+
+urlpatterns = [
+    path('', gl_reviews_view, name='gl_reviews_page'),
+    path('remove_gl_supporting_document/<int:document_id>', upload_gl_supporting_document, name='remove_gl_supporting_document'),
+    path('tier3/', balance_sheet_view, name='reports_tier3'),
+    path('upload-document/', upload_gl_supporting_document, name='upload_gl_supporting_document'),
+    path('submit-review/', submit_gl_review_preparer, name='submit_gl_review_preparer'),
+    path('submit-review/reviewer/', submit_gl_review_reviewer, name='submit_gl_review_reviewer'),
+]
+

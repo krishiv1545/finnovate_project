@@ -1,0 +1,562 @@
+GL,GL Name,Gr GL,Gr GL Name,Amount,FS Grouping Main Head,FS Grouping Main Sub Head
+11100110,Inventory-Raw Material-Domestic,2021001001,Inventory-Raw Material,125437.0,Non-Current Assets,Capital work-in-progress
+11100200,Capital Inventory-Domestic,2021006002,Capital Inventory,960844.0,Non-Current Assets,Capital work-in-progress
+11100400,Inventory-Stores & Spares-Domestic,2021004004,Inventory-Stores & Spares,43169617.0,Current Assets,Inventories
+11100410,BPC-Inventory-Stores & Spares,2021004004,Inventory-Stores & Spares,125444.0,Current Assets,Inventories
+11100500,Inventory-Stores & Spares-Foreign,2021004004,Inventory-Stores & Spares,26958527.0,Current Assets,Inventories
+11100600,Inventory-Operating Supplies-Domestic,2021004004,Inventory-Stores & Spares,70831968.0,Current Assets,Inventories
+11100700,Inventory-Operating Supplies-Foreign,2021004004,Inventory-Stores & Spares,190202.0,Current Assets,Inventories
+11200010,Business Partner-Loan,1040310002,Other Current Liabilities,125444.0,Current Liabilities,Financial Liabilities - Other financial liabilities
+11200030,Business Partner-Fixed Deposit,2021201201,Fixed Deposit with Original Maturity,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11200100,Sundry Debtors-Domestic,2021102002,Receivables < 6M Unsecured Considere,505598670.0,Current Assets,Financial Assets - Trade Receivables
+11210900,Sundry Debtors-Group Company,2021102002,Receivables < 6M Unsecured Considere,131204714.0,Current Assets,Financial Assets - Trade Receivables
+11211970,BPC-Sundry Debtors,2021102002,Receivables < 6M Unsecured Considere,-1073453.0,Current Assets,Financial Assets - Trade Receivables
+11212000,Sundry Debtors-Foreign,2021102002,Receivables < 6M Unsecured Considere,125444.0,Current Assets,Financial Assets - Trade Receivables
+11221150,Unbilled Receivable,2021400003,Accrued Revenue (incl amt due ag. le,173170016.0,Current Assets,Other Current assets
+11290820,Sundry Debtors-Non Trade,2021400012,Non Trade Receivables,1565444.0,Current Assets,Financial Assets - Other Financial Assetsequivalents
+11290840,IGST Receivable-TDS-Government,2021302105,Balances with Government Authorities,1951226.0,Current Assets,Other Current assets
+11290850,CGST Receivable-TDS-Government,2021302105,Balances with Government Authorities,7900367.0,Current Assets,Other Current assets
+11290860,SGST Receivable-TDS-Government,2021302105,Balances with Government Authorities,7837677.0,Current Assets,Other Current assets
+11301200,Advance-Salary,2021302115,Loans and Advances to Employees,67413.0,Current Assets,Financial Assets - Other Financial Assetsequivalents
+11302100,Advance Against Expenses,2021302103,Adv Recover in Cash orKind or for va,1304891958.0,Current Assets,Other Current assets
+11302150,Advance-Mobilization,2010401001,Capital Advances,5823674.0,Non-Current Assets,Other Non-Current Assets
+11302200,Advance Against Capital Expenditure,2010401001,Capital Advances,2265869.0,Non-Current Assets,Other Non-Current Assets
+11303000,Deposit with Vendors-Others,2021302108,"Deposit to Vendor, Customer & Others",3620889.0,Current Assets,Financial Assets - Other Financial Assetsequivalents
+11303100,Deposit with Government Authorities,2021302108,"Deposit to Vendor, Customer & Others",2261326.0,Current Assets,Financial Assets - Other Financial Assetsequivalents
+11303300,Deposit with Vendors-Rent,2021302108,"Deposit to Vendor, Customer & Others",2180245.0,Current Assets,Financial Assets - Other Financial Assetsequivalents
+11304100,Prepaid Expenses,2021400004,Prepaid Expenses,4696449.0,Current Assets,Other Current assets
+11304120,Prepaid Expenses-Non Current,2010502003,Pre-paid Expense Non-Current,7645426.0,Non-Current Assets,Other Non-Current Assets
+11304200,Prepaid Insurance,2021400004,Prepaid Expenses,11002780.0,Current Assets,Other Current assets
+11305100,Deposit with Vendors & Customers-Non C,2010402001,Unsecured Deposits - Non Current Por,7811572.0,Non-Current Assets,Other  Financial assets
+11310450,Receivable-GST-Adjustment,2021302105,Balances with Government Authorities,-10896077.0,Current Assets,Other Current assets
+11311110,CENVAT Credit-Non Current,2010404102,Bal. with Govt Authorities Unsecured,278063.0,Non-Current Assets,Other Non-Current Assets
+11314200,Receivable-TDS,2021302202,Tax Deducted at Source,322296270.0,Non-Current Assets,Other Non-Current Assets
+11314220,Receivable-TDS (FY 06-07),2021302202,Tax Deducted at Source,4469527.0,Non-Current Assets,Other Non-Current Assets
+11314240,Receivable-TDS (FY 08-09),2021302202,Tax Deducted at Source,3478274.0,Non-Current Assets,Other Non-Current Assets
+11314250,Receivable-TDS-Non Recon,2021302202,Tax Deducted at Source,106676200.0,Non-Current Assets,Other Non-Current Assets
+11314290,Receivable-TDS (FY 09-10),2021302202,Tax Deducted at Source,39632584.0,Non-Current Assets,Other Non-Current Assets
+11314300,Taxes Paid Under Protest,2021302105,Balances with Government Authorities,3446172.0,Current Assets,Other Current assets
+11314310,Receivable-TDS (FY 10-11),2021302202,Tax Deducted at Source,28280339.0,Non-Current Assets,Other Non-Current Assets
+11314330,Receivable-TDS (FY 11-12),2021302202,Tax Deducted at Source,56518634.0,Non-Current Assets,Other Non-Current Assets
+11314350,Receivable-TDS (FY 12-13),2021302202,Tax Deducted at Source,1244678.0,Non-Current Assets,Other Non-Current Assets
+11314370,Receivable-TDS (FY 13-14),2021302202,Tax Deducted at Source,57859331.0,Non-Current Assets,Other Non-Current Assets
+11314380,Receivable-TDS (FY 14-15),2021302202,Tax Deducted at Source,4783038.0,Non-Current Assets,Other Non-Current Assets
+11314390,Receivable-TDS (FY 15-16),2021302202,Tax Deducted at Source,104958290.0,Non-Current Assets,Other Non-Current Assets
+11314440,Receivable-TDS (FY 16-17),2021302202,Tax Deducted at Source,59210866.0,Non-Current Assets,Other Non-Current Assets
+11314450,Receivable-TDS (FY 17-18),2021302202,Tax Deducted at Source,88132274.0,Non-Current Assets,Other Non-Current Assets
+11314460,Receivable-TDS (FY 18-19),2021302202,Tax Deducted at Source,129481346.0,Non-Current Assets,Other Non-Current Assets
+11314470,Receivable-TDS (FY 19-20),2021302202,Tax Deducted at Source,149261583.0,Non-Current Assets,Other Non-Current Assets
+11314480,Receivable-TDS (FY 20-21),2021302202,Tax Deducted at Source,47914541.0,Non-Current Assets,Other Non-Current Assets
+11314700,Advance-Income Tax (FY 07-08),2021302201,Advance Payment of Income Tax,1679888.0,Non-Current Assets,Other Non-Current Assets
+11314810,Advance-Income Tax (FY 09-10),2021302201,Advance Payment of Income Tax,9214394.0,Non-Current Assets,Other Non-Current Assets
+11314820,Advance-Income Tax (FY 10-11),2021302201,Advance Payment of Income Tax,2110234.0,Non-Current Assets,Other Non-Current Assets
+11314830,Advance-Income Tax (FY 11-12),2021302201,Advance Payment of Income Tax,6874184.0,Non-Current Assets,Other Non-Current Assets
+11314870,Advance-Income Tax (FY 15-16),2021302201,Advance Payment of Income Tax,64970071.0,Non-Current Assets,Other Non-Current Assets
+11314880,Advance-Income Tax (FY 16-17),2021302201,Advance Payment of Income Tax,184474.0,Non-Current Assets,Other Non-Current Assets
+11314990,Advance-Income Tax (FY 19-20),2021302201,Advance Payment of Income Tax,89706405.0,Non-Current Assets,Other Non-Current Assets
+11315020,Advance-Income Tax (FY 20-21),2021302201,Advance Payment of Income Tax,113926527.0,Non-Current Assets,Other Non-Current Assets
+11315600,Receivable-CGST Refund,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11315660,TRM-IGST Receivable,2021302105,Balances with Government Authorities,137143.0,Current Assets,Other Current assets
+11316000,Interest Accrued but Not Due,2021400001,Interest accrued but not due (Intere,125444.0,Current Assets,Financial Assets - Other Financial Assetsequivalents
+11316600,Receivable-Insurance Claim,2021400013,Insurance Claim Receivable,4600821.0,Current Assets,Financial Assets - Other Financial Assetsequivalents
+11316920,TRM-Unsecured Inter Company Loan-Group,2021301001,Unsecured Inter Company Loan to Pare,3220025444.0,Current Assets,Financial Assets - Loans
+11318200,Interest Accrued and Due,2021400002,Int.accrued &due(Lodged with Govt.Au,106547458.0,Current Assets,Financial Assets - Other Financial Assetsequivalents
+11318510,Receivable-TCS-0.1%,2021302202,Tax Deducted at Source,191541.0,Non-Current Assets,Other Non-Current Assets
+11318850,BPC-Deposit with Government Authoritie,2021302105,Balances with Government Authorities,14887467.0,Current Assets,Other Current assets
+11318890,BPC-Deposit with Vendors,2021302108,"Deposit to Vendor, Customer & Others",-7560684.0,Current Assets,Financial Assets - Other Financial Assetsequivalents
+11370300,BPC-Advance Against Capital Expenditur,2010401001,Capital Advances,1212825233.0,Non-Current Assets,Other Non-Current Assets
+11370500,BPC-Advance Against Purchase of Goods,2021302103,Adv Recover in Cash orKind or for va,-1233189062.0,Current Assets,Other Current assets
+11371190,Receivable-TDS (FY 21-22),2021302202,Tax Deducted at Source,119310074.0,Non-Current Assets,Other Non-Current Assets
+11371209,CGST Receivable-Uttar Pradesh,2021302105,Balances with Government Authorities,137428.0,Current Assets,Other Current assets
+11371219,CGST Receivable-West Bengal,2021302105,Balances with Government Authorities,201493.0,Current Assets,Other Current assets
+11371221,CGST Receivable-Odisha,2021302105,Balances with Government Authorities,808811.0,Current Assets,Other Current assets
+11371224,CGST Receivable-Gujarat,2021302105,Balances with Government Authorities,547816.0,Current Assets,Other Current assets
+11371227,CGST Receivable-Maharashtra,2021302105,Balances with Government Authorities,2582984.0,Current Assets,Other Current assets
+11371228,CGST Receivable-Andhra Pradesh,2021302105,Balances with Government Authorities,1408995.0,Current Assets,Other Current assets
+11371229,CGST Receivable-Karnataka,2021302105,Balances with Government Authorities,195841.0,Current Assets,Other Current assets
+11371230,CGST Receivable-Goa,2021302105,Balances with Government Authorities,125537.0,Current Assets,Other Current assets
+11371232,CGST Receivable-Kerala,2021302105,Balances with Government Authorities,152356.0,Current Assets,Other Current assets
+11371233,CGST Receivable-Tamil Nadu,2021302105,Balances with Government Authorities,998784.0,Current Assets,Other Current assets
+11371234,CGST Receivable-Puducherry,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371235,CGST Receivable-Andaman & Nicobar Isla,2021302105,Balances with Government Authorities,138234.0,Current Assets,Other Current assets
+11371236,CGST Receivable-Telangana,2021302105,Balances with Government Authorities,7399848.0,Current Assets,Other Current assets
+11371309,SGST Receivable-Uttar Pradesh,2021302105,Balances with Government Authorities,137428.0,Current Assets,Other Current assets
+11371319,SGST Receivable-West Bengal,2021302105,Balances with Government Authorities,201493.0,Current Assets,Other Current assets
+11371321,SGST Receivable-Odisha,2021302105,Balances with Government Authorities,808811.0,Current Assets,Other Current assets
+11371324,SGST Receivable-Gujarat,2021302105,Balances with Government Authorities,547816.0,Current Assets,Other Current assets
+11371327,SGST Receivable-Maharashtra,2021302105,Balances with Government Authorities,2582984.0,Current Assets,Other Current assets
+11371328,SGST Receivable-Andhra Pradesh,2021302105,Balances with Government Authorities,1408995.0,Current Assets,Other Current assets
+11371329,SGST Receivable-Karnataka,2021302105,Balances with Government Authorities,195842.0,Current Assets,Other Current assets
+11371330,SGST Receivable-Goa,2021302105,Balances with Government Authorities,125537.0,Current Assets,Other Current assets
+11371332,SGST Receivable-Kerala,2021302105,Balances with Government Authorities,152356.0,Current Assets,Other Current assets
+11371333,SGST Receivable-Tamil Nadu,2021302105,Balances with Government Authorities,998784.0,Current Assets,Other Current assets
+11371334,SGST Receivable-Puducherry,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371335,SGST Receivable-Andaman & Nicobar Isla,2021302105,Balances with Government Authorities,138234.0,Current Assets,Other Current assets
+11371336,SGST Receivable-Telangana,2021302105,Balances with Government Authorities,7399848.0,Current Assets,Other Current assets
+11371409,IGST Receivable-Uttar Pradesh,2021302105,Balances with Government Authorities,773549.0,Current Assets,Other Current assets
+11371419,IGST Receivable-West Bengal,2021302105,Balances with Government Authorities,1263614.0,Current Assets,Other Current assets
+11371421,IGST Receivable-Odisha,2021302105,Balances with Government Authorities,2857505.0,Current Assets,Other Current assets
+11371424,IGST Receivable-Gujarat,2021302105,Balances with Government Authorities,10234406.0,Current Assets,Other Current assets
+11371427,IGST Receivable-Maharashtra,2021302105,Balances with Government Authorities,2957850.0,Current Assets,Other Current assets
+11371428,IGST Receivable-Andhra Pradesh,2021302105,Balances with Government Authorities,4224671.0,Current Assets,Other Current assets
+11371429,IGST Receivable-Karnataka,2021302105,Balances with Government Authorities,3063219.0,Current Assets,Other Current assets
+11371430,IGST Receivable-Goa,2021302105,Balances with Government Authorities,1049116.0,Current Assets,Other Current assets
+11371432,IGST Receivable-Kerala,2021302105,Balances with Government Authorities,607088.0,Current Assets,Other Current assets
+11371433,IGST Receivable-Tamil Nadu,2021302105,Balances with Government Authorities,2995942.0,Current Assets,Other Current assets
+11371434,IGST Receivable-Puducherry,2021302105,Balances with Government Authorities,456440.0,Current Assets,Other Current assets
+11371435,IGST Receivable-Andaman & Nicobar Isla,2021302105,Balances with Government Authorities,958811.0,Current Assets,Other Current assets
+11371436,IGST Receivable-Telangana,2021302105,Balances with Government Authorities,22142859.0,Current Assets,Other Current assets
+11371509,CGST Receivable-RCM-Uttar Pradesh,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371519,CGST Receivable-RCM-West Bengal,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371521,CGST Receivable-RCM-Odisha,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371527,CGST Receivable-RCM-Maharashtra,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371528,CGST Receivable-RCM-Andhra Pradesh,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371533,CGST Receivable-RCM-Tamil Nadu,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371535,CGST Receivable-RCM-Andaman & Nicobar,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371536,CGST Receivable-RCM-Telangana,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371609,SGST Receivable-RCM-Uttar Pradesh,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371619,SGST Receivable-RCM-West Bengal,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371621,SGST Receivable-RCM-Odisha,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371627,SGST Receivable-RCM-Maharashtra,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371628,SGST Receivable-RCM-Andhra Pradesh,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371633,SGST Receivable-RCM-Tamil Nadu,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371635,SGST Receivable-RCM-Andaman & Nicobar,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371636,SGST Receivable-RCM-Telangana,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371709,IGST Receivable-RCM-Uttar Pradesh,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371719,IGST Receivable-RCM-West Bengal,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371721,IGST Receivable-RCM-Odisha,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371724,IGST Receivable-RCM-Gujarat,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371727,IGST Receivable-RCM-Maharashtra,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371728,IGST Receivable-RCM-Andhra Pradesh,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371729,IGST Receivable-RCM-Karnataka,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371730,IGST Receivable-RCM-Goa,2021302105,Balances with Government Authorities,104034.0,Current Assets,Other Current assets
+11371732,IGST Receivable-RCM-Kerala,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371733,IGST Receivable-RCM-Tamil Nadu,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371734,IGST Receivable-RCM-Puducherry,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371735,IGST Receivable-RCM-Andaman & Nicobar,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371736,IGST Receivable-RCM-Telangana,2021302105,Balances with Government Authorities,125444.0,Current Assets,Other Current assets
+11371855,Clearing-GST Receivable-ICICI Bank,2021302105,Balances with Government Authorities,371174.0,Current Assets,Other Current assets
+11371857,Clearing-GST Receivable-IDFC First Ban,2021302105,Balances with Government Authorities,168218.0,Current Assets,Other Current assets
+11371868,Clearing-GST Receivable-State Bank of,2021302105,Balances with Government Authorities,1733323.0,Current Assets,Other Current assets
+11381450,Receivable-TCS (FY 21-22)-0.1%,2021302202,Tax Deducted at Source,280720.0,Non-Current Assets,Other Non-Current Assets
+11381470,Receivable-TDS 194Q-Sales of Goods,2021302202,Tax Deducted at Source,238764.0,Non-Current Assets,Other Non-Current Assets
+11381870,Receivable-TCS (FY 20-21)-0.1%,2021302202,Tax Deducted at Source,267283.0,Non-Current Assets,Other Non-Current Assets
+11381920,Receivable-TDS (FY 22-23),2021302202,Tax Deducted at Source,-58182914.0,Non-Current Assets,Other Non-Current Assets
+11382136,CGST Receivable-Telangana-ISD,2021302105,Balances with Government Authorities,584140.0,Current Assets,Other Current assets
+11382236,SGST Receivable-Telangana-ISD,2021302105,Balances with Government Authorities,584140.0,Current Assets,Other Current assets
+11382330,Receivable-TDS (FY 23-24),2021302202,Tax Deducted at Source,-69853865.0,Non-Current Assets,Other Non-Current Assets
+11382336,IGST Receivable-Telangana-ISD,2021302105,Balances with Government Authorities,5034810.0,Current Assets,Other Current assets
+11382380,Receivable-TDS (FY 24-25),2021302202,Tax Deducted at Source,24267277.0,Non-Current Assets,Other Non-Current Assets
+11382740,Receivable-TDS (FY 25-26),2021302202,Tax Deducted at Source,10873541.0,Non-Current Assets,Other Non-Current Assets
+11400100,Cash on Hand,2021204001,Cash on Hand-Local Currency,145572.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11599010,BPC-Bank Accounts,2021201101,Current Account-Scheduled Banks,311153.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621160,State Bank of Ind 10260539347 Main,2021201101,Current Account-Scheduled Banks,497046.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621161,State Bank of Ind 10260539347 In Payme,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621162,State Bank of Ind 10260539347 Out Paym,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621163,State Bank of Ind 10260539347 Misc Dr,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621164,State Bank of Ind 10260539347 Misc Cr,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621170,State Bank of Ind 10260540137 Main,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621181,State Bank of Ind 31106930957 In Payme,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621182,State Bank of Ind 31106930957 Out Paym,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621190,State Bank of Ind 40056253368 Main,2021201101,Current Account-Scheduled Banks,136517.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621191,State Bank of Ind 40056253368 In Payme,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621192,State Bank of Ind 40056253368 Out Paym,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621193,State Bank of Ind 40056253368 Misc Dr,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621194,State Bank of Ind 40056253368 Misc Cr,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621200,State Bank of Ind 40058264447 Main,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621202,State Bank of Ind 40058264447 Out Paym,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621212,State Bank of Ind 40084246347 Out Paym,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621220,State Bank of Ind 40052872586 Main,2021201101,Current Account-Scheduled Banks,127744.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621221,State Bank of Ind 40052872586 In Payme,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621222,State Bank of Ind 40052872586 Out Paym,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621223,State Bank of Ind 40052872586 Misc Dr,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621230,State Bank of Ind 40065789397 Main,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621231,State Bank of Ind 40065789397 In Payme,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621232,State Bank of Ind 40065789397 Out Paym,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621233,State Bank of Ind 40065789397 Misc Dr,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621240,State Bank of Ind 40053608633 Main,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621241,State Bank of Ind 40053608633 In Payme,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621242,State Bank of Ind 40053608633 Out Paym,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621250,HDFC Bank 00210120000182 Main,2021201101,Current Account-Scheduled Banks,1946407.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621251,HDFC Bank 00210120000182 In Payment,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621252,HDFC Bank 00210120000182 Out Payment,2021201101,Current Account-Scheduled Banks,-590225.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621253,HDFC Bank 00210120000182 Misc Dr,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621254,HDFC Bank 00210120000182 Misc Cr,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621260,HDFC Bank 57500000311252 Main,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621261,HDFC Bank 57500000311252 In Payment,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11621270,HDFC Bank 57500000341587 Main,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11631080,State Bank of Ind 10260540137 Main,2021201101,Current Account-Scheduled Banks,125403.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11631082,State Bank of Ind 10260540137 Out Paym,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11640110,Fixed Deposits-Less than 3 months,2021201201,Fixed Deposit with Original Maturity,1543622.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11640120,Fixed Deposits-More than 12 months,2010502002,Fixed Deposits with Original Maturit,25321340.0,Non-Current Assets,Other  Financial assets
+11640140,Fixed Deposits-More than 12 months-Cur,2021201501,Fixed Deposit Maturity >12 Months,10041698.0,Current Assets,Financial Assets - Bank balances other than cash and cash equivalents
+11640150,Fixed Deposits-More than 12 months-Cur,2010502002,Fixed Deposits with Original Maturit,-9790810.0,Non-Current Assets,Other  Financial assets
+11641110,Fixed Deposits-Margin Money (Others),2021201401,Margin Money-BG & Letter of Credit,188187403.0,Current Assets,Financial Assets - Bank balances other than cash and cash equivalents
+11641160,Margin Money-Non Current,2010502006,Margin Money-BG & Letter of Credit-L,6079407.0,Non-Current Assets,Other  Financial assets
+11641170,Margin Money-Non Current-Adjustment,2021201401,Margin Money-BG & Letter of Credit,-5828519.0,Current Assets,Financial Assets - Bank balances other than cash and cash equivalents
+11643410,IDFC First Bank 10204801416 Main,2021201101,Current Account-Scheduled Banks,238516.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11643411,IDFC First Bank 10204801416 In Payment,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11643412,IDFC First Bank 10204801416 Out Paymen,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11643413,IDFC First Bank 10204801416 Misc Dr,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11643414,IDFC First Bank 10204801416 Misc Cr,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11645120,ICICI Bank 548705000142 Main,2021201101,Current Account-Scheduled Banks,286656.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11645121,ICICI Bank 548705000142 In Payment,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11645122,ICICI Bank 548705000142 Out Payment,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11645123,ICICI Bank 548705000142 Misc Dr,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+11645124,ICICI Bank 548705000142 Misc Cr,2021201101,Current Account-Scheduled Banks,125444.0,Current Assets,Financial Assets - Cash and Cash Equivalents
+12101900,Investment in National Saving Certific,2010205201,Long Term Inv - Government Securitie,1345444.0,Non-Current Assets,Financial Assets - Investments
+12102050,Investment in Equity Shares-Subsidiary,2010213202,NC LT Invest in Subsidiary Co-Equity,1398120603.0,Non-Current Assets,Financial Assets - Investments
+12102060,Investment in Equity Shares-JV-NC-Unqu,2010213204,NC LT Invest in Joint Venture-Equity,81144851.0,Non-Current Assets,Financial Assets - Investments
+12103200,IndAS-Deemed Investment in Subsidiary,2010213202,NC LT Invest in Subsidiary Co-Equity,152655779.0,Non-Current Assets,Financial Assets - Investments
+12200200,Free Hold Land,2010101101,Freehold Land,83318126.0,Non-Current Assets,"Property, Plant and Equipment"
+12200500,Buildings,2010101201,Freehold Buildings,102148876.0,Non-Current Assets,"Property, Plant and Equipment"
+12200600,Computer Hardware,2010101305,Computer Equipment,26299406.0,Non-Current Assets,"Property, Plant and Equipment"
+12200700,Computer Software,2010102002,Computer Software,18960081.0,Non-Current Assets,Other Intangible Assets
+12200900,Office Equipment,2010101304,Office Equipments,17356381.0,Non-Current Assets,"Property, Plant and Equipment"
+12201000,Plant & Machinery,2010101301,Plant & Machinery,33708361.0,Non-Current Assets,"Property, Plant and Equipment"
+12201100,Furniture & Fixtures,2010101302,Furniture & Fixtures,7572624.0,Non-Current Assets,"Property, Plant and Equipment"
+12201200,Vehicles,2010101306,Vehicles,3509615.0,Non-Current Assets,"Property, Plant and Equipment"
+12202000,Tugs & Boats,2010101309,Tugs and Boats,17025958212.0,Non-Current Assets,"Property, Plant and Equipment"
+12202400,Books,2010101318,Lease Hold Improvement,1422628.0,Non-Current Assets,"Property, Plant and Equipment"
+12210000,Capital Work in Progress,2010107101,CWIP Other than Adani Power,49340997.0,Non-Current Assets,Capital work-in-progress
+12220500,Accumulated Depreciation-Buildings,2010103201,Accumulated Depreciation-Free Hold B,-27063066.0,Non-Current Assets,"Property, Plant and Equipment"
+12220600,Accumulated Depreciation-Computer Hard,2010103305,Accumulated Depreciation-Computer Ha,-11462301.0,Non-Current Assets,"Property, Plant and Equipment"
+12220700,Accumulated Depreciation-Computer Soft,2010104002,Accumulated Depreciation-Computer So,-11006809.0,Non-Current Assets,Other Intangible Assets
+12220900,Accumulated Depreciation-Office Equipm,2010103304,Accumulated Depreciation-Office Equi,-11832046.0,Non-Current Assets,"Property, Plant and Equipment"
+12221000,Accumulated Depreciation-Plant & Machi,2010103301,Accumulated Depreciation-Plant & Mac,-21337466.0,Non-Current Assets,"Property, Plant and Equipment"
+12221100,Accumulated Depreciation-Furniture & F,2010103302,Accumulated Depreciation-Furniture &,-6284408.0,Non-Current Assets,"Property, Plant and Equipment"
+12221200,Accumulated Depreciation-Vehicles,2010103306,Accumulated Depreciation-Vehicles,-2184953.0,Non-Current Assets,"Property, Plant and Equipment"
+12222000,Accumulated Depreciation-Tugs & Boats,2010103309,Accumulated Depreciation-Tugs & Boat,-4917540427.0,Non-Current Assets,"Property, Plant and Equipment"
+12222330,Accumulated Depreciation-Books,2010103318,Accumulated Depreciation-Lease Hold,-1106881.0,Non-Current Assets,"Property, Plant and Equipment"
+12222900,Capital Work in Progress-Acquisition D,2010401001,Capital Advances,1217308257.0,Non-Current Assets,Other Non-Current Assets
+12222910,Clearing-CWIP-Acquisition Down Payment,2010401001,Capital Advances,-1217057369.0,Non-Current Assets,Other Non-Current Assets
+12243030,IndAS-RoU-Buildings,2010102009,IndAS-RoU-Building,23831884.0,Non-Current Assets,Right-of-use assets
+12243080,IndAS-Accumulated Depreciation-RoU-Bui,2010104009,IndAS-Accumulated Depreciation-RoU-B,-15669134.0,Non-Current Assets,Right-of-use assets
+21100016,Payable-Seamen Gratuity,1040401002,Provision for Gratuity,87556.0,Current Liabilities,Provisions
+21100017,Payable-Seamen Provident Fund Employer,1040310105,PF Payable,-1157857.0,Current Liabilities,Other Current liabilities
+21100026,Payable-Seamen Provident Fund Employee,1040310105,PF Payable,-1032125.0,Current Liabilities,Other Current liabilities
+21100027,Payable-Seamen Welfare Fund,1040310107,Other Statutory Liabilities,125444.0,Current Liabilities,Other Current liabilities
+21100100,Sundry Creditors-Domestic,1040200002,Sundry Creditors-Others,-31176752.0,Current Liabilities,Financial Liabilities - Trade Payables
+21100600,Sundry Creditors-Foreign,1040200002,Sundry Creditors-Others,-10513401.0,Current Liabilities,Financial Liabilities - Trade Payables
+21100700,Sundry Creditors-Group Company,1040200002,Sundry Creditors-Others,-14660506.0,Current Liabilities,Financial Liabilities - Trade Payables
+21100800,Sundry Creditors-Employees,1040200002,Sundry Creditors-Others,125444.0,Current Liabilities,Financial Liabilities - Trade Payables
+21100980,Sundry Creditors-Credit Card,1040200002,Sundry Creditors-Others,125544.0,Current Liabilities,Financial Liabilities - Trade Payables
+21101000,BPC-Sundry Creditors-Expenses,1040200002,Sundry Creditors-Others,36502826.0,Current Liabilities,Financial Liabilities - Trade Payables
+21101010,BPC-Sundry Creditors-Capital Goods,1040310002,Other Current Liabilities,125444.0,Current Liabilities,Financial Liabilities - Other financial liabilities
+21101300,Deposit from Customers,1040310005,Interest Free Deposit from Customer,-2457890.0,Current Liabilities,Financial Liabilities - Other financial liabilities
+21102000,Payable-Statutory,1040310107,Other Statutory Liabilities,68202.0,Current Liabilities,Other Current liabilities
+21103100,Payable-PF Employee's Contribution,1040310105,PF Payable,-520715.0,Current Liabilities,Other Current liabilities
+21103200,Payable-ESI Employee's Contribution,1040310105,PF Payable,122749.0,Current Liabilities,Other Current liabilities
+21103300,Payable-ESI Employer's Contribution,1040310105,PF Payable,113810.0,Current Liabilities,Other Current liabilities
+21103400,Payable-PF Employer's Contribution,1040310105,PF Payable,-765344.0,Current Liabilities,Other Current liabilities
+21103500,Payable-Labour Welfare Fund,1040310107,Other Statutory Liabilities,123862.0,Current Liabilities,Other Current liabilities
+21103600,Payable-Salary,1040200008,Accrual for Employees,-6058973.0,Current Liabilities,Financial Liabilities - Trade Payables
+21110400,Payable-Retention Money,1040310007,Retention Money - Non Trade,123465.0,Current Liabilities,Financial Liabilities - Other financial liabilities
+21110600,Hold for Other Recoveries,1040310002,Other Current Liabilities,-338822.0,Current Liabilities,Financial Liabilities - Other financial liabilities
+21118000,Sundry Creditors-Expenses-Forex Adjust,1040200004,Pro FCV Sundry Creditors - Others,-1230755.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119101,GRIR Clearing Account-Capital Inventor,1040310002,Other Current Liabilities,-71815.0,Current Liabilities,Financial Liabilities - Other financial liabilities
+21119105,GRIR Clearing Account-Stores & Spares-,1040200002,Sundry Creditors-Others,-8581081.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119106,GRIR Clearing Account-Stores & Spares-,1040200002,Sundry Creditors-Others,-703176.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119107,GRIR Clearing Account-Power & Fuel,1040200002,Sundry Creditors-Others,-3647385.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119108,GRIR Clearing Account-Operating Suppli,1040200002,Sundry Creditors-Others,-667844.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119109,GRIR Clearing Account-Operating Suppli,1040200002,Sundry Creditors-Others,91844.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119111,GRIR Clearing Account-Raw Material,1040200002,Sundry Creditors-Others,125444.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119200,GRIR Clearing Account-Others,1040200002,Sundry Creditors-Others,-10581503.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119201,Clearing-Credit Card,1040200002,Sundry Creditors-Others,876912.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119300,Clearing-Freight-Domestic,1040200002,Sundry Creditors-Others,125444.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119301,Clearing-Freight-Foreign,1040200002,Sundry Creditors-Others,-434556.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119302,Clearing-Freight-Raw Material,1040200002,Sundry Creditors-Others,125444.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119400,Clearing-Customs Duty,1040200002,Sundry Creditors-Others,129066.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119500,Clearing-Clearing & Forwarding Charges,1040200002,Sundry Creditors-Others,-204937.0,Current Liabilities,Financial Liabilities - Trade Payables
+21119550,Clearing-TCS Payable,1040310102,Tax Deducted at Source Payable,125444.0,Current Liabilities,Other Current liabilities
+21119990,Clearing-TDS Provision,1040200002,Sundry Creditors-Others,125444.0,Current Liabilities,Financial Liabilities - Trade Payables
+21120100,Payable-Bonus,1040200008,Accrual for Employees,-7970440.0,Current Liabilities,Financial Liabilities - Trade Payables
+21130500,Advance from Customer,1040310001,Advance from Customer,125444.0,Current Liabilities,Other Current liabilities
+21170100,Payable-TDS 192-Salary,1040310102,Tax Deducted at Source Payable,-2603746.0,Current Liabilities,Other Current liabilities
+21170200,Payable-TDS 194A-Interest other than S,1040310102,Tax Deducted at Source Payable,125444.0,Current Liabilities,Other Current liabilities
+21170220,Payable-TDS 193-Interest on Securities,1040310102,Tax Deducted at Source Payable,-271542.0,Current Liabilities,Other Current liabilities
+21170300,Payable-TDS 194C-Contractor,1040310102,Tax Deducted at Source Payable,-619084.0,Current Liabilities,Other Current liabilities
+21170400,Payable-TDS 194H-Brokerage & Commissio,1040310102,Tax Deducted at Source Payable,125444.0,Current Liabilities,Other Current liabilities
+21170500,Payable-TDS 194I-Rent,1040310102,Tax Deducted at Source Payable,-462556.0,Current Liabilities,Other Current liabilities
+21170600,Payable-TDS 194J-Professional & Techni,1040310102,Tax Deducted at Source Payable,-3683669.0,Current Liabilities,Other Current liabilities
+21170700,Payable-TDS 195-Foreign Payments,1040310102,Tax Deducted at Source Payable,-57211.0,Current Liabilities,Other Current liabilities
+21170900,Payable-TCS 206C,1040310102,Tax Deducted at Source Payable,126849.0,Current Liabilities,Other Current liabilities
+21174090,TRM-IGST Payable-RCM,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21175000,Payable-Work Contract Tax,1040310104,Work Contract Tax Payable,106940.0,Current Liabilities,Other Current liabilities
+21175160,Payable-GST-Adjustment,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21175600,Payable-Professional Tax,1040310107,Other Statutory Liabilities,85044.0,Current Liabilities,Other Current liabilities
+21180100,Clearing-Business Area,1040310002,Other Current Liabilities,125444.0,Current Liabilities,Financial Liabilities - Other financial liabilities
+21180230,Payable-Sodexo Meal Voucher,1040200008,Accrual for Employees,133400.0,Current Liabilities,Financial Liabilities - Trade Payables
+21190450,Advance from Customer,1040310001,Advance from Customer,18842.0,Current Liabilities,Other Current liabilities
+21193000,IndAS-Unamortized Govt Grant Deferred-,1031002011,IndAS-Unamortised Govt Grant Deferre,-41408485.0,Non-Current Liabilities,Other Liabilities
+21193010,IndAS-Unamortized Govt Grant Deferred-,1040310011,IndAS-Unamortised Govt Grant Deferre,-1869731.0,Current Liabilities,Other Current liabilities
+21193020,IndAS-Unearned Guarantee Fee Income-No,1031002001,Other Liabilities - Non Current Port,-7611542.0,Non-Current Liabilities,Other  Financial Liabilities
+21193030,IndAS-Unearned Guarantee Fee Income-Cu,1040310002,Other Current Liabilities,125444.0,Current Liabilities,Financial Liabilities - Other financial liabilities
+21193100,IndAS-Financial Liabilities-Current,1040310013,IndAS-Other Current Financial Liabil,-7874556.0,Current Liabilities,Financial Liabilities - Other financial liabilities
+21193120,IndAS-Financial Lease-Current,1040310014,IndAS-Financial Lease-Current,-3233053.0,Current Liabilities,Financial Liabilities - Lease Liabilities
+21193220,IndAS-Financial Lease-Non Current,1031002014,IndAS-Financial Lease-Non Current,-5891610.0,Non-Current Liabilities,Financial Liabilities - Lease Liabilities
+21194119,GST Control Account-West Bengal,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194121,GST Control Account-Odisha,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194124,GST Control Account-Gujarat,1040310150,GST Payable,8318180.0,Current Liabilities,Other Current liabilities
+21194127,GST Control Account-Maharashtra,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194128,GST Control Account-Andhra Pradesh,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194129,GST Control Account-Karnataka,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194130,GST Control Account-Goa,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194133,GST Control Account-Tamil Nadu,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194134,GST Control Account-Puducherry,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194136,GST Control Account-Telangana,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194209,CGST Payable-Uttar Pradesh,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194219,CGST Payable-West Bengal,1040310150,GST Payable,-2136616.0,Current Liabilities,Other Current liabilities
+21194221,CGST Payable-Odisha,1040310150,GST Payable,-5413804.0,Current Liabilities,Other Current liabilities
+21194224,CGST Payable-Gujarat,1040310150,GST Payable,-8232475.0,Current Liabilities,Other Current liabilities
+21194227,CGST Payable-Maharashtra,1040310150,GST Payable,-5995370.0,Current Liabilities,Other Current liabilities
+21194228,CGST Payable-Andhra Pradesh,1040310150,GST Payable,-5707094.0,Current Liabilities,Other Current liabilities
+21194229,CGST Payable-Karnataka,1040310150,GST Payable,-3307066.0,Current Liabilities,Other Current liabilities
+21194230,CGST Payable-Goa,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194232,CGST Payable-Kerala,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194233,CGST Payable-Tamil Nadu,1040310150,GST Payable,-4368283.0,Current Liabilities,Other Current liabilities
+21194234,CGST Payable-Puducherry,1040310150,GST Payable,-1265056.0,Current Liabilities,Other Current liabilities
+21194235,CGST Payable-Andaman & Nicobar Islands,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194236,CGST Payable-Telangana,1040310150,GST Payable,-1609036.0,Current Liabilities,Other Current liabilities
+21194309,SGST Payable-Uttar Pradesh,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194319,SGST Payable-West Bengal,1040310150,GST Payable,-2136616.0,Current Liabilities,Other Current liabilities
+21194321,SGST Payable-Odisha,1040310150,GST Payable,-5413804.0,Current Liabilities,Other Current liabilities
+21194324,SGST Payable-Gujarat,1040310150,GST Payable,-8232475.0,Current Liabilities,Other Current liabilities
+21194327,SGST Payable-Maharashtra,1040310150,GST Payable,-5995370.0,Current Liabilities,Other Current liabilities
+21194328,SGST Payable-Andhra Pradesh,1040310150,GST Payable,-5707094.0,Current Liabilities,Other Current liabilities
+21194329,SGST Payable-Karnataka,1040310150,GST Payable,-3307066.0,Current Liabilities,Other Current liabilities
+21194330,SGST Payable-Goa,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194332,SGST Payable-Kerala,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194333,SGST Payable-Tamil Nadu,1040310150,GST Payable,-4368283.0,Current Liabilities,Other Current liabilities
+21194334,SGST Payable-Puducherry,1040310150,GST Payable,-1265056.0,Current Liabilities,Other Current liabilities
+21194335,SGST Payable-Andaman & Nicobar Islands,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194336,SGST Payable-Telangana,1040310150,GST Payable,-1609036.0,Current Liabilities,Other Current liabilities
+21194409,IGST Payable-Uttar Pradesh,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194419,IGST Payable-West Bengal,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194421,IGST Payable-Odisha,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194424,IGST Payable-Gujarat,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194427,IGST Payable-Maharashtra,1040310150,GST Payable,-6503508.0,Current Liabilities,Other Current liabilities
+21194428,IGST Payable-Andhra Pradesh,1040310150,GST Payable,-2347861.0,Current Liabilities,Other Current liabilities
+21194429,IGST Payable-Karnataka,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194430,IGST Payable-Goa,1040310150,GST Payable,-981556.0,Current Liabilities,Other Current liabilities
+21194432,IGST Payable-Kerala,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194433,IGST Payable-Tamil Nadu,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194435,IGST Payable-Andaman & Nicobar Islands,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194436,IGST Payable-Telangana,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194609,CGST Payable-RCM-Uttar Pradesh,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194619,CGST Payable-RCM-West Bengal,1040310150,GST Payable,122590.0,Current Liabilities,Other Current liabilities
+21194621,CGST Payable-RCM-Odisha,1040310150,GST Payable,118216.0,Current Liabilities,Other Current liabilities
+21194624,CGST Payable-RCM-Gujarat,1040310150,GST Payable,75314.0,Current Liabilities,Other Current liabilities
+21194627,CGST Payable-RCM-Maharashtra,1040310150,GST Payable,78728.0,Current Liabilities,Other Current liabilities
+21194628,CGST Payable-RCM-Andhra Pradesh,1040310150,GST Payable,108026.0,Current Liabilities,Other Current liabilities
+21194629,CGST Payable-RCM-Karnataka,1040310150,GST Payable,122294.0,Current Liabilities,Other Current liabilities
+21194633,CGST Payable-RCM-Tamil Nadu,1040310150,GST Payable,111576.0,Current Liabilities,Other Current liabilities
+21194635,CGST Payable-RCM-Andaman & Nicobar Isl,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194636,CGST Payable-RCM-Telangana,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194709,SGST Payable-RCM-Uttar Pradesh,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194719,SGST Payable-RCM-West Bengal,1040310150,GST Payable,122590.0,Current Liabilities,Other Current liabilities
+21194721,SGST Payable-RCM-Odisha,1040310150,GST Payable,118216.0,Current Liabilities,Other Current liabilities
+21194724,SGST Payable-RCM-Gujarat,1040310150,GST Payable,75314.0,Current Liabilities,Other Current liabilities
+21194727,SGST Payable-RCM-Maharashtra,1040310150,GST Payable,78728.0,Current Liabilities,Other Current liabilities
+21194728,SGST Payable-RCM-Andhra Pradesh,1040310150,GST Payable,108026.0,Current Liabilities,Other Current liabilities
+21194729,SGST Payable-RCM-Karnataka,1040310150,GST Payable,122294.0,Current Liabilities,Other Current liabilities
+21194733,SGST Payable-RCM-Tamil Nadu,1040310150,GST Payable,111576.0,Current Liabilities,Other Current liabilities
+21194735,SGST Payable-RCM-Andaman & Nicobar Isl,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194736,SGST Payable-RCM-Telangana,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194809,IGST Payable-RCM-Uttar Pradesh,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194819,IGST Payable-RCM-West Bengal,1040310150,GST Payable,122052.0,Current Liabilities,Other Current liabilities
+21194821,IGST Payable-RCM-Odisha,1040310150,GST Payable,123235.0,Current Liabilities,Other Current liabilities
+21194824,IGST Payable-RCM-Gujarat,1040310150,GST Payable,116882.0,Current Liabilities,Other Current liabilities
+21194827,IGST Payable-RCM-Maharashtra,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194828,IGST Payable-RCM-Andhra Pradesh,1040310150,GST Payable,124798.0,Current Liabilities,Other Current liabilities
+21194829,IGST Payable-RCM-Karnataka,1040310150,GST Payable,122638.0,Current Liabilities,Other Current liabilities
+21194830,IGST Payable-RCM-Goa,1040310150,GST Payable,122749.0,Current Liabilities,Other Current liabilities
+21194832,IGST Payable-RCM-Kerala,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194833,IGST Payable-RCM-Tamil Nadu,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194834,IGST Payable-RCM-Puducherry,1040310150,GST Payable,121319.0,Current Liabilities,Other Current liabilities
+21194835,IGST Payable-RCM-Andaman & Nicobar Isl,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21194836,IGST Payable-RCM-Telangana,1040310150,GST Payable,125444.0,Current Liabilities,Other Current liabilities
+21199120,Payable-TCS 206C (1H) Billed,1040310102,Tax Deducted at Source Payable,125444.0,Current Liabilities,Other Current liabilities
+21199150,Payable-TCS-1%,1040310102,Tax Deducted at Source Payable,125444.0,Current Liabilities,Other Current liabilities
+21199160,Payable-TCS Clearing-1%,1040310102,Tax Deducted at Source Payable,125444.0,Current Liabilities,Other Current liabilities
+21199180,GST Hold-Vendor,1040200002,Sundry Creditors-Others,-3792381.0,Current Liabilities,Financial Liabilities - Trade Payables
+21199390,Employee Payables-Others,1040310020,Employee Payables,-18491957.0,Current Liabilities,Financial Liabilities - Other financial liabilities
+21199640,Payable-TDS 194Q-Purchase of Goods,1040310102,Tax Deducted at Source Payable,-13096.0,Current Liabilities,Other Current liabilities
+21200010,Provision for Income Tax (FY 23-24),2021302201,Advance Payment of Income Tax,-54874556.0,Non-Current Assets,Other Non-Current Assets
+21200020,Provision for Income Tax (FY 24-25),2021302201,Advance Payment of Income Tax,-97374556.0,Non-Current Assets,Other Non-Current Assets
+21200030,Provision for Income Tax (FY 25-26),2021302201,Advance Payment of Income Tax,-50874556.0,Non-Current Assets,Other Non-Current Assets
+21200100,Provision for Gratuity,1040401002,Provision for Gratuity,-1129447.0,Current Liabilities,Provisions
+21200110,Provision for Gratuity-Non Current,1031101002,Provision for Gratuity - Non Current,-16973455.0,Non-Current Liabilities,Provisions
+21200200,Provision for Leave Encashment,1040401001,Provision for Leave Encashment,-1413591.0,Current Liabilities,Provisions
+21200210,Provision for Leave Encashment-Non Cur,1031101001,Provision for Leave Encashment - Non,-3646758.0,Non-Current Liabilities,Provisions
+21200410,Provision for PF on Leave Encashment-N,1040401001,Provision for Leave Encashment,125444.0,Current Liabilities,Provisions
+21210100,Provision for Expenses,1040402009,Provision for Expenses,-78936220.0,Current Liabilities,Financial Liabilities - Trade Payables
+21210200,Interest Accrued but Not Due,1040303001,Interest accrued but not due,-7447501.0,Current Liabilities,Financial Liabilities - Other financial liabilities
+21210400,Provision for Expenses-Group Companies,1040402010,Provision for Expenses - Intercompan,-48076869.0,Current Liabilities,Financial Liabilities - Trade Payables
+21230200,Provision for Doubtful Debts,2021101004,Provision for Doubtful Debts > 6M,-56757217.0,Current Assets,Financial Assets - Trade Receivables
+21240120,Provision for Income Tax (FY 07-08),2021302201,Advance Payment of Income Tax,-1696367.0,Non-Current Assets,Other Non-Current Assets
+21240130,Provision for Income Tax (FY 08-09),2021302201,Advance Payment of Income Tax,-1933680.0,Non-Current Assets,Other Non-Current Assets
+21240140,Provision for Income Tax (FY 09-10),2021302201,Advance Payment of Income Tax,-14218097.0,Non-Current Assets,Other Non-Current Assets
+21240150,Provision for Income Tax (FY 10-11),2021302201,Advance Payment of Income Tax,-1924556.0,Non-Current Assets,Other Non-Current Assets
+21240160,Provision for Income Tax (FY 11-12),2021302201,Advance Payment of Income Tax,42862.0,Non-Current Assets,Other Non-Current Assets
+21240180,Provision for Income Tax (FY 12-13),2021302201,Advance Payment of Income Tax,-331791658.0,Non-Current Assets,Other Non-Current Assets
+21240190,Provision for Income Tax (FY 13-14),2021302201,Advance Payment of Income Tax,-852556.0,Non-Current Assets,Other Non-Current Assets
+21240210,Provision for Income Tax (FY 14-15),2021302201,Advance Payment of Income Tax,-71474556.0,Non-Current Assets,Other Non-Current Assets
+21240220,Provision for Income Tax (FY 15-16),2021302201,Advance Payment of Income Tax,4455942.0,Non-Current Assets,Other Non-Current Assets
+21240230,Provision for Income Tax (FY 16-17),2021302201,Advance Payment of Income Tax,397095.0,Non-Current Assets,Other Non-Current Assets
+21240240,Provision for Income Tax (FY 17-18),2021302201,Advance Payment of Income Tax,-6882869.0,Non-Current Assets,Other Non-Current Assets
+21240250,Provision for Income Tax (FY 18-19),2021302201,Advance Payment of Income Tax,-121374556.0,Non-Current Assets,Other Non-Current Assets
+21240260,Provision for Income Tax (FY 19-20),2021302201,Advance Payment of Income Tax,-219874556.0,Non-Current Assets,Other Non-Current Assets
+21240270,Provision for Income Tax (FY 20-21),2021302201,Advance Payment of Income Tax,-159838599.0,Non-Current Assets,Other Non-Current Assets
+21240280,Provision for Income Tax (FY 22-23),2021302201,Advance Payment of Income Tax,-208874556.0,Non-Current Assets,Other Non-Current Assets
+21240410,Provision for Diminution in Value of I,2010203204,Provision for NC LT Inv Others Equit,-3947986.0,Non-Current Assets,Financial Assets - Investments
+21299100,Takeover-Initial Stock,7010000000,Noted Items,125444.0,"Takover, Ignore","Takover, Ignore"
+21299200,Takeover-Assets,7010000000,Noted Items,125444.0,"Takover, Ignore","Takover, Ignore"
+21299300,Takeover-Customer Opening Balance,7010000000,Noted Items,125444.0,"Takover, Ignore","Takover, Ignore"
+21299400,Takeover-Vendor Opening Balance,7010000000,Noted Items,125444.0,"Takover, Ignore","Takover, Ignore"
+21299500,Takeover-Other Balance Sheet Accounts,7010000000,Noted Items,125444.0,"Takover, Ignore","Takover, Ignore"
+21299550,Takeover-Capital Work in Progress,7010000000,Noted Items,125444.0,"Takover, Ignore","Takover, Ignore"
+22102000,Non-Convertible Redeemable Debenture-C,1040301007,Non Convertible Redeem.Debenture-Cur,-224874556.0,Current Liabilities,Financial Liabilities - Borrowings
+22400100,Deferred Tax Liabilities,1030900001,Deferred Tax Liability,-17643707.0,Non-Current Liabilities,Deferred tax liabilities (net)
+31100100,Equity Share Capital,1010101001,Equity Share Capital,-216357466.0,Equity,Equity  Share Capital
+34100100,General Reserve,1010206001,General Reserve,-265222252.0,Equity,Other Equity
+34100160,Tonnage Tax Reserve,1010200003,Tonnage Tax Reserve,-959874556.0,Equity,Other Equity
+34100200,Equity Share Premium,1010202001,Equity Share Premium,-1532770215.0,Equity,Other Equity
+34100500,Debenture Redemption Reserve,1010203001,Debenture Redemption Reserve,11912444.0,Equity,Other Equity
+34100800,Balance in Profit & Loss Account,1010212001,Surplus in Proift & Loss Account,-3013637520.0,Equity,Other Equity
+34100900,Retained Earnings from Previous Year,1010212001,Surplus in Proift & Loss Account,-12011386346.0,Equity,Other Equity
+34103030,IndAS-Other Comprehensive Income,1010208001,Actuarial Gain/Loss on defined Emp.,-5847884.0,Equity,Other Equity
+41001400,Other Operating Income,3010400004,Other Operating Income,-12574753.0,Income,Revenue from operations
+41011570,Income-Operation & Maintenance,3010301011,Operation & Maintenance Income,-85903541.0,Income,Revenue from operations
+41016000,IndAS-Other Government Incentives,3010400011,Other Government Incentives,-872146.0,Income,Revenue from operations
+41099040,Income-Tug Hire Charges (IPMS),3010301014,Tug Hire Charges,-2607501958.0,Income,Revenue from operations
+41099250,Direct Income Round Off (IPMS),4050300001,Other Miscellaneous Expenses,125439.0,Expenses,Other Expenses
+41099810,Income-Mooring Charges (IPMS),3010301012,Port Dues,-134560939.0,Income,Revenue from operations
+42000560,Interest Income-Group Companies,3020200009,Interest Income-Group Companies,-107298946.0,Income,Other Income
+42000810,Equipment Rentals (IPMS),3010301002,Equipment Rentals-Operations,-159628304.0,Income,Revenue from operations
+42001050,Sales-Inventory,3010100001,Domestic Sales,-522016.0,Income,Other Income
+42001200,Insurance Claim Received,3010400001,Insurance Claim Received,-102384.0,Income,Revenue from operations
+42001400,Interest Income-Bank,3020200002,Interest Income-Bank,-4724510.0,Income,Other Income
+42001700,Income-Rent,3020500001,Rent Income,-9510556.0,Income,Other Income
+42001900,Income-Sale of Scrap Material,3020400006,Income-Sale of Scrap,-1166320.0,Income,Other Income
+42002710,IndAS-Income-Guarantee Commission,3020400011,IndAS-Income-Guarantee Commission,-3885515.0,Income,Other Income
+42061500,Excess/Short Provision Written Back,3020400005,Liabilities No Longer Required Writt,66137.0,Income,Other Income
+42061510,Liabilities No Longer Required Written,3020400005,Liabilities No Longer Required Writt,94930.0,Income,Other Income
+51000200,Consumption of Capital Inventory-Domes,4010200003,Stores & Spares Consumed,2574602.0,Expenses,Operating Expenses
+51000600,Consumption of Stores & Spares-Domesti,4010200003,Stores & Spares Consumed,61323704.0,Expenses,Operating Expenses
+51000700,Consumption of Stores & Spares-Foreign,4010200003,Stores & Spares Consumed,37522787.0,Expenses,Operating Expenses
+51000800,Consumption of Power & Fuel-Domestic,4010200002,Power & Fuel Consumed,75419763.0,Expenses,Operating Expenses
+51000900,Consumption of Operating Supplies-Dome,4010200003,Stores & Spares Consumed,12287759.0,Expenses,Operating Expenses
+51001000,Consumption of Operating Supplies-Fore,4010200003,Stores & Spares Consumed,345724.0,Expenses,Operating Expenses
+51003200,Purchase Price Difference-Stores & Spa,4010200010,"PRD Stores, Spares, Chemical & Consu",340504.0,Expenses,Operating Expenses
+51003800,GRIR Clearing Account-Forex Gain/Loss,4010100001,Raw Material Consumed,119886.0,Expenses,Operating Expenses
+51003900,Small Price Difference (Auto),4050300001,Other Miscellaneous Expenses,125476.0,Expenses,Other Expenses
+51010600,Cost of Goods Sold-Stores & Spares,4010200003,Stores & Spares Consumed,771904.0,Expenses,Operating Expenses
+51020410,Operation & Maintenance Expenses,4010200004,Labour Charges,207153179.0,Expenses,Operating Expenses
+52000200,Salary-Employees,4040000001,Salaries & Bonus,370554596.0,Expenses,Employee benefit expense
+52000400,Bonus-Employees,4040000001,Salaries & Bonus,3854597.0,Expenses,Employee benefit expense
+52000500,Company's Contribution to Gratuity,4040000004,Gratuity,1494674.0,Expenses,Employee benefit expense
+52000600,Leave Encashment-Employees,4040000001,Salaries & Bonus,1872110.0,Expenses,Employee benefit expense
+52001400,Company's Contribution to ESI,4040000002,Contribution to Provident & Other Fu,196720.0,Expenses,Employee benefit expense
+52001500,Company's Contribution to Labour Welfa,4040000002,Contribution to Provident & Other Fu,132256.0,Expenses,Employee benefit expense
+52001700,Company's Contribution to PF,4040000002,Contribution to Provident & Other Fu,3897438.0,Expenses,Employee benefit expense
+52001710,Administrative Charges to PF,4040000002,Contribution to Provident & Other Fu,282473.0,Expenses,Employee benefit expense
+52002000,Company's Contribution to EDLI,4040000002,Contribution to Provident & Other Fu,228317.0,Expenses,Employee benefit expense
+52002600,Staff Welfare Expenses,4040000003,Staff Welfare Expenses,48323315.0,Expenses,Employee benefit expense
+52002700,Stipend Expenses,4040000001,Salaries & Bonus,4603128.0,Expenses,Employee benefit expense
+52002800,Training Expenses-Functional,4040000005,Learning & Development Expenses,209481.0,Expenses,Employee benefit expense
+52003500,Conveyance Expenses,4050000020,Travelling & Conveyance Expenses,194146.0,Expenses,Other Expenses
+52004000,Profession Tax on Company,4050000002,Rates & Taxes,137194.0,Expenses,Other Expenses
+52009970,Seamen Provident Fund Employer Contrib,4040000002,Contribution to Provident & Other Fu,6377957.0,Expenses,Employee benefit expense
+52009980,Seamen Provident Fund Employee Contrib,4040000002,Contribution to Provident & Other Fu,1336153.0,Expenses,Employee benefit expense
+52009990,Seamen Provident Fund Admin Charges,4040000002,Contribution to Provident & Other Fu,739370.0,Expenses,Employee benefit expense
+52010010,Seamen Gratuity,4040000004,Gratuity,253482.0,Expenses,Employee benefit expense
+52010020,Seamen Welfare Fund,4040000002,Contribution to Provident & Other Fu,428864.0,Expenses,Employee benefit expense
+53001160,Port Dues,4010202026,Port Dues,1906651.0,Expenses,Operating Expenses
+53001550,Water Charges-Operations,4010202001,Operation Handling & Storage Expense,1059466.0,Expenses,Operating Expenses
+53005200,Repairs & Maintenance-Buildings,4050100001,Repairs & Maintenance-Office Buildin,295742.0,Expenses,Operating Expenses
+53006000,Repairs & Maintenance-Plant & Machiner,4050100002,Repairs & Maintenance-Plant & Machin,10043537.0,Expenses,Operating Expenses
+53006200,Repairs & Maintenance-Marine Equipment,4050100005,Repairs & Maintenance-Marine Equipme,46851864.0,Expenses,Operating Expenses
+53007000,Repairs & Maintenance-Office Equipment,4050100003,Repairs & Maintenance-Others,638834.0,Expenses,Other Expenses
+53010000,"Testing, Inspection & Survey Fees",4050000028,Professional Charges,14803388.0,Expenses,Other Expenses
+53010350,Services for Projects,4010100005,Service Charges (Purchase / Outsourc,125444.0,Expenses,Operating Expenses
+53010900,Transportation Charges,4050300001,Other Miscellaneous Expenses,540100.0,Expenses,Other Expenses
+53014000,Lease Rent-Land,4050000001,Rent & Infrastructure Usage,125444.0,Expenses,Other Expenses
+53014300,Pool Vehicle Fuel Expenses,4050000020,Travelling & Conveyance Expenses,651144.0,Expenses,Other Expenses
+53015800,Hire Charges-Tug & Boat,4010202007,Tug & Pilotage Charges,169966982.0,Expenses,Operating Expenses
+53016200,Tug & Barge Management Fees,4010202007,Tug & Pilotage Charges,3576229.0,Expenses,Operating Expenses
+53016300,Marine Expenses-Others,4010202009,Other Marine Expenses,5004328.0,Expenses,Operating Expenses
+53063030,IndAS-OCI PL-Actuarial on Employee Ben,4160000001,IndAS-OCI PL-Actuarial on Employee B,-1333947.0,Expenses,Other Comprehensive Income
+53063050,IndAS-OCI PL-Tax Adjustment,4160000003,IndAS-OCI PL-Tax Adjustment,492744.0,Expenses,Other Comprehensive Income
+54001000,Bank Charges-Trade Finance,4090101005,Bank Charges,437668.0,Expenses,Finance Costs
+54001010,Bank Charges-General,4050300010,Bank Charges General,150667.0,Expenses,Other Expenses
+54001020,Bank Charges-Stamp Duty on Borrowings,4090101005,Bank Charges,129064.0,Expenses,Finance Costs
+54001100,Bank Charges-Bank Guarantee,4090101005,Bank Charges,9615233.0,Expenses,Finance Costs
+55000300,Audit Fees-Other Miscellaneous Service,4050200003,Audit Fees-Other Miscellaneous Servi,208644.0,Expenses,Other Expenses
+55000400,Audit Fees-Statutory Audit,4050200001,Audit Fees-Statutory Audit,264644.0,Expenses,Other Expenses
+55000550,Rates & Taxes,4050000002,Rates & Taxes,607189.0,Expenses,Other Expenses
+55000620,IT Outsourcing Expenses,4050000028,Professional Charges,572813.0,Expenses,Other Expenses
+55000700,Professional & Consultancy Fees,4050000028,Professional Charges,2271212.0,Expenses,Other Expenses
+55001000,Laboratory Expenses,4050000013,Supervision & Testing Expenses,194744.0,Expenses,Other Expenses
+55001100,Filing & Listing Fees,4050100009,"Legal Expenses, Fees & Subscription",216894.0,Expenses,Other Expenses
+55001300,Legal Fees,4050100009,"Legal Expenses, Fees & Subscription",3477500.0,Expenses,Other Expenses
+55001600,Rent Expense-Building,4050000001,Rent & Infrastructure Usage,5562343.0,Expenses,Other Expenses
+55001900,Insurance-Property,4050100008,Insurance Expenses,21704246.0,Expenses,Other Expenses
+55002600,Insurance-Liabilities & Others,4050100008,Insurance Expenses,125540.0,Expenses,Other Expenses
+55003000,Insurance-Vehicles,4050100008,Insurance Expenses,141545.0,Expenses,Other Expenses
+55003200,Insurance-Employee Benefits,4040000003,Staff Welfare Expenses,1873517.0,Expenses,Employee benefit expense
+55003950,Insurance-Marine,4050100008,Insurance Expenses,135361.0,Expenses,Other Expenses
+55004100,Hire Charges-Vehicle,4050000020,Travelling & Conveyance Expenses,14942050.0,Expenses,Other Expenses
+55004200,Travelling Expenses Domestic-Others,4050000020,Travelling & Conveyance Expenses,7993788.0,Expenses,Other Expenses
+55004600,Travelling Expenses Domestic-Staff,4050000020,Travelling & Conveyance Expenses,5671348.0,Expenses,Other Expenses
+55005000,Donation-Deductible u/s 80G,4050400002,Donation-Others,125444.0,Expenses,Other Expenses
+55005950,Corporate Social Responsibility Expens,4050300009,Corporate Social Responsibility Expe,24875444.0,Expenses,Other Expenses
+55006000,Membership & Subscription,4050100009,"Legal Expenses, Fees & Subscription",1566236.0,Expenses,Other Expenses
+55006100,Business Development Expenses,4060000002,Advertisement & Selling Expenses,903959.0,Expenses,Other Expenses
+55007100,Book & Periodical Expenses,4050300001,Other Miscellaneous Expenses,132887.0,Expenses,Other Expenses
+55007300,Postage & Courier Charges,4050000003,Communication Expenses,432284.0,Expenses,Other Expenses
+55007400,Printing & Stationery Expenses,4050000004,Printing & Stationery Expenses,293497.0,Expenses,Other Expenses
+55007500,Canteen Expenses,4040000003,Staff Welfare Expenses,215417.0,Expenses,Employee benefit expense
+55007600,Brokerage & Commission Charges,4060000004,Brokerage & Commission Expenses,165444.0,Expenses,Other Expenses
+55007700,Land Line Expenses,4050000003,Communication Expenses,243110.0,Expenses,Other Expenses
+55007800,Mobile & Data Card Expenses,4050000003,Communication Expenses,1528374.0,Expenses,Other Expenses
+55008100,Sitting Fees-Directors,4050000007,Directors Sitting Fees,315444.0,Expenses,Other Expenses
+55008500,Contractual Manpower-General & Adminis,4050000045,Manpower Services,10242772.0,Expenses,Other Expenses
+55008600,Water Charges-Admin,4050300001,Other Miscellaneous Expenses,98328.0,Expenses,Other Expenses
+55009700,Interest-TDS,4090100006,Interest-Others,151401.0,Expenses,Finance Costs
+55010000,Network Connectivity Expenses,4050000003,Communication Expenses,385426.0,Expenses,Other Expenses
+55010600,Factory & Office Expenses,4050000005,Factory & Office Expenses,2745976.0,Expenses,Other Expenses
+55011000,House Keeping Expenses,4050000005,Factory & Office Expenses,955121.0,Expenses,Other Expenses
+55011400,Fire & Safety Expenses,4050300001,Other Miscellaneous Expenses,216349.0,Expenses,Other Expenses
+55011800,Sponsorship Expenses,4060000002,Advertisement & Selling Expenses,143444.0,Expenses,Other Expenses
+55011900,Sundry Balance Written Off/Back,4050300001,Other Miscellaneous Expenses,1012507.0,Expenses,Other Expenses
+55012000,Repairs & Maintenance-Computer Hardwar,4050100003,Repairs & Maintenance-Others,159457.0,Expenses,Other Expenses
+55012300,Repairs & Maintenance-Vehicles,4050100003,Repairs & Maintenance-Others,156060.0,Expenses,Other Expenses
+55012400,Repairs & Maintenance-Furniture & Fixt,4050100003,Repairs & Maintenance-Others,137654.0,Expenses,Other Expenses
+55012800,Taxes on Property,4050000002,Rates & Taxes,1102981.0,Expenses,Other Expenses
+55013900,Bid & Tender Expenses,4050300001,Other Miscellaneous Expenses,156174.0,Expenses,Other Expenses
+55061260,Exch Rate Diff on Customer/Vendor-Real,4050000033,Exch Rate Diff on Non Financing Acti,905355.0,Expenses,Foreign Exchange / Derivatives Loss / (Gain) (net)
+55061300,Small Price Difference (MP),4050300001,Other Miscellaneous Expenses,125943.0,Expenses,Other Expenses
+55071000,Provision for Doubtful Debts,4050000019,Provision for Doubtful Debts,20125444.0,Expenses,Other Expenses
+55080200,Electricity Expenses-General & Adminis,4050100007,Electric Power Expenses,1643980.0,Expenses,Other Expenses
+55080910,Repairs & Maintenance-Ships,4050100003,Repairs & Maintenance-Others,125439.0,Expenses,Other Expenses
+55081320,IT License Fees-Applications,4050000003,Communication Expenses,5427361.0,Expenses,Other Expenses
+55081360,IT AMC-Applications,4050000003,Communication Expenses,635754.0,Expenses,Other Expenses
+55081500,Interest-GST,4050300001,Other Miscellaneous Expenses,202623.0,Expenses,Other Expenses
+56003500,Interest-Debentures & Bonds-Domestic,4090100003,Interest-Debentures & Bonds,8022019.0,Expenses,Finance Costs
+56003610,IndAS-Interest on Lease Liability,4090100013,IndAS-Interest on Lease Liability,588444.0,Expenses,Finance Costs
+57000500,Depreciation-Buildings,4070000004,Depreciation-Buildings,1870611.0,Expenses,Depreciation and Amortization Expense
+57000600,Depreciation-Computer Hardware,4070000012,Depreciation-Computer Hardware,2748666.0,Expenses,Depreciation and Amortization Expense
+57000700,Depreciation-Computer Software,4070000024,Depreciation-Computer Software,1625878.0,Expenses,Depreciation and Amortization Expense
+57000900,Depreciation-Office Equipment,4070000011,Depreciation-Office Equipment,791342.0,Expenses,Depreciation and Amortization Expense
+57001000,Depreciation-Plant & Machinery,4070000008,Depreciation-Plant & Machinery,1165728.0,Expenses,Depreciation and Amortization Expense
+57001100,Depreciation-Furniture & Fixtures,4070000009,Depreciation-Furniture & Fixtures,224244.0,Expenses,Depreciation and Amortization Expense
+57001200,Depreciation-Vehicles,4070000013,Depreciation-Vehicles,304208.0,Expenses,Depreciation and Amortization Expense
+57002000,Depreciation-Tugs & Boats,4070000016,Depreciation-Tugs & Boats,352870201.0,Expenses,Depreciation and Amortization Expense
+57003980,IndAS-Depreciation-RoU-Buildings,4070000035,IndAS-Depreciation-RoU-Buildings,1780002.0,Expenses,Depreciation and Amortization Expense
+58001000,Income Tax Expense,4130100001,Current Income Tax,51125444.0,Tax Expense,Current Tax
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,

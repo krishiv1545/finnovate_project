@@ -167,7 +167,7 @@ def gl_reviews_view(request):
 
 
 @login_required
-def upload_gl_supporting_document(request, document_id):
+def remove_gl_supporting_document(request, document_id):
     if request.method != 'POST':
         logger.error(request, "Invalid request method.")
         return redirect("gl_reviews_page")

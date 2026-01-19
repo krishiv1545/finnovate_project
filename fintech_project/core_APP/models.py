@@ -396,6 +396,13 @@ class ReviewTrail(models.Model):
     gl_name = models.CharField(max_length=255, null=True, blank=True)
     reconciliation_notes = models.TextField(null=True, blank=True)
 
+    REVIEW_CHOICES = [
+        ('Submitted', 'Submitted'), 
+        ('Approved', 'Approved'), 
+        ('Rejected', 'Rejected'),
+    ]
+    action = models.CharField(max_length=50, choices=REVIEW_CHOICES, null=True, blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

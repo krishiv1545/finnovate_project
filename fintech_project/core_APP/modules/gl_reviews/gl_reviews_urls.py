@@ -6,6 +6,7 @@ from .gl_reviews import (
     submit_gl_review_preparer, 
     submit_gl_review_reviewer,
     remove_gl_supporting_document,
+    get_review_trail
 )
 
 
@@ -16,5 +17,6 @@ urlpatterns = [
     path('upload-document/', upload_gl_supporting_document, name='upload_gl_supporting_document'),
     path('submit-review/', submit_gl_review_preparer, name='submit_gl_review_preparer'),
     path('submit-review/reviewer/', submit_gl_review_reviewer, name='submit_gl_review_reviewer'),
+    path('trail/<str:gl_code>/', get_review_trail, name='get_review_trail'),
 ]
 

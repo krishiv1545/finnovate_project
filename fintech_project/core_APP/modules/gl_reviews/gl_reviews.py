@@ -9,6 +9,7 @@ from django.utils import timezone
 from django.conf import settings
 from django.core.mail import send_mail
 from core_APP.models import GLReview
+from django.http import JsonResponse
 
 
 logger = logging.getLogger(__name__)
@@ -331,7 +332,8 @@ def submit_gl_review_preparer(request):
                 previous_trail=None,
                 gl_code=gl_code,
                 gl_name=BalanceSheet.objects.filter(gl_acct=gl_code).values_list('gl_account_name', flat=True).first() or '',
-                reconciliation_notes=reconciliation_notes
+                reconciliation_notes=reconciliation_notes,
+                action='Submitted'
             )
             review_trail.save()
         
@@ -428,6 +430,7 @@ def submit_gl_review_reviewer(request):
         previous_trail=previous_trail,
         reconciliation_notes=reconciliation_notes,
         gl_code=gl_code,
+        action='Approved' if action == 'approve' else 'Rejected'
     )
     review_trail.save()
 
@@ -483,4 +486,35 @@ def balance_sheet_view(request):
         "stats": stats,
     }
     return render(request, 'gl_reviews/balance_sheet.html', context)
+
+
+@login_required
+def get_review_trail(request, gl_code):
+    """
+    Fetch the review trail history for a specific GL code.
+    Returns JSON data for the timeline.
+    """
+    trails = ReviewTrail.objects.filter(gl_code=gl_code).select_related('reviewer', 'previous_trail').order_by('created_at')
+    
+    trail_data = []
+    
+    # 0. Initial Assignment (Optional: fetch from ResponsibilityMatrix if needed, 
+    # but trails usually start from first submission).
+    # If trails are empty, we might want to show "Assigned" at least.
+    
+    # Let's iterate through recorded trails
+    for trail in trails:
+        trail_entry = {
+            'id': str(trail.id),
+            'reviewer': f"{trail.reviewer.first_name} {trail.reviewer.last_name} ({trail.reviewer.username})" if trail.reviewer else "Unknown",
+            'role': 'Preparer' if trail.action == 'Submitted' else 'Reviewer', # Simplified inference
+            'action': trail.action,
+            'notes': trail.reconciliation_notes,
+            'date': trail.created_at.strftime("%B %d, %Y"),
+            'time': trail.created_at.strftime("%I:%M %p"),
+            'timestamp': trail.created_at.isoformat(),
+        }
+        trail_data.append(trail_entry)
+        
+    return JsonResponse({'trails': trail_data})
 

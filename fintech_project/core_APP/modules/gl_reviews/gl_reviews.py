@@ -518,3 +518,50 @@ def get_review_trail(request, gl_code):
         
     return JsonResponse({'trails': trail_data})
 
+
+@login_required
+def review_trail_page(request):
+    """
+    Dedicated page for searching and viewing Review Trails.
+    """
+    gl_code = request.GET.get('gl_code', '').strip()
+    context = {'gl_code': gl_code}
+    
+    # Get all unique GL codes for datalist
+    # Combine ReviewTrail gl_codes and maybe existing GLs
+    # For efficiency let's just grab from ReviewTrail and ResponsibilityMatrix
+    gl_codes = set(ReviewTrail.objects.values_list('gl_code', flat=True).distinct())
+    # You might want to add Assignment GLs too if they haven't started trailing yet, 
+    # but the request implies showing trails.
+    context['all_gl_codes'] = sorted([g for g in gl_codes if g])
+
+    if gl_code:
+        trails_qs = ReviewTrail.objects.filter(gl_code=gl_code).select_related('reviewer').order_by('created_at')
+        
+        # Get GL Name if possible
+        # Try finding in TrialBalance or BalanceSheet or from the first trail
+        gl_name = None
+        first_trail = trails_qs.first()
+        if first_trail and first_trail.gl_name:
+            gl_name = first_trail.gl_name
+        
+        if not gl_name:
+             # Fallback lookup
+             bs = BalanceSheet.objects.filter(gl_acct=gl_code).first()
+             if bs: gl_name = bs.gl_account_name
+
+        context['gl_name'] = gl_name
+        
+        trails_data = []
+        for trail in trails_qs:
+            trails_data.append({
+                'action': trail.action,
+                'reviewer': f"{trail.reviewer.first_name} {trail.reviewer.last_name}" if trail.reviewer else "Unknown",
+                'date': trail.created_at.strftime("%B %d, %Y"),
+                'time': trail.created_at.strftime("%I:%M %p"),
+                'notes': trail.reconciliation_notes
+            })
+        context['trails'] = trails_data
+        
+    return render(request, 'gl_reviews/review_trail_page.html', context)
+

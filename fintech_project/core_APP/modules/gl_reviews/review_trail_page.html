@@ -1,0 +1,383 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Review Trail | Finnovate</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
+    <link rel="stylesheet" href="{% static 'output.css' %}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        main {
+            padding: 3rem 20rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: start;
+        }
+
+        .panel {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+            padding: 1.5rem;
+            height: fit-content;
+            z-index: 2;
+        }
+
+        .panel h1 {
+            margin: 0 0 1.5rem 0;
+            font-size: 1.5rem;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .panel h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #0f172a;
+        }
+
+        .panel p {
+            margin: 0;
+            color: var(--subtle);
+        }
+
+        .search-form {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #f8fafc;
+            transition: border 0.2s ease, box-shadow 0.2s ease;
+            font-family: inherit;
+        }
+
+        /* Hide datalist dropdown arrow */
+        .search-input::-webkit-calendar-picker-indicator {
+            display: none;
+        }
+
+        .search-input::-webkit-list-button {
+            display: none;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(199, 108, 74, 0.1);
+            background: #fff;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(199, 108, 74, 0.3);
+        }
+
+        .timeline-container {
+            min-height: 200px;
+        }
+
+        .gl-header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .gl-header h2 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .gl-code {
+            font-family: monospace;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .gl-header p {
+            margin: 0.5rem 0 0 0;
+            color: var(--subtle);
+            font-size: 0.95rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: var(--subtle);
+            padding: 3rem 2rem;
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            opacity: 0.5;
+        }
+
+        .empty-state p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Timeline Styles - Fixed */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            padding-top: 1rem;
+        }
+
+        .timeline li {
+            position: relative;
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline li:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline li:last-child .timeline-connector {
+            display: none;
+        }
+
+        .timeline-icon-wrapper {
+            position: relative;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timeline-middle {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 50%;
+            border: 3px solid #e2e8f0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-middle i {
+            font-size: 1rem;
+        }
+
+        .timeline-connector {
+            position: absolute;
+            top: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: calc(100% + 3rem);
+            background: #e2e8f0;
+            z-index: 1;
+        }
+
+        .timeline-box {
+            flex: 1;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline-action {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #0f172a;
+        }
+
+        .timeline-reviewer {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-left: 0.5rem;
+        }
+
+        .timeline-time {
+            font-size: 0.8rem;
+            font-family: monospace;
+            font-style: italic;
+            color: #94a3b8;
+        }
+
+        .timeline-notes {
+            font-size: 0.9rem;
+            color: #475569;
+            font-style: italic;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .timeline-notes::before {
+            content: '"';
+        }
+
+        .timeline-notes::after {
+            content: '"';
+        }
+
+        /* Icon Colors */
+        .text-primary {
+            color: var(--accent);
+        }
+
+        .text-success {
+            color: #16a34a;
+        }
+
+        .text-info {
+            color: #2563eb;
+        }
+
+        .text-error {
+            color: #dc2626;
+        }
+
+        /* Icon specific styling */
+        .timeline-middle.text-success {
+            border-color: #16a34a;
+        }
+
+        .timeline-middle.text-success i {
+            color: #16a34a;
+        }
+
+        .timeline-middle.text-info {
+            border-color: #2563eb;
+        }
+
+        .timeline-middle.text-info i {
+            color: #2563eb;
+        }
+
+        .timeline-middle.text-error {
+            border-color: #dc2626;
+        }
+
+        .timeline-middle.text-error i {
+            color: #dc2626;
+        }
+
+        .timeline-middle.text-primary {
+            border-color: var(--accent);
+        }
+
+        .timeline-middle.text-primary i {
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'base/navbar.html' %}
+
+    <main>
+        <div class="grid"></div>
+        
+        <!-- Search Section -->
+        <div class="panel timeline-container">
+            <h1><i class="fa-solid fa-clock-rotate-left"></i> Review Trail Search</h1>
+            <form method="get" action="{% url 'review_trail_page' %}" class="search-form">
+                <input type="text" name="gl_code" class="search-input" placeholder="Enter GL Code (e.g. 100000)"
+                    value="{{ gl_code|default:'' }}" required autocomplete="off">
+                <datalist id="gl-options">
+                    {% for gl in all_gl_codes %}
+                    <option value="{{ gl }}">
+                    {% endfor %}
+                </datalist>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+
+        {% if gl_code %}
+        <!-- Result Section -->
+            {% if trails %}
+            <ul class="timeline">
+                {% for trail in trails %}
+                <li>
+                    <div class="timeline-icon-wrapper">
+                        <div class="timeline-middle {% if trail.action == 'Submitted' %}text-success{% elif trail.action == 'Approved' %}text-info{% elif trail.action == 'Rejected' %}text-error{% else %}text-primary{% endif %}">
+                            {% if trail.action == 'Submitted' %}
+                            <i class="fa-solid fa-paper-plane"></i>
+                            {% elif trail.action == 'Approved' %}
+                            <i class="fa-solid fa-check"></i>
+                            {% elif trail.action == 'Rejected' %}
+                            <i class="fa-solid fa-xmark"></i>
+                            {% else %}
+                            <i class="fa-solid fa-circle"></i>
+                            {% endif %}
+                        </div>
+                        {% if not forloop.last %}
+                        <div class="timeline-connector"></div>
+                        {% endif %}
+                    </div>
+                    <div class="timeline-box">
+                        <div class="timeline-header">
+                            <div>
+                                <span class="timeline-action">{{ trail.action }}</span>
+                                <span class="timeline-reviewer">by {{ trail.reviewer }}</span>
+                            </div>
+                            <time class="timeline-time">{{ trail.date }} {{ trail.time }}</time>
+                        </div>
+                        {% if trail.notes %}
+                        <p class="timeline-notes">{{ trail.notes }}</p>
+                        {% endif %}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <div class="empty-state">
+                <i class="fa-regular fa-folder-open"></i>
+                <p>No review trail found for this GL Code.</p>
+            </div>
+            {% endif %}
+        {% endif %}
+        </div>
+    </main>
+
+    {% include 'base/footer.html' %}
+</body>
+
+</html>

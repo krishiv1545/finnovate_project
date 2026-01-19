@@ -101,12 +101,12 @@ main {
 }
 
 .grid {
-  position: fixed;
+  position: absolute;
   inset: 0;
   background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 40px 40px;
-  z-index: -1;
+  z-index: 0;
 }
 
 /* Modern Animation Keyframes */

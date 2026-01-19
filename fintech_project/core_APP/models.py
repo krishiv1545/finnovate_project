@@ -44,9 +44,9 @@ class ResponsibilityMatrix(models.Model):
     )
     GL_CODE_STATUS_CHOICES = (
         (1, 'Pending'),
-        (2, 'Done'),
+        (2, 'Submitted'),
         (3, 'Approved'),
-        (4, 'Rejected')
+        (4, 'Rejected'),
     )
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

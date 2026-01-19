@@ -70,9 +70,10 @@ def gl_reviews_view(request):
                 status_code = assignment.gl_code_status or 1
                 status_display = assignment.get_gl_code_status_display() if assignment.gl_code_status else 'Pending'
 
-                if gl_review:
-                    status_code = gl_review.status
-                    status_display = gl_review.get_status_display()
+                # if gl_review:
+                #    status_code = gl_review.status
+                #    status_display = gl_review.get_status_display()
+
 
                 assigned_on = assignment.created_at
                 assigned_on_formatted = assigned_on.strftime("%B %d, %Y at %I:%M %p") if assigned_on else 'N/A'
@@ -321,7 +322,7 @@ def submit_gl_review_preparer(request):
                 )
             
             # Update ResponsibilityMatrix status
-            assignment.gl_code_status = 2  # Done
+            assignment.gl_code_status = 2  # Submitted
             assignment.save()
 
             # Also mark in ReviewTrail
@@ -434,10 +435,26 @@ def submit_gl_review_reviewer(request):
     )
     review_trail.save()
 
+    # Update Previous Reviewer/Preparer Status on Rejection
+    if action == 'reject':
+        if previous_trail and previous_trail.reviewer_responsibility_matrix:
+            prev_matrix = previous_trail.reviewer_responsibility_matrix
+            prev_matrix.gl_code_status = 4 # Rejected
+            prev_matrix.save()
+            print(f"Updated Previous Matrix {prev_matrix.id} to Rejected")
+        
+        # Current reviewer status? Stay as Submitted or Pending?
+        # If I rejected it, I am Submitted with it until it comes back.
+        # But for now, let's leave my status as 'Rejected' (4) to indicate I pushed it back? 
+        # Or 'Submitted' (2)? Existing code sets it to 4. 
+        # "Only if Reviewer rejects, the status should affect him [Preparer]." - satisfied by prev_matrix update.
+
+
     messages.success(
         request,
-        f"GL Review submitted successfully for GL Code {gl_code}. Status updated to '{assignment.gl_code_status}'."
+        f"GL Review submitted successfully for GL Code {gl_code}. Status updated to '{assignment.get_gl_code_status_display()}'."
     )
+
 
     if action == 'approve':
         # send mail to FC

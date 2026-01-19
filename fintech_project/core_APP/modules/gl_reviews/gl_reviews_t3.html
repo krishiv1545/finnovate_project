@@ -514,7 +514,7 @@
                 <span style="color: #16a34a; font-weight: 500;">GL Review Submitted</span>
 
                 {% elif gl.status_code == 3 %}
-                <span style="color: #2563eb; font-weight: 500;">✔ Approved</span>
+                <span style="color: #2563eb; font-weight: 500;">Approved</span>
 
                 {% elif gl.status_code == 4 %}
                 <a href="#" class="action-link status-badge status-pending"
@@ -576,10 +576,17 @@
               <td>{{ gl.department }}</td>
               <td>{{ gl.assigned_on }}</td>
               <td>
+                {% if gl.status_code == 4 and gl.preparer_assignment_status == 2 %} <!-- Reviewer Rejected and Preparer Re-submitted -->
+                <span
+                  class="status-badge status-pending">
+                  Recheck Pending
+                </span>
+                {% else %}
                 <span
                   class="status-badge {% if gl.status_code == 1 %}status-pending {% elif gl.status_code == 2 %}status-done {% elif gl.status_code == 3 %}status-approved {% elif gl.status_code == 4 %}status-rejected {% else %}status-pending{% endif %}">
                   {{ gl.status }}
                 </span>
+                {% endif %}
               </td>
               <td>
                 {{ gl.reconciliation_notes }}
@@ -592,11 +599,24 @@
                 {% endif %}
               </td>
               <td>
-                {% if gl.status == "Awaiting Approval" %}
+                {% if gl.status_code == 1 %}
                 <a href="#" class="action-link"
                   onclick="openReviewModalTwo('{{ gl.assignment_id }}', '{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')">
-                  Review
+                  Submit Review
                 </a>
+                {% elif gl.status_code == 2 %}
+                <span style="color: #16a34a; font-weight: 500;">GL Review Submitted</span>
+                {% elif gl.status_code == 3 %}
+                <span style="color: #2563eb; font-weight: 500;">Approved</span>
+                {% elif gl.status_code == 4 %}
+                  {% if gl.preparer_assignment_status == 2 %} <!-- Reviewer Rejected and Preparer Re-submitted -->
+                    <a href="#" class="action-link"
+                      onclick="openReviewModalTwo('{{ gl.assignment_id }}', '{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')">
+                      Re-Submit Review
+                    </a>
+                  {% else %}
+                    <span style="color: #b91c1c; font-weight: 500;">Rejected</span>
+                  {% endif %}
                 {% endif %}
                 <br />
                 <a href="#" class="view-link" style="margin-top: 0.5rem; display: inline-block;"
@@ -711,7 +731,9 @@
           <button type="submit" name="action" value="reject" class="btn btn-reject">
             Reject
           </button>
-          <button type="submit" name="action" value="approve" </button>
+          <button type="submit" name="action" value="approve" class="btn btn-approve">
+            Approve
+          </button>
         </div>
       </form>
     </div>

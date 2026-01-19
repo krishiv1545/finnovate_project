@@ -82,6 +82,16 @@ def gl_reviews_view(request):
                 trial_bal_field = TrialBalance.objects.filter(gl_code=gl_code).first()
                 gl_rev = GLReview.objects.filter(trial_balance=trial_bal_field).first()
 
+                preparer_assignment_status = None
+                if not is_preparer:
+                    # if reviewer, there has to be a preparer assignment
+                    preparer_assignment = ResponsibilityMatrix.objects.filter(
+                        gl_code=assignment.gl_code,
+                        user_role=4
+                    ).first()
+                    if preparer_assignment:
+                        preparer_assignment_status = preparer_assignment.gl_code_status
+
                 gl_data.append({
                     'assignment_id': str(assignment.id),
                     'gl_code': assignment.gl_code,
@@ -104,6 +114,7 @@ def gl_reviews_view(request):
                         }
                         for doc in supporting_docs
                     ],
+                    'preparer_assignment_status': preparer_assignment_status,
                 })
             return gl_data
 
@@ -403,6 +414,10 @@ def submit_gl_review_reviewer(request):
         id=assignment_id,
         gl_code=gl_code
     )
+    preparer_assignment = ResponsibilityMatrix.objects.filter(
+        gl_code=assignment.gl_code,
+        user_role=4,
+    ).first()
     if action == 'approve':
         assignment.gl_code_status = 3  # Approved
         # get FC
@@ -411,10 +426,13 @@ def submit_gl_review_reviewer(request):
             department=assignment.department
         ).first()
         print("FC: ", fc.id)
+        preparer_assignment.gl_code_status = 3  # Approved
     else:
         assignment.gl_code_status = 4  # Rejected
+        preparer_assignment.gl_code_status = 4  # Rejected
 
     assignment.save()
+    preparer_assignment.save()
     
     gl_review.reconciliation_notes = reconciliation_notes
     if action == 'approve':

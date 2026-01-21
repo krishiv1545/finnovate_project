@@ -487,7 +487,7 @@
                   {% endif %}
                 </td>
                 <td>
-                  {% if reviewer_assignment_status == 1 %}
+                  {% if gl.status_code == 1 %}
                     <a
                       href="#"
                       class="action-link"
@@ -495,8 +495,12 @@
                     >
                       Review
                     </a>
+                  {% elif gl.status_code == 3 %}
+                    <span style="color: #2563eb; font-weight: 500;">Approved</span>
+                  {% elif gl.status_code == 4 %}
+                    <span style="color: #b91c1c; font-weight: 500;">Rejected</span>
                   {% else %}
-                    <span style="color: #6b7280;">Cant Take Action</span>
+                    <span style="color: #6b7280; font-weight: 500;">Cant Take Action</span>
                   {% endif %}
                 </td>
               </tr>

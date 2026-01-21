@@ -186,8 +186,6 @@ def gl_reviews_view(request):
             assigned_on = ubfc_assignment.created_at if ubfc_assignment else None
             assigned_on_formatted = assigned_on.strftime("%B %d, %Y at %I:%M %p") if assigned_on else 'N/A'
 
-            status_code = ubfc_assignment.gl_code_status or 1
-            status_display = ubfc_assignment.get_gl_code_status_display() if ubfc_assignment.gl_code_status else 'Pending'
             reviewer_assignment = ResponsibilityMatrix.objects.filter(
                 gl_code=trial_balance.gl_code,
                 user_role=5
@@ -201,8 +199,8 @@ def gl_reviews_view(request):
                 'gl_name': balance_sheet.gl_account_name if balance_sheet else 'N/A',
                 'department': ubfc_assignment.department.name if ubfc_assignment and ubfc_assignment.department else 'N/A',
                 'reviewer_assignment_status': reviewer_assignment_status,
-                'status': status_display,
-                'status_code': status_code,
+                'status': ubfc_assignment.get_gl_code_status_display() if ubfc_assignment.gl_code_status else 'Pending',
+                'status_code': ubfc_assignment.gl_code_status or 1,
                 'assigned_on': assigned_on_formatted,
                 "reconciliation_notes": review.reconciliation_notes,
                 'supporting_documents': [

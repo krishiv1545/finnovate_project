@@ -439,7 +439,6 @@
     <main>
       <div class="grid"></div>
 
-      <!-- Preparer Side (Left) -->
       <div class="panel table-panel">
         <div class="table-header">
           <h2>General Ledger Review-III</h2>
@@ -488,16 +487,16 @@
                   {% endif %}
                 </td>
                 <td>
-                  {% if gl.status == "Awaiting Approval" %}
-                  <a
-                    href="#"
-                    class="action-link"
-                    onclick="openReviewModalTwo('{{ gl.assignment_id }}', '{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')"
-                  >
-                    Review
-                  </a>
+                  {% if reviewer_assignment_status == 1 %}
+                    <a
+                      href="#"
+                      class="action-link"
+                      onclick="openReviewModalTwo('{{ gl.assignment_id }}', '{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')"
+                    >
+                      Review
+                    </a>
                   {% else %}
-                  <span style="color: #6b7280;">Cant Take Action</span>
+                    <span style="color: #6b7280;">Cant Take Action</span>
                   {% endif %}
                 </td>
               </tr>

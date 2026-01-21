@@ -600,10 +600,15 @@
               </td>
               <td>
                 {% if gl.status_code == 1 %}
-                <a href="#" class="action-link"
-                  onclick="openReviewModalTwo('{{ gl.assignment_id }}', '{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')">
-                  Submit Review
-                </a>
+                <!-- TODO: && if preparer assignment status submitted -->
+                  {% if preparer_assignment_status == 2 %}
+                    <a href="#" class="action-link"
+                      onclick="openReviewModalTwo('{{ gl.assignment_id }}', '{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')">
+                      Submit Review
+                    </a>
+                  {% else %}
+                    <span style="color: #6b7280;">Cant Take Action</span>
+                  {% endif %}
                 {% elif gl.status_code == 2 %}
                 <span style="color: #16a34a; font-weight: 500;">GL Review Submitted</span>
                 {% elif gl.status_code == 3 %}

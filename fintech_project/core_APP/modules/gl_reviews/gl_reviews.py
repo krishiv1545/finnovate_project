@@ -74,7 +74,6 @@ def gl_reviews_view(request):
                 #    status_code = gl_review.status
                 #    status_display = gl_review.get_status_display()
 
-
                 assigned_on = assignment.created_at
                 assigned_on_formatted = assigned_on.strftime("%B %d, %Y at %I:%M %p") if assigned_on else 'N/A'
 
@@ -131,19 +130,18 @@ def gl_reviews_view(request):
     # USER TYPE 3: FC
     # -------------------------------
     if request.user.user_type == 3:
-        # Fetch all GLReviews assigned to this reviewer
+        # Init UBFC ResponsibilityMatrix rows
+        main_ubfc_assignment = ResponsibilityMatrix.objects.filter(
+            user_role=3
+        ).select_related('department').first()
+
         gl_reviews_qs = GLReview.objects.filter(
             reviewer=request.user
         ).select_related('trial_balance', 'trial_balance__user').order_by('-reviewed_at')
 
-        main_ubfc_assignment = ResponsibilityMatrix.objects.filter(
-            user_role=3
-        ).select_related('department').first()
-        
-        gl_reviews = []
         for review in gl_reviews_qs:
             trial_balance = review.trial_balance
-        
+
             assignment = ResponsibilityMatrix.objects.filter(
                 user=request.user,
                 gl_code=trial_balance.gl_code
@@ -167,48 +165,52 @@ def gl_reviews_view(request):
                     main_ubfc_assignment.gl_code_status = 1
                     main_ubfc_assignment.save()
             
-            # fresh fetch ubfc_assignment
-            ubfc_assignment = ResponsibilityMatrix.objects.filter(
-                user=request.user,
-                gl_code=trial_balance.gl_code
-            ).select_related('department').first()
 
-            print("ASSIGNMENT: ", ubfc_assignment.user.username, " ASSIGNMENT_STATUS: ", ubfc_assignment.gl_code_status, " GL_CODE: ", ubfc_assignment.gl_code)
+        ubfc_assignments = ResponsibilityMatrix.objects.filter(
+            user=request.user,
+            gl_code__isnull=False
+        ).select_related('department').order_by('-created_at')
+
+        gl_reviews = []
+
+        for assignment in ubfc_assignments:
+            trial_balance = TrialBalance.objects.filter(
+                gl_code=assignment.gl_code
+            ).first()
+
+            gl_review = GLReview.objects.filter(
+                trial_balance=trial_balance
+            ).first() if trial_balance else None
 
             balance_sheet = BalanceSheet.objects.filter(
-                gl_acct=trial_balance.gl_code
+                gl_acct=assignment.gl_code
             ).first()
 
             supporting_docs = GLSupportingDocument.objects.filter(
-                gl_review=review
-            ).order_by('-uploaded_at')
-
-            assigned_on = ubfc_assignment.created_at if ubfc_assignment else None
-            assigned_on_formatted = assigned_on.strftime("%B %d, %Y at %I:%M %p") if assigned_on else 'N/A'
+                gl_review=gl_review
+            ).order_by('-uploaded_at') if gl_review else []
 
             reviewer_assignment = ResponsibilityMatrix.objects.filter(
-                gl_code=trial_balance.gl_code,
+                gl_code=assignment.gl_code,
                 user_role=5
             ).first()
-            reviewer_assignment_status = reviewer_assignment.gl_code_status if reviewer_assignment else None
-            # pending (1), approved (3), rejected (4)
-            
+
             gl_reviews.append({
-                'assignment_id': str(ubfc_assignment.id) if ubfc_assignment else None,
-                'gl_code': trial_balance.gl_code,
+                'assignment_id': str(assignment.id),
+                'gl_code': assignment.gl_code,
                 'gl_name': balance_sheet.gl_account_name if balance_sheet else 'N/A',
-                'department': ubfc_assignment.department.name if ubfc_assignment and ubfc_assignment.department else 'N/A',
-                'reviewer_assignment_status': reviewer_assignment_status,
-                'status': ubfc_assignment.get_gl_code_status_display() if ubfc_assignment.gl_code_status else 'Pending',
-                'status_code': ubfc_assignment.gl_code_status or 1,
-                'assigned_on': assigned_on_formatted,
-                "reconciliation_notes": review.reconciliation_notes,
+                'department': assignment.department.name if assignment.department else 'N/A',
+                'reviewer_assignment_status': reviewer_assignment.gl_code_status if reviewer_assignment else None,
+                'status': assignment.get_gl_code_status_display(),
+                'status_code': assignment.gl_code_status or 1,
+                'assigned_on': assignment.created_at.strftime("%B %d, %Y at %I:%M %p"),
+                'reconciliation_notes': gl_review.reconciliation_notes if gl_review else 'N/A',
                 'supporting_documents': [
                     {
                         'id': str(doc.id),
-                        'file_name': doc.file.name.split('/')[-1] if doc.file else 'Unknown',
-                        'file_url': doc.file.url if doc.file else '#',
-                        'uploaded_at': doc.uploaded_at.strftime("%B %d, %Y at %I:%M %p") if doc.uploaded_at else 'N/A',
+                        'file_name': doc.file.name.split('/')[-1],
+                        'file_url': doc.file.url,
+                        'uploaded_at': doc.uploaded_at.strftime("%B %d, %Y at %I:%M %p"),
                     }
                     for doc in supporting_docs
                 ],

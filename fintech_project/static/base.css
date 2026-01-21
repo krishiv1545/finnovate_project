@@ -98,6 +98,7 @@ main {
   );
   position: relative;
   align-items: stretch;
+  scrollbar-width: thin !important;
 }
 
 .grid {

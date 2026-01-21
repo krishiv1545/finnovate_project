@@ -25,7 +25,7 @@
             box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
             padding: 1.5rem;
             height: fit-content;
-            z-index: 2;
+            z-index: 10;
         }
 
         .panel h1 {
@@ -104,6 +104,9 @@
 
         .timeline-container {
             min-height: 200px;
+            max-height: 625px;
+            overflow-y: auto !important;
+            scrollbar-width: thin;
         }
 
         .gl-header {
@@ -339,7 +342,7 @@
                     <div class="timeline-icon-wrapper">
                         <div class="timeline-middle {% if trail.action == 'Submitted' %}text-success{% elif trail.action == 'Approved' %}text-info{% elif trail.action == 'Rejected' %}text-error{% else %}text-primary{% endif %}">
                             {% if trail.action == 'Submitted' %}
-                            <i class="fa-solid fa-paper-plane"></i>
+                            <i class="fa-solid fa-check"></i>
                             {% elif trail.action == 'Approved' %}
                             <i class="fa-solid fa-check"></i>
                             {% elif trail.action == 'Rejected' %}

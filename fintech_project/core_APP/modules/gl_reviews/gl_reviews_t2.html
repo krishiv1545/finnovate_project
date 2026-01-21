@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="{% static 'base.css' %}" />
     <link rel="stylesheet" href="{% static 'output.css' %}" />
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
       main {
-        padding: 1rem 1rem;
+        padding: 2rem 2rem 4rem 2rem;
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -46,6 +47,7 @@
       .gl-table {
         width: 100%;
         font-size: 0.85rem;
+        margin-top: 0;
       }
 
       .gl-table thead {
@@ -311,7 +313,7 @@
         overflow-y: auto;
         scrollbar-width: thin;
         height: 100%;
-        z-index: 2;
+        z-index: 10;
       }
 
       .panel h1,
@@ -502,6 +504,11 @@
                   {% else %}
                     <span style="color: #6b7280; font-weight: 500;">Cant Take Action</span>
                   {% endif %}
+                  <br />
+                  <a href="#" class="view-link" style="margin-top: 0.5rem; display: inline-block;"
+                    onclick="openTrailModal('{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')">
+                    <i class="fa-solid fa-clock-rotate-left"></i> View Trail
+                  </a>
                 </td>
               </tr>
               {% endfor %}
@@ -542,6 +549,34 @@
           </button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <!-- Review Trail Modal -->
+  <div id="trailModal" class="modal">
+    <div class="modal-content" style="max-width: 700px;">
+      <div class="modal-header">
+        <h3>Review Trail History</h3>
+        <p id="trailModalGlInfo"></p>
+      </div>
+
+      <div class="panel" style="box-shadow: none; border: none; padding: 0;">
+        <ul class="timeline timeline-vertical" id="trailTimeline">
+          <!-- Trail items will be injected here via JS -->
+        </ul>
+        <div id="trailLoading" style="text-align: center; padding: 2rem; display: none;">
+          <i class="fa-solid fa-circle-notch fa-spin"></i> Loading trail...
+        </div>
+        <div id="trailEmpty" class="empty-state" style="display: none;">
+          <p>No activity recorded yet.</p>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-secondary" onclick="closeTrailModal()">
+          Close
+        </button>
+      </div>
     </div>
   </div>
 
@@ -603,6 +638,99 @@
           closeReviewModalTwo();
         }
       });
+    </script>
+
+    <script>
+      document.getElementById("trailModal").addEventListener("click", function (e) {
+        if (e.target === this) {
+          closeTrailModal();
+        }
+      });
+      // Review Trail Functions
+      function openTrailModal(glCode, glName) {
+        document.getElementById("trailModalGlInfo").textContent = `GL Code: ${glCode} - ${glName}`;
+        document.getElementById("trailModal").classList.add("active");
+
+        const timelineContainer = document.getElementById("trailTimeline");
+        const loadingDiv = document.getElementById("trailLoading");
+        const emptyDiv = document.getElementById("trailEmpty");
+
+        timelineContainer.innerHTML = '';
+        loadingDiv.style.display = 'block';
+        emptyDiv.style.display = 'none';
+
+        fetch(`/gl-reviews/trail/${glCode}/`)
+          .then(response => response.json())
+          .then(data => {
+            loadingDiv.style.display = 'none';
+            if (data.trails && data.trails.length > 0) {
+              renderTimeline(data.trails);
+            } else {
+              emptyDiv.style.display = 'block';
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching trail:', error);
+            loadingDiv.style.display = 'none';
+            timelineContainer.innerHTML = '<p style="color: red; text-align: center;">Error loading trail data.</p>';
+          });
+      }
+
+      function closeTrailModal() {
+        document.getElementById("trailModal").classList.remove("active");
+      }
+
+      function renderTimeline(trails) {
+        const container = document.getElementById("trailTimeline");
+        let html = '';
+
+        trails.forEach((trail, index) => {
+          const isLast = index === trails.length - 1;
+          const isStart = index === 0;
+
+          let iconColor = 'text-primary';
+          let badgeClass = 'status-pending';
+          let icon = '<i class="fa-solid fa-circle"></i>';
+
+          if (trail.action === 'Submitted') {
+            badgeClass = 'status-done';
+            icon = '<i class="fa-solid fa-check"></i>';
+            iconColor = 'text-success';
+          } else if (trail.action === 'Approved') {
+            badgeClass = 'status-approved';
+            icon = '<i class="fa-solid fa-check"></i>';
+            iconColor = 'text-info';
+          } else if (trail.action === 'Rejected') {
+            badgeClass = 'status-rejected';
+            icon = '<i class="fa-solid fa-xmark"></i>';
+            iconColor = 'text-error';
+          }
+
+          html += `
+                <li>
+                  ${!isStart ? '<hr class="bg-primary"/>' : ''}
+                  <div class="timeline-middle">
+                    <span class="${iconColor} h-5 w-5" style="display: flex; justify-content: center; align-items: center;">
+                      ${icon}
+                    </span>
+                  </div>
+                  <div class="timeline-end timeline-box panel" style="width: 90%; box-shadow: var(--shadow-sm);">
+                      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                          <div>
+                              <span class="font-bold text-sm">${trail.action}</span>
+                              <span class="text-xs text-gray-500">by ${trail.reviewer}</span>
+                          </div>
+                          <time class="text-xs font-mono italic text-gray-400">${trail.date} ${trail.time}</time>
+                      </div>
+                    ${trail.notes ? `<p class="text-sm text-gray-600 italic">"${trail.notes}"</p>` : ''}
+                  </div>
+                  ${!isLast ? '<hr class="bg-primary"/>' : ''}
+                </li>
+                `;
+        });
+
+        container.innerHTML = html;
+      }
     </script>
   </body>
 </html>

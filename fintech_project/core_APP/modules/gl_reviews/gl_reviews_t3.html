@@ -27,6 +27,7 @@
       box-shadow: var(--shadow-md);
       overflow: hidden;
       height: fit-content;
+      scrollbar-width: thin !important;
     }
 
     .table-header {
@@ -43,11 +44,13 @@
 
     .table-container {
       overflow-x: auto;
+      scrollbar-width: thin !important;
     }
 
     .gl-table {
       width: 100%;
       font-size: 0.85rem;
+      margin-top: 0;
     }
 
     .gl-table thead {
@@ -189,9 +192,11 @@
       max-height: 90vh;
       overflow-y: auto;
       box-shadow: var(--shadow-lg);
+      scrollbar-width: thin !important;
     }
 
     .modal-header {
+      position: fixed;
       margin-bottom: 1.5rem;
     }
 
@@ -313,7 +318,8 @@
       overflow-y: auto;
       scrollbar-width: thin;
       height: 100%;
-      z-index: 2;
+      z-index: 10;
+      scrollbar-width: thin !important;
     }
 
     .panel h1,
@@ -406,6 +412,7 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
+      scrollbar-width: thin !important;
     }
 
     th,
@@ -893,7 +900,7 @@
 
         if (trail.action === 'Submitted') {
           badgeClass = 'status-done';
-          icon = '<i class="fa-solid fa-paper-plane"></i>';
+          icon = '<i class="fa-solid fa-check"></i>';
           iconColor = 'text-success';
         } else if (trail.action === 'Approved') {
           badgeClass = 'status-approved';

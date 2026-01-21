@@ -141,7 +141,6 @@ def gl_reviews_view(request):
 
         for review in gl_reviews_qs:
             trial_balance = review.trial_balance
-
             assignment = ResponsibilityMatrix.objects.filter(
                 user=request.user,
                 gl_code=trial_balance.gl_code
@@ -164,7 +163,19 @@ def gl_reviews_view(request):
                     main_ubfc_assignment.gl_code = trial_balance.gl_code
                     main_ubfc_assignment.gl_code_status = 1
                     main_ubfc_assignment.save()
-            
+
+            refetch_bufc_assignment = ResponsibilityMatrix.objects.filter(
+                user=request.user,
+                gl_code=trial_balance.gl_code
+            ).first()
+            reviewer_assignment = ResponsibilityMatrix.objects.filter(
+                gl_code=trial_balance.gl_code,
+                user_role=5
+            ).first()
+            if reviewer_assignment.gl_code_status == 3:
+                refetch_bufc_assignment.gl_code_status = 1 # reset to pending after Reviewer approves the GL Review
+                refetch_bufc_assignment.save()
+            print(f"GL CODE: {trial_balance.gl_code}, BUFC STATUS: {refetch_bufc_assignment.gl_code_status}, REVIEWER STATUS: {reviewer_assignment.gl_code_status}")
 
         ubfc_assignments = ResponsibilityMatrix.objects.filter(
             user=request.user,

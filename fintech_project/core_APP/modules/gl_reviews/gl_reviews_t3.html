@@ -622,6 +622,13 @@
                   {% else %}
                     <span style="color: #b91c1c; font-weight: 500;">Rejected</span>
                   {% endif %}
+                {% elif gl.status_code == 5 %}
+                    <span style="color: #2563eb; font-weight: 500;">Approved by FC</span>
+                {% elif gl.status_code == 6 %}
+                    <a href="#" class="action-link"
+                      onclick="openReviewModalTwo('{{ gl.assignment_id }}', '{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')">
+                      Re-Submit Review
+                    </a>
                 {% endif %}
                 <br />
                 <a href="#" class="view-link" style="margin-top: 0.5rem; display: inline-block;"

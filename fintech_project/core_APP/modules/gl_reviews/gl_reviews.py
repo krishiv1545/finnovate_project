@@ -540,6 +540,133 @@ def submit_gl_review_reviewer(request):
 
 
 @login_required
+@require_http_methods(["POST"])
+def submit_gl_review_bufc(request):
+    """
+    Submit a GL review for an assigned GL code.
+    """
+    assignment_id = request.POST.get("assignment_id")
+    gl_code = request.POST.get("gl_code")
+    reconciliation_notes = request.POST.get("reconciliation_notes")
+    action = request.POST.get("action")  # either 'approve' or 'reject'
+
+    
+    if not assignment_id or not gl_code:
+        messages.error(request, "Missing required information.")
+        return redirect("gl_reviews_page")
+    
+    if not reconciliation_notes:
+        messages.error(request, "Reconciliation notes are required.")
+        return redirect("gl_reviews_page")
+    
+    trial_balance = TrialBalance.objects.filter(
+        gl_code=gl_code
+    ).first()
+    if not trial_balance:
+        print("TRIAL BALANCE NOT FOUND")
+        messages.error(request, "Trial balance not found.")
+        return redirect("gl_reviews_page")
+    print("FOUND TRIAL BALANCE:", trial_balance.id)
+    
+    gl_review = GLReview.objects.filter(
+        trial_balance=trial_balance,
+    ).first()
+
+    if not gl_review:
+        print("GL REVIEW NOT FOUND")
+        messages.error(request, "GL review not found.")
+        return redirect("gl_reviews_page")
+    
+    previous_trail = ReviewTrail.objects.filter(
+        gl_review=gl_review
+    ).order_by('-created_at').first()
+    if not previous_trail:
+        print("PREVIOUS TRAIL NOT FOUND")
+        messages.error(request, "Previous trail not found.")
+        return redirect("gl_reviews_page")
+    print("FOUND PREVIOUS TRAIL:", previous_trail.id)
+    
+    assignment = ResponsibilityMatrix.objects.get(
+        id=assignment_id,
+        gl_code=gl_code
+    )
+    reviewer_assignment = ResponsibilityMatrix.objects.filter(
+        gl_code=assignment.gl_code,
+        user_role=5,
+    ).first()
+    if action == 'approve':
+        assignment.gl_code_status = 3  # Approved
+        reviewer_assignment.gl_code_status = 5  # Approved by FC
+    else:
+        assignment.gl_code_status = 4  # Rejected
+        reviewer_assignment.gl_code_status = 6  # Rejected by FC
+
+    assignment.save()
+    reviewer_assignment.save()
+
+    dh = ResponsibilityMatrix.objects.filter(
+        user_role=2,
+        department=assignment.department
+    ).first()
+    print("Dept. Head (DH): ", dh.id)
+    
+    gl_review.reconciliation_notes = reconciliation_notes
+    if action == 'approve':      
+        gl_review.reviewer = dh.user
+    else:
+        gl_review.reviewer = previous_trail.reviewer
+    gl_review.save()
+
+    review_trail = ReviewTrail.objects.create(
+        reviewer=request.user,
+        reviewer_responsibility_matrix=assignment,
+        gl_review=gl_review,
+        previous_trail=previous_trail,
+        reconciliation_notes=reconciliation_notes,
+        gl_code=gl_code,
+        action='Approved' if action == 'approve' else 'Rejected'
+    )
+    review_trail.save()
+
+    # Update Previous Reviewer/Preparer Status on Rejection
+    if action == 'reject':
+        if previous_trail and previous_trail.reviewer_responsibility_matrix:
+            prev_matrix = previous_trail.reviewer_responsibility_matrix
+            prev_matrix.gl_code_status = 6 # Rejected by FC
+            prev_matrix.save()
+            print(f"Updated Previous Matrix {prev_matrix.id} to Rejected by FC")
+
+    messages.success(
+        request,
+        f"GL Review submitted successfully for GL Code {gl_code}. Status updated to '{assignment.get_gl_code_status_display()}'."
+    )
+
+    if action == 'approve':
+        # send mail to FC
+        fc_email = dh.user.email
+        send_mail(
+            'GL Review Available',
+            f'GL Review for GL Code {gl_code} is available for your approval.',
+            settings.EMAIL_HOST_USER,
+            [fc_email],
+            fail_silently=False,
+        )
+    # find next
+    else:
+        # mail previous
+        prev_reviewer = previous_trail.reviewer
+        send_mail(
+            'GL Review Rejected',
+            f'Your GL Review for GL Code {gl_code} has been rejected by the Finance Controller.',
+            settings.EMAIL_HOST_USER,
+            [prev_reviewer.email],
+            fail_silently=False,
+        )
+
+    return redirect("gl_reviews_page")
+
+
+@login_required
 def balance_sheet_view(request):
     """Detailed balance sheet view for Tier 3 navigation."""
 

@@ -511,6 +511,40 @@
 
     {% include 'base/footer.html' %}
 
+  <!-- UBFC Approval/Rejection Modal -->
+  <div id="reviewModalTwo" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Finance Controller GL Submission</h3>
+        <p id="modalGlInfoTwo"></p>
+      </div>
+      <form id="reviewFormTwo" method="post" action="{% url 'submit_gl_review_bufc' %}">
+        {% csrf_token %}
+        <input type="hidden" id="assignmentIdTwo" name="assignment_id" value="" />
+        <input type="hidden" id="glCodeTwo" name="gl_code" value="" />
+
+        <div class="form-group">
+          <label for="reconciliation_notes_two">Review Comments *</label>
+          <textarea id="reconciliation_notes_two" name="reconciliation_notes"
+            placeholder="Enter your review comments, feedback, or reasons for approval/rejection..."
+            required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" onclick="closeReviewModalTwo()">
+            Cancel
+          </button>
+          <button type="submit" name="action" value="reject" class="btn btn-reject">
+            Reject
+          </button>
+          <button type="submit" name="action" value="approve" class="btn btn-approve">
+            Approve
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
 <script>
       // Upload Modal Functions
       function openUploadModal(assignmentId, glCode, glName) {

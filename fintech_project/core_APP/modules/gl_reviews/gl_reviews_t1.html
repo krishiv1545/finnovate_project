@@ -1,0 +1,762 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>GL Review (Tower Head) | Finnovate</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
+    <link rel="stylesheet" href="{% static 'output.css' %}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        main {
+            padding: 2rem 2rem 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .table-wrapper {
+            background: white;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            height: fit-content;
+        }
+
+        .table-header {
+            padding: 0rem 1rem 1rem 1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .table-header h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .gl-table {
+            width: 100%;
+            font-size: 0.85rem;
+            margin-top: 0;
+        }
+
+        .gl-table thead {
+            background: #f1f5f9;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .gl-table th {
+            padding: 0.9rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .gl-table td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: #1f2937;
+            font-size: 0.85rem;
+        }
+
+        .gl-table tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        .gl-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-pending {
+            background: rgba(251, 191, 36, 0.15);
+            color: #92400e;
+        }
+
+        .status-done {
+            background: rgba(16, 185, 129, 0.15);
+            color: #065f46;
+        }
+
+        .status-approved {
+            background: rgba(59, 130, 246, 0.15);
+            color: #1e40af;
+        }
+
+        .status-rejected {
+            background: rgba(239, 68, 68, 0.15);
+            color: #991b1b;
+        }
+
+        .action-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            font-size: 0.85rem;
+        }
+
+        .action-link:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .view-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .view-link:hover {
+            text-decoration: underline;
+        }
+
+        .file-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            display: block;
+            margin: 0.25rem 0;
+        }
+
+        .file-link:hover {
+            text-decoration: underline;
+        }
+
+        .empty-state {
+            padding: 1.5rem 1.5rem;
+            text-align: center;
+            color: var(--subtle);
+        }
+
+        .empty-state p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .modal-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+            color: #0f172a;
+        }
+
+        .modal-header p {
+            margin: 0;
+            color: var(--subtle);
+            font-size: 0.9rem;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-sm {
+            padding: 0.3rem 0.8rem;
+            font-size: 0.75rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(199, 108, 74, 0.3);
+        }
+
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #1f2937;
+        }
+
+        .btn-secondary:hover {
+            background: #d1d5db;
+        }
+
+        .btn-approve {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-approve:hover {
+            background: #218838;
+        }
+
+        .btn-reject {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-reject:hover {
+            background: #bb2d3b;
+        }
+
+        .btn:disabled {
+            background-color: #cbd5e1;
+            cursor: not-allowed;
+            color: #94a3b8;
+        }
+
+        .panel {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            height: 100%;
+            z-index: 10;
+        }
+
+        .panel h1,
+        .panel h2 {
+            margin: 0;
+            color: #0f172a;
+        }
+
+        .panel p {
+            margin: 0;
+            color: var(--subtle);
+        }
+
+        .search-container {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 0.65rem 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            width: 275px;
+            background: #f8fafc;
+            transition: border 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+            background: #fff;
+        }
+
+        .bulk-actions {
+            display: none;
+            gap: 1rem;
+            align-items: center;
+            margin-left: 1rem;
+        }
+
+        .bulk-actions.active {
+            display: flex;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .gl-checkbox-wrapper {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        }
+
+        .gl-checkbox {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        }
+
+        .checkbox-ui {
+        width: 18px;
+        height: 18px;
+        border: 2px solid #6b7280;
+        border-radius: 4px;
+        background: #ffffff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.15s ease;
+        }
+
+        .gl-checkbox-wrapper:hover .checkbox-ui {
+        border-color: #374151;
+        }
+
+        /* Checked state */
+        .gl-checkbox:checked + .checkbox-ui {
+        background: var(--accent);
+        border-color: var(--accent);
+        }
+
+        .gl-checkbox:checked + .checkbox-ui::after {
+        content: "";
+        width: 5px;
+        height: 9px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        }
+
+        .gl-checkbox:disabled + .checkbox-ui {
+        background: #e5e7eb;
+        border-color: #d1d5db;
+        cursor: not-allowed;
+        opacity: 0.6;
+        }
+
+        .gl-checkbox:disabled + .checkbox-ui::after {
+        border-color: #9ca3af;
+        }
+
+    </style>
+</head>
+
+<body>
+    {% include 'base/navbar.html' %}
+
+    <main>
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="panel table-panel">
+            <div class="table-header">
+                <div class="header-row">
+                    <div style="display: flex; align-items: center;">
+                        <h2>Tower Head GL Review</h2>
+                        <div class="bulk-actions" id="bulkActionsBar">
+                            <span id="selectedCount" style="font-size: 0.9rem; font-weight: 500; color: #64748b;">0
+                                Selected</span>
+                            <button type="button" class="btn btn-approve btn-sm"
+                                onclick="submitBulkAction('approve')">Approve Selected</button>
+                            <button type="button" class="btn btn-reject btn-sm" onclick="submitBulkAction('reject')">Reject
+                                Selected</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="glSearch" class="search-input" placeholder="Search GL Code, Name, or Deptartment"
+                        onkeyup="filterTable()">
+                </div>
+            </div>
+            <div class="table-container">
+                {% if gl_reviews %}
+                <form id="bulkForm" method="post" action="{% url 'submit_gl_review_tower' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" id="bulkActionInput">
+                    <table class="gl-table" id="glTable">
+                        <thead>
+                            <tr>
+                                <th style="width: 40px;">
+                                    <label class="gl-checkbox-wrapper">
+                                    <input 
+                                        type="checkbox" 
+                                        id="selectAll" 
+                                        class="gl-checkbox"
+                                        onclick="toggleSelectAll()"
+                                    >
+                                    <span class="checkbox-ui"></span>
+                                    </label>
+                                </th>
+                                <th>GL Code</th>
+                                <th>GL Name</th>
+                                <th>Dept.</th>
+                                <th>Status</th>
+                                <th>Reconciliation</th>
+                                <th>Supporting Documents</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for gl in gl_reviews %}
+                            <tr>
+                                <td>
+                                    <label class="gl-checkbox-wrapper">
+                                    <input
+                                        type="checkbox"
+                                        name="assignment_ids[]"
+                                        value="{{ gl.assignment_id }}"
+                                        class="gl-checkbox"
+                                        {% if not gl.is_actionable %}disabled{% endif %}
+                                        onclick="updateBulkState()"
+                                    >
+                                    <span class="checkbox-ui"></span>
+                                    </label>
+                                </td>
+                                <td><strong>{{ gl.gl_code }}</strong></td>
+                                <td>{{ gl.gl_name }}</td>
+                                <td>{{ gl.department }}</td>
+                                <td>
+                                    <span
+                                        class="status-badge {% if gl.is_actionable %}status-pending {% else %}status-done{% endif %}">
+                                        {% if gl.is_actionable %}
+                                            Pending
+                                        {% else %}
+                                            {{ gl.status }}
+                                        {% endif %}
+                                    </span>
+                                </td>
+                                <td>{{ gl.reconciliation_notes }}</td>
+                                <td>
+                                    {% if gl.supporting_documents %} {% for doc in gl.supporting_documents %}
+                                    <a href="{{ doc.file_url }}" class="file-link" target="_blank"
+                                        >{{ doc.file_name }}</a
+                                    >
+                                    {% endfor %} {% else %}
+                                    <span style="color: var(--subtle); font-size: 0.8rem"
+                                        >No documents</span
+                                    >
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if gl.is_actionable %}
+                                    <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                        <button type="button" class="btn btn-approve btn-sm"
+                                            onclick="submitSingle('{{ gl.assignment_id }}', 'approve')">Approve</button>
+                                        <button type="button" class="btn btn-reject btn-sm"
+                                            onclick="submitSingle('{{ gl.assignment_id }}', 'reject')">Reject</button>
+                                    </div>
+                                    {% else %}
+                                    {% if gl.status_code == 7 %}
+                                    <span style="color: #2563eb; font-weight: 500;">Approved</span>
+                                    {% elif gl.status_code == 8 %}
+                                    <span style="color: #b91c1c; font-weight: 500;">Rejected</span>
+                                    {% else %}
+                                    <span style="color: #64748b; font-size: 0.85rem;">Waiting for BUFC</span>
+                                    {% endif %}
+                                    {% endif %}
+                                    <br />
+                                    <a href="#" class="view-link" style="margin-top: 0.5rem; display: inline-block;"
+                                        onclick="openTrailModal('{{ gl.gl_code }}', '{{ gl.gl_name|escapejs }}')">
+                                        <i class="fa-solid fa-clock-rotate-left"></i> View Trail
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </form>
+                {% else %}
+                <div class="empty-state">
+                    <p>No GLs to review.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    <!-- Review Trail Modal -->
+    <div id="trailModal" class="modal">
+        <div class="modal-content" style="max-width: 700px;">
+            <div class="modal-header">
+                <h3>Review Trail History</h3>
+                <p id="trailModalGlInfo"></p>
+            </div>
+
+            <div class="panel" style="box-shadow: none; border: none; padding: 0;">
+                <ul class="timeline timeline-vertical" id="trailTimeline">
+                    <!-- Trail items will be injected here via JS -->
+                </ul>
+                <div id="trailLoading" style="text-align: center; padding: 2rem; display: none;">
+                    <i class="fa-solid fa-circle-notch fa-spin"></i> Loading trail...
+                </div>
+                <div id="trailEmpty" class="empty-state" style="display: none;">
+                    <p>No activity recorded yet.</p>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="closeTrailModal()">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    {% include 'base/footer.html' %}
+
+    <script>
+        // Search Function
+        function filterTable() {
+            const input = document.getElementById("glSearch");
+            const filter = input.value.toUpperCase();
+            const table = document.getElementById("glTable");
+            const tr = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < tr.length; i++) {
+                const glCode = tr[i].getElementsByTagName("td")[1].textContent || "";
+                const glName = tr[i].getElementsByTagName("td")[2].textContent || "";
+                const dept = tr[i].getElementsByTagName("td")[3].textContent || "";
+
+                if (glCode.toUpperCase().indexOf(filter) > -1 ||
+                    glName.toUpperCase().indexOf(filter) > -1 ||
+                    dept.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
+        // Single Submit
+        function submitSingle(id, action) {
+            const form = document.getElementById('bulkForm');
+
+            if (!confirm('Are you sure you want to ' + action + ' this GL?')) return;
+
+            const tempForm = document.createElement('form');
+            tempForm.method = 'POST';
+            tempForm.action = "{% url 'submit_gl_review_tower' %}";
+
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+            const csrfInput = document.createElement('input');
+            csrfInput.type = 'hidden';
+            csrfInput.name = 'csrfmiddlewaretoken';
+            csrfInput.value = csrfToken;
+            tempForm.appendChild(csrfInput);
+
+            const idInput = document.createElement('input');
+            idInput.type = 'hidden';
+            idInput.name = 'assignment_id';
+            idInput.value = id;
+            tempForm.appendChild(idInput);
+
+            const actionInput = document.createElement('input');
+            actionInput.type = 'hidden';
+            actionInput.name = 'action';
+            actionInput.value = action;
+            tempForm.appendChild(actionInput);
+
+            document.body.appendChild(tempForm);
+            tempForm.submit();
+        }
+
+        // Bulk Actions
+        function toggleSelectAll() {
+            const selectAll = document.getElementById('selectAll');
+            const checkboxes = document.querySelectorAll('.gl-checkbox:not(:disabled)');
+
+            checkboxes.forEach(cb => {
+                if (cb.closest('tr').style.display !== 'none') {
+                    cb.checked = selectAll.checked;
+                }
+            });
+            updateBulkState();
+        }
+
+        function updateBulkState() {
+            const checkboxes = document.querySelectorAll('.gl-checkbox:checked');
+            const count = checkboxes.length;
+            document.getElementById('selectedCount').textContent = count + " Selected";
+
+            const bulkBar = document.getElementById('bulkActionsBar');
+            if (count > 0) {
+                bulkBar.classList.add('active');
+            } else {
+                bulkBar.classList.remove('active');
+            }
+        }
+
+        function submitBulkAction(action) {
+            if (!confirm('Are you sure you want to ' + action + ' selected GLs?')) return;
+            document.getElementById('bulkActionInput').value = action;
+            document.getElementById('bulkForm').submit();
+        }
+
+        // View Trail Modal
+        document.getElementById("trailModal").addEventListener("click", function (e) {
+            if (e.target === this) {
+                closeTrailModal();
+            }
+        });
+
+        function openTrailModal(glCode, glName) {
+            document.getElementById("trailModalGlInfo").textContent = `GL Code: ${glCode} - ${glName}`;
+            document.getElementById("trailModal").classList.add("active");
+
+            const timelineContainer = document.getElementById("trailTimeline");
+            const loadingDiv = document.getElementById("trailLoading");
+            const emptyDiv = document.getElementById("trailEmpty");
+
+            timelineContainer.innerHTML = '';
+            loadingDiv.style.display = 'block';
+            emptyDiv.style.display = 'none';
+
+            fetch(`/gl-reviews/trail/${glCode}/`)
+                .then(response => response.json())
+                .then(data => {
+                    loadingDiv.style.display = 'none';
+                    if (data.trails && data.trails.length > 0) {
+                        renderTimeline(data.trails);
+                    } else {
+                        emptyDiv.style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching trail:', error);
+                    loadingDiv.style.display = 'none';
+                    timelineContainer.innerHTML = '<p style="color: red; text-align: center;">Error loading trail data.</p>';
+                });
+        }
+
+        function closeTrailModal() {
+            document.getElementById("trailModal").classList.remove("active");
+        }
+
+        function renderTimeline(trails) {
+            const container = document.getElementById("trailTimeline");
+            let html = '';
+
+            trails.forEach((trail, index) => {
+                const isLast = index === trails.length - 1;
+                const isStart = index === 0;
+
+                let iconColor = 'text-primary';
+                let badgeClass = 'status-pending';
+                let icon = '<i class="fa-solid fa-circle"></i>';
+
+                if (trail.action === 'Submitted') {
+                    badgeClass = 'status-done';
+                    icon = '<i class="fa-solid fa-check"></i>';
+                    iconColor = 'text-success';
+                } else if (trail.action === 'Approved') {
+                    badgeClass = 'status-approved';
+                    icon = '<i class="fa-solid fa-check"></i>';
+                    iconColor = 'text-info';
+                } else if (trail.action === 'Rejected') {
+                    badgeClass = 'status-rejected';
+                    icon = '<i class="fa-solid fa-xmark"></i>';
+                    iconColor = 'text-error';
+                }
+
+                html += `
+                <li>
+                  ${!isStart ? '<hr class="bg-primary"/>' : ''}
+                  <div class="timeline-middle">
+                    <span class="${iconColor} h-5 w-5" style="display: flex; justify-content: center; align-items: center;">
+                      ${icon}
+                    </span>
+                  </div>
+                  <div class="timeline-end timeline-box panel" style="width: 90%; box-shadow: var(--shadow-sm);">
+                      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                          <div>
+                              <span class="font-bold text-sm">${trail.action}</span>
+                              <span class="text-xs text-gray-500">by ${trail.reviewer}</span>
+                          </div>
+                          <time class="text-xs font-mono italic text-gray-400">${trail.date} ${trail.time}</time>
+                      </div>
+                    ${trail.notes ? `<p class="text-sm text-gray-600 italic">"${trail.notes}"</p>` : ''}
+                  </div>
+                  ${!isLast ? '<hr class="bg-primary"/>' : ''}
+                </li>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+
+</html>

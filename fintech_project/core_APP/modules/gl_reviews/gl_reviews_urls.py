@@ -8,7 +8,8 @@ from .gl_reviews import (
     remove_gl_supporting_document,
     get_review_trail,
     review_trail_page,
-    submit_gl_review_bufc
+    submit_gl_review_bufc,
+    submit_gl_review_tower,
 )
 
 
@@ -17,8 +18,11 @@ urlpatterns = [
     path('remove_gl_supporting_document/<str:document_id>', remove_gl_supporting_document, name='remove_gl_supporting_document'),
     path('tier3/', balance_sheet_view, name='reports_tier3'),
     path('upload-document/', upload_gl_supporting_document, name='upload_gl_supporting_document'),
+    # --- gl review submit apis ---
     path('submit-review/', submit_gl_review_preparer, name='submit_gl_review_preparer'),
     path('submit-review/reviewer/', submit_gl_review_reviewer, name='submit_gl_review_reviewer'),
+    path('submit-review/tower/', submit_gl_review_tower, name='submit_gl_review_tower'),
+    # -----------------------------
     path('submit-review/bufc/', submit_gl_review_bufc, name='submit_gl_review_bufc'),
     path('trail/<str:gl_code>/', get_review_trail, name='get_review_trail'),
     path('trail-search/', review_trail_page, name='review_trail_page'),

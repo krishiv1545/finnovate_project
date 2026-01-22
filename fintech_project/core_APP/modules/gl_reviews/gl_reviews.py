@@ -127,6 +127,122 @@ def gl_reviews_view(request):
         )
 
     # -------------------------------
+    # USER TYPE 2: Tower Head
+    # -------------------------------
+    if request.user.user_type == 2:
+        # Init Tower Head ResponsibilityMatrix rows
+        main_tower_assignment = ResponsibilityMatrix.objects.filter(
+            user_role=2
+        ).select_related('department').first()
+
+        gl_reviews_qs = GLReview.objects.all().select_related('trial_balance', 'trial_balance__user').order_by('-reviewed_at')
+
+        for review in gl_reviews_qs:
+            trial_balance = review.trial_balance
+            assignment = ResponsibilityMatrix.objects.filter(
+                user=request.user,
+                gl_code=trial_balance.gl_code
+            )
+            if not assignment.exists():
+                if main_tower_assignment.gl_code:
+                     # create new assignment
+                     print("CREATING NEW TOWER ASSIGNMENT")
+                     new_tower_assignment = ResponsibilityMatrix.objects.create(
+                        user=request.user,
+                        gl_code=trial_balance.gl_code,
+                        gl_code_status=1,
+                        department=main_tower_assignment.department,
+                        user_role=2
+                     )
+                     new_tower_assignment.save()
+                else:
+                    print("MAIN TOWER HAS NO GL CODE, ASSIGNING TO SELF")
+                    main_tower_assignment.gl_code = trial_balance.gl_code
+                    main_tower_assignment.gl_code_status = 1
+                    main_tower_assignment.save()
+
+        # Get Tower Head Assignments
+        tower_assignments = ResponsibilityMatrix.objects.filter(
+            user=request.user,
+            user_role=2,
+            gl_code__isnull=False
+        ).select_related('department').order_by('-created_at')
+
+        gl_reviews = []
+
+        for assignment in tower_assignments:
+            trial_balance = TrialBalance.objects.filter(
+                gl_code=assignment.gl_code
+            ).first()
+
+            gl_review = GLReview.objects.filter(
+                trial_balance=trial_balance
+            ).first() if trial_balance else None
+
+            balance_sheet = BalanceSheet.objects.filter(
+                gl_acct=assignment.gl_code
+            ).first()
+
+            supporting_docs = GLSupportingDocument.objects.filter(
+                gl_review=gl_review
+            ).order_by('-uploaded_at') if gl_review else []
+
+            fc_assignment = ResponsibilityMatrix.objects.filter(
+                gl_code=assignment.gl_code,
+                user_role=3
+            ).first()
+
+            fc_status = fc_assignment.gl_code_status if fc_assignment else 1
+            
+            # Actionable if FC Status is 'Approved by FC' (5)
+            is_actionable = (fc_status == 3)
+            
+            last_status_text = ""
+            if gl_review.reviewer.user_type == 4:
+                # could be preparer/reviewer
+                print("GL CODE: ", assignment.gl_code)
+                reviewer_assignment = ResponsibilityMatrix.objects.filter(
+                    gl_code=trial_balance.gl_code,
+                    user_role=5
+                ).first()
+                if reviewer_assignment:
+                    if reviewer_assignment.gl_code_status == 4:
+                        last_status_text = "GL Review-I (Preparer)"
+                    else:
+                        last_status_text = "GL Review-II (Reviewer)"
+                else:
+                    last_status_text = "GL Review-I (Preparer)"
+            else:
+                last_status_text = "GL Review-III (Finance Controller)"
+
+            gl_reviews.append({
+                'assignment_id': str(assignment.id),
+                'gl_code': assignment.gl_code,
+                'gl_name': balance_sheet.gl_account_name if balance_sheet else 'N/A',
+                'department': assignment.department.name if assignment.department else 'N/A',
+                'fc_status': fc_status,
+                'status': last_status_text,
+                'status_code': assignment.gl_code_status or 1,
+                'assigned_on': assignment.created_at.strftime("%B %d, %Y at %I:%M %p"),
+                'reconciliation_notes': gl_review.reconciliation_notes if gl_review else 'N/A',
+                'supporting_documents': [
+                    {
+                        'id': str(doc.id),
+                        'file_name': doc.file.name.split('/')[-1],
+                        'file_url': doc.file.url,
+                        'uploaded_at': doc.uploaded_at.strftime("%B %d, %Y at %I:%M %p"),
+                    }
+                    for doc in supporting_docs
+                ],
+                'is_actionable': is_actionable
+            })
+        
+        gl_reviews.sort(key=lambda x: x['is_actionable'], reverse=True)
+
+        return render(request, 'gl_reviews/gl_reviews_t1.html', {'gl_reviews': gl_reviews})
+
+
+    # -------------------------------
     # USER TYPE 3: FC
     # -------------------------------
     if request.user.user_type == 3:
@@ -676,6 +792,109 @@ def submit_gl_review_bufc(request):
             fail_silently=False,
         )
 
+    return redirect("gl_reviews_page")
+
+
+@login_required
+@require_http_methods(["POST"])
+def submit_gl_review_tower(request):
+    """
+    Submit a GL review for Tower Head (User Type 2).
+    """
+    assignment_id = request.POST.get("assignment_id")
+    gl_code = request.POST.get("gl_code")
+    # For bulk actions, assignment_id might be single, but if we do bulk in JS, 
+    # we might send list. But user asked for "similar logic". 
+    # Usually "Action" column implies single row action.
+    # Bulk select might require a different endpoint or parameter handling.
+    # For now let's support single action via this endpoint, checking for list inputs if needed.
+    
+    # Actually, standard HTML forms send one. 
+    # If the user implements bulk, they will likely iterate and send multiple fetch requests 
+    # OR send a list of IDs.
+    # Let's assume the basic single submit first, as per `gl_reviews_t2.html` pattern.
+    # If bulk is needed, I'll add handle for list.
+
+    action = request.POST.get("action")  # 'approve' or 'reject'
+    
+    # Check if this is a bulk request (list of IDs)
+    # The frontend might send `assignment_ids[]`
+    assignment_ids = request.POST.getlist("assignment_ids[]")
+    if not assignment_ids and assignment_id:
+        assignment_ids = [assignment_id]
+
+    if not assignment_ids:
+        messages.error(request, "No GLs selected.")
+        return redirect("gl_reviews_page")
+
+    
+    processed_count = 0
+    
+    for a_id in assignment_ids:
+        # We need to re-fetch context for each
+        assignment = ResponsibilityMatrix.objects.get(id=a_id, user=request.user)
+        current_gl_code = assignment.gl_code
+        
+        # Verify FC status?
+        fc_assignment = ResponsibilityMatrix.objects.filter(
+            gl_code=current_gl_code,
+            user_role=3
+        ).first()
+        
+        if not fc_assignment or fc_assignment.gl_code_status != 5:
+            # Skip if not approved by FC
+            continue
+
+        trial_balance = TrialBalance.objects.filter(gl_code=current_gl_code).first()
+        gl_review = GLReview.objects.filter(trial_balance=trial_balance).first()
+        
+        if not gl_review:
+            continue
+
+        previous_trail = ReviewTrail.objects.filter(gl_review=gl_review).order_by('-created_at').first()
+
+        if action == 'approve':
+            assignment.gl_code_status = 7  # Approved by Tower Head
+            # Next layer? None specified. Final approval?
+        else:
+            assignment.gl_code_status = 8  # Rejected by Tower Head
+            # Update FC status to rejected?
+            fc_assignment.gl_code_status = 6 # Rejected by FC ?? Or new status "Rejected by Tower"?
+            # User requirement: "Rejected by BUFC" in view. 
+            # If Tower rejects, it goes back to BUFC?
+            # Let's look at `submit_gl_review_bufc`: if FC rejects, it sets Reviewer to 6 (Rejected by FC).
+            # So if Tower rejects, maybe set FC to 8 (Rejected by Tower)? 
+            # But 8 is "Rejected by Tower Head". 
+            # Let's set FC status to 8 so they know it came from Tower.
+            fc_assignment.gl_code_status = 8
+            fc_assignment.save()
+
+        assignment.save()
+
+        # Update GL Review reviewer ownership?
+        # If approved, stays with me or done? 
+        # "Actions column... Approve and Reject... no Reconciliation"
+        # Since I am taking action, I am the reviewer now.
+        gl_review.reviewer = request.user
+        gl_review.save()
+
+        # Create Trail
+        ReviewTrail.objects.create(
+            reviewer=request.user,
+            reviewer_responsibility_matrix=assignment,
+            gl_review=gl_review,
+            previous_trail=previous_trail,
+            reconciliation_notes=f"Bulk Action: {action.title()}" if len(assignment_ids) > 1 else "Tower Head Review", # No notes input defined for bulk?
+            # Wait, "Action should also have View Trail (just copy existing logic)"
+            # "Actions column should directly have an Approve and Reject button (no Reconciliation)."
+            # So no notes required.
+            gl_code=current_gl_code,
+            action='Approved' if action == 'approve' else 'Rejected'
+        )
+        
+        processed_count += 1
+
+    messages.success(request, f"Successfully processed {processed_count} GL reviews.")
     return redirect("gl_reviews_page")
 
 

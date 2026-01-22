@@ -49,6 +49,8 @@ class ResponsibilityMatrix(models.Model):
         (4, 'Rejected'),
         (5, 'Approved by FC'),
         (6, 'Rejected by FC'),
+        (7, 'Approved by Tower Head'),
+        (8, 'Rejected by Tower Head'),
     )
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

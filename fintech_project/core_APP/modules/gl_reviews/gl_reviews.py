@@ -237,7 +237,14 @@ def gl_reviews_view(request):
                 'is_actionable': is_actionable
             })
         
-        gl_reviews.sort(key=lambda x: x['is_actionable'], reverse=True)
+        def tower_sort_key(x):
+            if x['is_actionable']:
+                return 0
+            if x['status_code'] in (7, 8):
+                return 1
+            return 2
+
+        gl_reviews.sort(key=tower_sort_key)
 
         return render(request, 'gl_reviews/gl_reviews_t1.html', {'gl_reviews': gl_reviews})
 
@@ -801,73 +808,145 @@ def submit_gl_review_tower(request):
     """
     Submit a GL review for Tower Head (User Type 2).
     """
-    print("submit_gl_review_tower")
-    assignment_id = request.POST.get("assignment_id")
-    gl_code = request.POST.get("gl_code")
+    try:
+        assignment_id = request.POST.get("assignment_id")
+        gl_code = request.POST.get("gl_code")
+        action = request.POST.get("action")  # 'approve' or 'reject'
 
-    action = request.POST.get("action")  # 'approve' or 'reject'
-    
-    assignment_ids = request.POST.getlist("assignment_ids[]")
-    print("assignment_ids:", assignment_ids)
-    if not assignment_ids and assignment_id:
-        assignment_ids = [assignment_id]
+        assignment_ids = request.POST.getlist("assignment_ids[]")
 
-    if not assignment_ids:
-        messages.error(request, "No GLs selected.")
-        return redirect("gl_reviews_page")
-    
-    processed_count = 0
-    
-    for a_id in assignment_ids:
-        # We need to re-fetch context for each
-        assignment = ResponsibilityMatrix.objects.get(id=a_id, user=request.user)
-        current_gl_code = assignment.gl_code
-        
-        # Verify FC status?
-        fc_assignment = ResponsibilityMatrix.objects.filter(
-            gl_code=current_gl_code,
-            user_role=3
-        ).first()
-        
-        if not fc_assignment or fc_assignment.gl_code_status != 3:
-            # Skip if not approved by FC (Status 3 = Approved)
-            continue
+        print("[1] Raw POST data")
+        print("    action:", action)
+        print("    assignment_id:", assignment_id)
+        print("    assignment_ids:", assignment_ids)
 
-        trial_balance = TrialBalance.objects.filter(gl_code=current_gl_code).first()
-        gl_review = GLReview.objects.filter(trial_balance=trial_balance).first()
-        
-        if not gl_review:
-            continue
+        if not assignment_ids and assignment_id:
+            assignment_ids = [assignment_id]
+            print("[1.1] Single assignment fallback used")
 
-        previous_trail = ReviewTrail.objects.filter(gl_review=gl_review).order_by('-created_at').first()
+        if not assignment_ids:
+            print("[ERROR] No assignment IDs found")
+            messages.error(request, "No GLs selected.")
+            return redirect("gl_reviews_page")
 
-        if action == 'approve':
-            assignment.gl_code_status = 7
-        else:
-            assignment.gl_code_status = 8
-            fc_assignment.gl_code_status = 6
-            fc_assignment.gl_code_status = 8
-            fc_assignment.save()
+        processed_count = 0
 
-        assignment.save()
-        gl_review.reviewer = request.user
-        gl_review.save()
+        for idx, a_id in enumerate(assignment_ids, start=1):
+            print(f"[2.{idx}] Processing assignment_id:", a_id)
 
-        # Create Trail
-        ReviewTrail.objects.create(
-            reviewer=request.user,
-            reviewer_responsibility_matrix=assignment,
-            gl_review=gl_review,
-            previous_trail=previous_trail,
-            reconciliation_notes=f"Bulk Action: {action.title()}" if len(assignment_ids) > 1 else "Tower Head Review", # No notes input defined for bulk?
-            gl_code=current_gl_code,
-            action='Approved' if action == 'approve' else 'Rejected'
+            try:
+                assignment = ResponsibilityMatrix.objects.get(
+                    id=a_id,
+                    user=request.user
+                )
+            except ResponsibilityMatrix.DoesNotExist:
+                print(f"[ERROR] Assignment not found or not owned by user: {a_id}")
+                continue
+
+            current_gl_code = assignment.gl_code
+            print(f"[3.{idx}] GL Code:", current_gl_code)
+
+            # Verify FC approval
+            fc_assignment = ResponsibilityMatrix.objects.filter(
+                gl_code=current_gl_code,
+                user_role=3
+            ).first()
+
+            if not fc_assignment:
+                print(f"[WARN] No FC assignment found for GL:", current_gl_code)
+                continue
+
+            print(f"[4.{idx}] FC status:", fc_assignment.gl_code_status)
+
+            if fc_assignment.gl_code_status != 3:
+                print(f"[SKIP] GL not approved by FC. Status:", fc_assignment.gl_code_status)
+                continue
+
+            trial_balance = TrialBalance.objects.filter(
+                gl_code=current_gl_code
+            ).first()
+
+            if not trial_balance:
+                print(f"[ERROR] No TrialBalance found for GL:", current_gl_code)
+                continue
+
+            print(f"[5.{idx}] TrialBalance ID:", trial_balance.id)
+
+            gl_review = GLReview.objects.filter(
+                trial_balance=trial_balance
+            ).first()
+
+            if not gl_review:
+                print(f"[ERROR] No GLReview found for GL:", current_gl_code)
+                continue
+
+            print(f"[6.{idx}] GLReview ID:", gl_review.id)
+
+            previous_trail = ReviewTrail.objects.filter(
+                gl_review=gl_review
+            ).order_by('-created_at').first()
+
+            print(f"[7.{idx}] Previous trail ID:",
+                  previous_trail.id if previous_trail else None)
+            print(f"[8.{idx}] Performing action:", action)
+
+            if action == 'approve':
+                assignment.gl_code_status = 7
+                fc_assignment.gl_code_status = 7
+                fc_assignment.save()
+                print(f"[9.{idx}] Tower Head APPROVED → status set to 7")
+
+            elif action == 'reject':
+                assignment.gl_code_status = 8
+                fc_assignment.gl_code_status = 8
+                fc_assignment.save()
+                print(f"[9.{idx}] Tower Head REJECTED → FC status set to 8")
+
+            else:
+                print(f"[ERROR] Invalid action:", action)
+                continue
+
+            assignment.save()
+            print(f"[10.{idx}] Assignment saved:", assignment.id)
+
+            gl_review.reviewer = request.user
+            gl_review.save()
+            print(f"[11.{idx}] GLReview reviewer updated to Tower Head")
+
+            ReviewTrail.objects.create(
+                reviewer=request.user,
+                reviewer_responsibility_matrix=assignment,
+                gl_review=gl_review,
+                previous_trail=previous_trail,
+                reconciliation_notes=(
+                    f"Bulk Action: {action.title()}"
+                    if len(assignment_ids) > 1
+                    else "Tower Head Review"
+                ),
+                gl_code=current_gl_code,
+                action='Approved' if action == 'approve' else 'Rejected'
+            )
+
+            print(f"[12.{idx}] ReviewTrail created successfully")
+
+            processed_count += 1
+
+        print("Processed count:", processed_count)
+
+        messages.success(
+            request,
+            f"Successfully processed {processed_count} GL reviews."
         )
-        
-        processed_count += 1
+        return redirect("gl_reviews_page")
 
-    messages.success(request, f"Successfully processed {processed_count} GL reviews.")
-    return redirect("gl_reviews_page")
+    except Exception as e:
+        print("[ERROR] submit_gl_review_tower crashed")
+        print("Exception:", repr(e))
+        import traceback
+        traceback.print_exc()
+
+        messages.error(request, "Something went wrong while processing GL reviews.")
+        return redirect("gl_reviews_page")
 
 
 @login_required

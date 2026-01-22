@@ -491,8 +491,7 @@
                                 <td>{{ gl.reconciliation_notes }}</td>
                                 <td>
                                     {% if gl.supporting_documents %} {% for doc in gl.supporting_documents %}
-                                    <a href="{{ doc.file_url }}" class="file-link" target="_blank">{{ doc.file_name
-                                        }}</a>
+                                    <a href="{{ doc.file_url }}" class="file-link" target="_blank">{{ doc.file_name}}</a>
                                     {% endfor %} {% else %}
                                     <span style="color: var(--subtle); font-size: 0.8rem">No documents</span>
                                     {% endif %}
@@ -544,8 +543,8 @@
             <p id="confirmMessage" style="color: var(--subtle); margin-bottom: 2rem;">Are you sure you want to proceed?
             </p>
             <div class="form-actions" style="justify-content: center;">
-                <button type="button" class="btn btn-secondary" onclick="closeConfirmModal()">Cancel</button>
                 <button type="button" id="confirmYesBtn" class="btn btn-primary">YES</button>
+                <button type="button" class="btn btn-secondary" onclick="closeConfirmModal()">Cancel</button>
             </div>
         </div>
     </div>

@@ -469,7 +469,7 @@
                 <td>{{ gl.assigned_on }}</td>
                 <td>
                   <span
-                    class="status-badge {% if gl.status_code == 1 %}status-pending {% elif gl.status_code == 2 %}status-done {% elif gl.status_code == 3 %}status-approved {% elif gl.status_code == 4 %}status-rejected {% else %}status-pending{% endif %}"
+                    class="status-badge {% if gl.status_code == 1 %}status-pending {% elif gl.status_code == 2 %}status-done {% elif gl.status_code == 3 %}status-approved {% elif gl.status_code == 4 %}status-rejected {% elif gl.status_code == 7 %}status-done {% elif gl.status_code == 8 %}status-rejected {% elif gl.status_code == 9 %}{% else %}status-pending{% endif %}"
                   >
                     {{ gl.status }}
                   </span>

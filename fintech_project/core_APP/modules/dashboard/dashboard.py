@@ -6,34 +6,202 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
 from django.conf import settings
 from django.shortcuts import redirect
+from django.db.models import Sum, Count, Q, F, Case, When, Value, FloatField
+from django.db.models.functions import TruncMonth, TruncQuarter, Coalesce
+from django.utils import timezone
 import json
 import os
 import time
 import re
-from core_APP.models import Conversation, Message
+import datetime
+from core_APP.models import (
+    Conversation, Message, TrialBalance, BalanceSheet, 
+    GLReview, ResponsibilityMatrix, ReviewTrail, Department, CustomUser
+)
 import google.generativeai as genai
 
 
 logger = logging.getLogger(__name__)
 
 
+class DashboardAnalytics:
+    @staticmethod
+    def get_dashboard_data(user):
+        """Aggregate data for all 4 rows of the dashboard."""
+        return {
+            "financials": DashboardAnalytics.get_financial_health(user),
+            "operations": DashboardAnalytics.get_operational_efficiency(user),
+            "profitability": DashboardAnalytics.get_pl_profitability(user),
+            "compliance": DashboardAnalytics.get_risk_compliance(user),
+        }
+
+    @staticmethod
+    def get_financial_health(user):
+        # 1. GL Variance Trends (Line)
+        end_date = timezone.now()
+        start_date = end_date - datetime.timedelta(days=365)
+        
+        monthly_variance = TrialBalance.objects.filter(
+            user=user, 
+            added_at__range=(start_date, end_date)
+        ).annotate(
+            month=TruncMonth('added_at')
+        ).values('month').annotate(
+            net_amount=Sum('amount')
+        ).order_by('month')
+
+        # 2. Assets vs Liabilities (Bar) - Quarterly
+        # Aggregate specific heads
+        # Map DB values to Logic values
+        asset_heads = ['Assets', 'Current Assets', 'Non-Current Assets']
+        liab_heads = ['Liabilities', 'Current Liabilities', 'Non-Current Liabilities']
+        
+        quarterly_pos = TrialBalance.objects.filter(
+            user=user,
+            fs_main_head__in=asset_heads + liab_heads
+        ).annotate(
+            quarter=TruncQuarter('added_at')
+        ).values('quarter', 'fs_main_head').annotate(
+            total=Sum('amount')
+        ).order_by('quarter')
+        
+        # 3. Balance Sheet Mix (Doughnut)
+        bs_mix = TrialBalance.objects.filter(
+            user=user,
+            fs_main_head__in=asset_heads + liab_heads + ['Equity']
+        ).values('fs_main_head').annotate(
+            total=Sum('amount')
+        )
+        
+        return {
+            "gl_variance": list(monthly_variance),
+            "quarterly_position": list(quarterly_pos),
+            "bs_mix": list(bs_mix),
+        }
+
+    @staticmethod
+    def get_operational_efficiency(user):
+        # 5. Review Status Breakdown (Pie)
+        status_counts = GLReview.objects.filter(
+            trial_balance__user=user
+        ).values('status').annotate(count=Count('id'))
+        
+        # 6. Department Workload (Bar)
+        dept_workload = ResponsibilityMatrix.objects.values(
+            'department__name'
+        ).annotate(count=Count('id')).order_by('-count')[:10]
+        
+        # 7. My Pending Reviews (Gauge)
+        my_pending = GLReview.objects.filter(
+            reviewer=user,
+            status=1 # Pending
+        ).count()
+        
+        # 8. Review Activity Timeline (Line)
+        activity = ReviewTrail.objects.annotate(
+            day=TruncMonth('created_at')
+        ).values('day').annotate(count=Count('id')).order_by('day')
+        
+        return {
+            "review_status": list(status_counts),
+            "dept_workload": list(dept_workload),
+            "my_pending": my_pending,
+            "activity_timeline": list(activity)
+        }
+    
+    @staticmethod
+    def get_pl_profitability(user):
+        # 9. Revenue vs Expenses (Bar)
+        rev_exp = TrialBalance.objects.filter(
+            user=user,
+            fs_main_head__in=['Revenue', 'Income', 'Expenses', 'Tax Expense']
+        ).values('fs_main_head').annotate(total=Sum('amount'))
+        
+        # 10. Expense Composition (Polar Area)
+        # Using fs_main_head filter for 'Expenses' or related
+        exp_comp = TrialBalance.objects.filter(
+            user=user,
+            fs_main_head__in=['Expenses', 'Tax Expense']
+        ).values('fs_sub_head').annotate(total=Sum('amount')).order_by('-total')[:8]
+        
+        # 11. Top Revenue Streams
+        top_rev = TrialBalance.objects.filter(
+            user=user,
+            fs_main_head__in=['Revenue', 'Income']
+        ).values('gl_name').annotate(total=Sum('amount')).order_by('-total')[:5]
+        
+        return {
+            "rev_vs_exp": list(rev_exp),
+            "expense_composition": list(exp_comp),
+            "top_revenue": list(top_rev)
+        }
+
+    @staticmethod
+    def get_risk_compliance(user):
+        # 13. Top Account Variances
+        # BalanceSheet has variance_percent as CharField (e.g. "5.2%", "Not Applicable", "Red")
+        # We fetch all and filter/clean in python to avoid complex regex logic in SQL for sqlite/other DBs
+        raw_bs = BalanceSheet.objects.exclude(variance_percent__isnull=True).values('gl_account_name', 'variance_percent', 'variance_percent')[:100]
+        
+        # Clean data in Python
+        cleaned_bs = []
+        for item in raw_bs:
+            v_str = str(item['variance_percent']).replace('%', '').strip()
+            try:
+                val = float(v_str)
+                item['variance_val'] = val
+                cleaned_bs.append(item)
+            except ValueError:
+                continue
+                
+        # Sort by absolute variance
+        cleaned_bs.sort(key=lambda x: abs(x['variance_val']), reverse=True)
+        top_variances = cleaned_bs[:6]
+        
+        # 14. Reconciliation Progress
+        total_recon = BalanceSheet.objects.count()
+        completed_recon = BalanceSheet.objects.filter(recon_status__icontains='Completed').count()
+        
+        # 15. Top Rejected Accounts
+        rejected = ReviewTrail.objects.filter(
+            action='Rejected'
+        ).values('gl_name').annotate(count=Count('id')).order_by('-count')[:5]
+        
+        # 16. Documentation Hygiene
+        total_reviews = GLReview.objects.filter(trial_balance__user=user).count()
+        reviews_with_docs = GLReview.objects.filter(
+            trial_balance__user=user,
+            supporting_documents__isnull=False
+        ).distinct().count()
+        
+        return {
+            "top_variances": top_variances, 
+            "recon_progress": {"total": total_recon, "completed": completed_recon},
+            "top_rejected": list(rejected),
+            "doc_hygiene": {"total": total_reviews, "with_docs": reviews_with_docs}
+        }
+
+
 def dashboard_view(request):
-    """Dashboard view."""
+    """Dashboard view with dynamic analytics."""
 
     if not request.user.is_authenticated:
         return redirect("landing_page")
+    
     print("Dashboard view for User: ", request.user.id)
-    if request.user.user_type == 1:
-        # Admin
-        return render(request, 'dashboard/dashboard.html')
-    elif request.user.user_type in [2, 3]:
-        # Tower Lead and Finance Controller
-        return render(request, 'dashboard/dashboard.html')
-    elif request.user.user_type == 4:
-        # User
-        return render(request, 'dashboard/dashboard.html')
-    else:
-        return render(request, 'dashboard/dashboard.html')
+    
+    context = {}
+    try:
+        # Fetch dynamic data
+        data = DashboardAnalytics.get_dashboard_data(request.user)
+        print(f"Dashboard data: {data}")
+        logger.info(f"Dashboard data: {data}")
+        context['dashboard_data'] = data # Passed as dict, template can use json_script
+    except Exception as e:
+        logger.error(f"Error getting dashboard data: {e}")
+        context['dashboard_data'] = {}
+
+    return render(request, 'dashboard/dashboard.html', context)
 
 
 @csrf_exempt

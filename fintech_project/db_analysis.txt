@@ -1,0 +1,30 @@
+==================================================
+DATABASE ANALYSIS FOR DASHBOARD
+==================================================
+Using User: admin
+
+=== TrialBalance ===
+Total Count: 567
+Sample: gl_code='21170200', gl_name='Pybl TDS 194A'
+  amount=0.00 (Type: <class 'decimal.Decimal'>)
+  fs_main_head='None'
+  fs_sub_head='None'
+  added_at=2026-01-20 06:08:19.320546+00:00
+Distinct fs_main_head: [None, None, None, None, None, None, None, None, None, None, None, 'Expenses', 'Tax Expense', 'Current Assets', 'Non-Current Assets', 'Current Liabilities', 'Non-Current Liabilities', 'Takover, Ignore', 'Equity', 'Income', 'Expenses', 'Current Assets', 'Non-Current Assets', 'Current Assets', 'Current Assets', 'Non-Current Assets', 'Non-Current Assets', 'Current Assets', 'Current Liabilities']
+Records with no added_at: 0
+
+=== BalanceSheet ===
+Total Count: 303
+Sample: gl_acct='11555520', variance_percent='Not Applicable'
+Sample variances: ['Not Applicable', None, 'Red']
+
+=== GLReview ===
+Total Count: 12
+Status distribution: [{'status': 1, 'count': 2}, {'status': 2, 'count': 6}, {'status': 3, 'count': 2}, {'status': 4, 'count': 2}]
+
+=== ResponsibilityMatrix ===
+Total Count: 46
+Departments: ['B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P', 'B2P']
+
+=== ReviewTrail ===
+Total Count: 31

@@ -829,8 +829,8 @@ def submit_gl_review_tower(request):
             user_role=3
         ).first()
         
-        if not fc_assignment or fc_assignment.gl_code_status != 5:
-            # Skip if not approved by FC
+        if not fc_assignment or fc_assignment.gl_code_status != 3:
+            # Skip if not approved by FC (Status 3 = Approved)
             continue
 
         trial_balance = TrialBalance.objects.filter(gl_code=current_gl_code).first()

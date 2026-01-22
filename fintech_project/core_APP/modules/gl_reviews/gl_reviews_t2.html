@@ -489,7 +489,7 @@
                   {% endif %}
                 </td>
                 <td>
-                  {% if gl.status_code == 1 %}
+                  {% if gl.status_code == 1 or gl.status_code == 8 %}
                     <a
                       href="#"
                       class="action-link"
@@ -501,6 +501,8 @@
                     <span style="color: #2563eb; font-weight: 500;">Approved</span>
                   {% elif gl.status_code == 4 %}
                     <span style="color: #b91c1c; font-weight: 500;">Rejected</span>
+                  {% elif gl.status_code == 7 %}
+                    <span style="color: #2563eb; font-weight: 500;">Approved by Tower Head</span>
                   {% else %}
                     <span style="color: #6b7280; font-weight: 500;">Cant Take Action</span>
                   {% endif %}

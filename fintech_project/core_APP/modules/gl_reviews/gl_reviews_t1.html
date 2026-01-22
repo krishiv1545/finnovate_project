@@ -350,59 +350,58 @@
         }
 
         .gl-checkbox-wrapper {
-        display: inline-flex;
-        align-items: center;
-        cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
         }
 
         .gl-checkbox {
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
         }
 
         .checkbox-ui {
-        width: 18px;
-        height: 18px;
-        border: 2px solid #6b7280;
-        border-radius: 4px;
-        background: #ffffff;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.15s ease;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #6b7280;
+            border-radius: 4px;
+            background: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
         }
 
         .gl-checkbox-wrapper:hover .checkbox-ui {
-        border-color: #374151;
+            border-color: #374151;
         }
 
         /* Checked state */
-        .gl-checkbox:checked + .checkbox-ui {
-        background: var(--accent);
-        border-color: var(--accent);
+        .gl-checkbox:checked+.checkbox-ui {
+            background: var(--accent);
+            border-color: var(--accent);
         }
 
-        .gl-checkbox:checked + .checkbox-ui::after {
-        content: "";
-        width: 5px;
-        height: 9px;
-        border: solid white;
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
+        .gl-checkbox:checked+.checkbox-ui::after {
+            content: "";
+            width: 5px;
+            height: 9px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
         }
 
-        .gl-checkbox:disabled + .checkbox-ui {
-        background: #e5e7eb;
-        border-color: #d1d5db;
-        cursor: not-allowed;
-        opacity: 0.6;
+        .gl-checkbox:disabled+.checkbox-ui {
+            background: #e5e7eb;
+            border-color: #d1d5db;
+            cursor: not-allowed;
+            opacity: 0.6;
         }
 
-        .gl-checkbox:disabled + .checkbox-ui::after {
-        border-color: #9ca3af;
+        .gl-checkbox:disabled+.checkbox-ui::after {
+            border-color: #9ca3af;
         }
-
     </style>
 </head>
 
@@ -430,14 +429,15 @@
                                 Selected</span>
                             <button type="button" class="btn btn-approve btn-sm"
                                 onclick="submitBulkAction('approve')">Approve Selected</button>
-                            <button type="button" class="btn btn-reject btn-sm" onclick="submitBulkAction('reject')">Reject
+                            <button type="button" class="btn btn-reject btn-sm"
+                                onclick="submitBulkAction('reject')">Reject
                                 Selected</button>
                         </div>
                     </div>
                 </div>
                 <div class="search-container">
-                    <input type="text" id="glSearch" class="search-input" placeholder="Search GL Code, Name, or Deptartment"
-                        onkeyup="filterTable()">
+                    <input type="text" id="glSearch" class="search-input"
+                        placeholder="Search GL Code, Name, or Deptartment" onkeyup="filterTable()">
                 </div>
             </div>
             <div class="table-container">
@@ -450,13 +450,9 @@
                             <tr>
                                 <th style="width: 40px;">
                                     <label class="gl-checkbox-wrapper">
-                                    <input 
-                                        type="checkbox" 
-                                        id="selectAll" 
-                                        class="gl-checkbox"
-                                        onclick="toggleSelectAll()"
-                                    >
-                                    <span class="checkbox-ui"></span>
+                                        <input type="checkbox" id="selectAll" class="gl-checkbox"
+                                            onclick="toggleSelectAll()">
+                                        <span class="checkbox-ui"></span>
                                     </label>
                                 </th>
                                 <th>GL Code</th>
@@ -473,15 +469,10 @@
                             <tr>
                                 <td>
                                     <label class="gl-checkbox-wrapper">
-                                    <input
-                                        type="checkbox"
-                                        name="assignment_ids[]"
-                                        value="{{ gl.assignment_id }}"
-                                        class="gl-checkbox"
-                                        {% if not gl.is_actionable %}disabled{% endif %}
-                                        onclick="updateBulkState()"
-                                    >
-                                    <span class="checkbox-ui"></span>
+                                        <input type="checkbox" name="assignment_ids[]" value="{{ gl.assignment_id }}"
+                                            class="gl-checkbox" {% if not gl.is_actionable %}disabled{% endif %}
+                                            onclick="updateBulkState()">
+                                        <span class="checkbox-ui"></span>
                                     </label>
                                 </td>
                                 <td><strong>{{ gl.gl_code }}</strong></td>
@@ -491,22 +482,19 @@
                                     <span
                                         class="status-badge {% if gl.is_actionable %}status-pending {% else %}status-done{% endif %}">
                                         {% if gl.is_actionable %}
-                                            Pending
+                                        Pending
                                         {% else %}
-                                            {{ gl.status }}
+                                        {{ gl.status }}
                                         {% endif %}
                                     </span>
                                 </td>
                                 <td>{{ gl.reconciliation_notes }}</td>
                                 <td>
                                     {% if gl.supporting_documents %} {% for doc in gl.supporting_documents %}
-                                    <a href="{{ doc.file_url }}" class="file-link" target="_blank"
-                                        >{{ doc.file_name }}</a
-                                    >
+                                    <a href="{{ doc.file_url }}" class="file-link" target="_blank">{{ doc.file_name
+                                        }}</a>
                                     {% endfor %} {% else %}
-                                    <span style="color: var(--subtle); font-size: 0.8rem"
-                                        >No documents</span
-                                    >
+                                    <span style="color: var(--subtle); font-size: 0.8rem">No documents</span>
                                     {% endif %}
                                 </td>
                                 <td>
@@ -546,6 +534,22 @@
         </div>
     </main>
 
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <div style="margin-bottom: 1.5rem;">
+                <i class="fa-solid fa-circle-question" style="font-size: 3rem; color: var(--accent);"></i>
+            </div>
+            <h3 id="confirmTitle" style="margin-bottom: 0.5rem; color: #0f172a;">Confirm Action</h3>
+            <p id="confirmMessage" style="color: var(--subtle); margin-bottom: 2rem;">Are you sure you want to proceed?
+            </p>
+            <div class="form-actions" style="justify-content: center;">
+                <button type="button" class="btn btn-secondary" onclick="closeConfirmModal()">Cancel</button>
+                <button type="button" id="confirmYesBtn" class="btn btn-primary">YES</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Review Trail Modal -->
     <div id="trailModal" class="modal">
         <div class="modal-content" style="max-width: 700px;">
@@ -577,6 +581,34 @@
     {% include 'base/footer.html' %}
 
     <script>
+        // Confirmation Modal Logic
+        let pendingConfirmCallback = null;
+
+        function openConfirmModal(title, message, onConfirm) {
+            document.getElementById('confirmTitle').textContent = title;
+            document.getElementById('confirmMessage').textContent = message;
+            document.getElementById('confirmModal').classList.add('active');
+            pendingConfirmCallback = onConfirm;
+        }
+
+        function closeConfirmModal() {
+            document.getElementById('confirmModal').classList.remove('active');
+            pendingConfirmCallback = null;
+        }
+
+        document.getElementById('confirmYesBtn').addEventListener('click', function () {
+            if (pendingConfirmCallback) {
+                pendingConfirmCallback();
+            }
+            closeConfirmModal();
+        });
+
+        document.getElementById('confirmModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeConfirmModal();
+            }
+        });
+
         // Search Function
         function filterTable() {
             const input = document.getElementById("glSearch");
@@ -601,36 +633,39 @@
 
         // Single Submit
         function submitSingle(id, action) {
-            const form = document.getElementById('bulkForm');
+            const actionTitle = action.charAt(0).toUpperCase() + action.slice(1);
+            openConfirmModal(
+                'Confirm ' + actionTitle,
+                'Are you sure you want to ' + action + ' this GL?',
+                function () {
+                    const tempForm = document.createElement('form');
+                    tempForm.method = 'POST';
+                    tempForm.action = "{% url 'submit_gl_review_tower' %}";
 
-            if (!confirm('Are you sure you want to ' + action + ' this GL?')) return;
+                    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
-            const tempForm = document.createElement('form');
-            tempForm.method = 'POST';
-            tempForm.action = "{% url 'submit_gl_review_tower' %}";
+                    const csrfInput = document.createElement('input');
+                    csrfInput.type = 'hidden';
+                    csrfInput.name = 'csrfmiddlewaretoken';
+                    csrfInput.value = csrfToken;
+                    tempForm.appendChild(csrfInput);
 
-            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                    const idInput = document.createElement('input');
+                    idInput.type = 'hidden';
+                    idInput.name = 'assignment_id';
+                    idInput.value = id;
+                    tempForm.appendChild(idInput);
 
-            const csrfInput = document.createElement('input');
-            csrfInput.type = 'hidden';
-            csrfInput.name = 'csrfmiddlewaretoken';
-            csrfInput.value = csrfToken;
-            tempForm.appendChild(csrfInput);
+                    const actionInput = document.createElement('input');
+                    actionInput.type = 'hidden';
+                    actionInput.name = 'action';
+                    actionInput.value = action;
+                    tempForm.appendChild(actionInput);
 
-            const idInput = document.createElement('input');
-            idInput.type = 'hidden';
-            idInput.name = 'assignment_id';
-            idInput.value = id;
-            tempForm.appendChild(idInput);
-
-            const actionInput = document.createElement('input');
-            actionInput.type = 'hidden';
-            actionInput.name = 'action';
-            actionInput.value = action;
-            tempForm.appendChild(actionInput);
-
-            document.body.appendChild(tempForm);
-            tempForm.submit();
+                    document.body.appendChild(tempForm);
+                    tempForm.submit();
+                }
+            );
         }
 
         // Bulk Actions
@@ -660,9 +695,15 @@
         }
 
         function submitBulkAction(action) {
-            if (!confirm('Are you sure you want to ' + action + ' selected GLs?')) return;
-            document.getElementById('bulkActionInput').value = action;
-            document.getElementById('bulkForm').submit();
+            const actionTitle = action.charAt(0).toUpperCase() + action.slice(1);
+            openConfirmModal(
+                'Confirm Bulk ' + actionTitle,
+                'Are you sure you want to ' + action + ' selected GLs?',
+                function () {
+                    document.getElementById('bulkActionInput').value = action;
+                    document.getElementById('bulkForm').submit();
+                }
+            );
         }
 
         // View Trail Modal

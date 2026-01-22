@@ -801,32 +801,20 @@ def submit_gl_review_tower(request):
     """
     Submit a GL review for Tower Head (User Type 2).
     """
+    print("submit_gl_review_tower")
     assignment_id = request.POST.get("assignment_id")
     gl_code = request.POST.get("gl_code")
-    # For bulk actions, assignment_id might be single, but if we do bulk in JS, 
-    # we might send list. But user asked for "similar logic". 
-    # Usually "Action" column implies single row action.
-    # Bulk select might require a different endpoint or parameter handling.
-    # For now let's support single action via this endpoint, checking for list inputs if needed.
-    
-    # Actually, standard HTML forms send one. 
-    # If the user implements bulk, they will likely iterate and send multiple fetch requests 
-    # OR send a list of IDs.
-    # Let's assume the basic single submit first, as per `gl_reviews_t2.html` pattern.
-    # If bulk is needed, I'll add handle for list.
 
     action = request.POST.get("action")  # 'approve' or 'reject'
     
-    # Check if this is a bulk request (list of IDs)
-    # The frontend might send `assignment_ids[]`
     assignment_ids = request.POST.getlist("assignment_ids[]")
+    print("assignment_ids:", assignment_ids)
     if not assignment_ids and assignment_id:
         assignment_ids = [assignment_id]
 
     if not assignment_ids:
         messages.error(request, "No GLs selected.")
         return redirect("gl_reviews_page")
-
     
     processed_count = 0
     
@@ -854,27 +842,14 @@ def submit_gl_review_tower(request):
         previous_trail = ReviewTrail.objects.filter(gl_review=gl_review).order_by('-created_at').first()
 
         if action == 'approve':
-            assignment.gl_code_status = 7  # Approved by Tower Head
-            # Next layer? None specified. Final approval?
+            assignment.gl_code_status = 7
         else:
-            assignment.gl_code_status = 8  # Rejected by Tower Head
-            # Update FC status to rejected?
-            fc_assignment.gl_code_status = 6 # Rejected by FC ?? Or new status "Rejected by Tower"?
-            # User requirement: "Rejected by BUFC" in view. 
-            # If Tower rejects, it goes back to BUFC?
-            # Let's look at `submit_gl_review_bufc`: if FC rejects, it sets Reviewer to 6 (Rejected by FC).
-            # So if Tower rejects, maybe set FC to 8 (Rejected by Tower)? 
-            # But 8 is "Rejected by Tower Head". 
-            # Let's set FC status to 8 so they know it came from Tower.
+            assignment.gl_code_status = 8
+            fc_assignment.gl_code_status = 6
             fc_assignment.gl_code_status = 8
             fc_assignment.save()
 
         assignment.save()
-
-        # Update GL Review reviewer ownership?
-        # If approved, stays with me or done? 
-        # "Actions column... Approve and Reject... no Reconciliation"
-        # Since I am taking action, I am the reviewer now.
         gl_review.reviewer = request.user
         gl_review.save()
 
@@ -885,9 +860,6 @@ def submit_gl_review_tower(request):
             gl_review=gl_review,
             previous_trail=previous_trail,
             reconciliation_notes=f"Bulk Action: {action.title()}" if len(assignment_ids) > 1 else "Tower Head Review", # No notes input defined for bulk?
-            # Wait, "Action should also have View Trail (just copy existing logic)"
-            # "Actions column should directly have an Approve and Reject button (no Reconciliation)."
-            # So no notes required.
             gl_code=current_gl_code,
             action='Approved' if action == 'approve' else 'Rejected'
         )

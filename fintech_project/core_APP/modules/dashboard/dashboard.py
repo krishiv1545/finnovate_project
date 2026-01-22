@@ -51,14 +51,9 @@ class DashboardAnalytics:
         ).order_by('month')
 
         # 2. Assets vs Liabilities (Bar) - Quarterly
-        # Aggregate specific heads
-        # Map DB values to Logic values
-        asset_heads = ['Assets', 'Current Assets', 'Non-Current Assets']
-        liab_heads = ['Liabilities', 'Current Liabilities', 'Non-Current Liabilities']
-        
-        quarterly_pos = TrialBalance.objects.filter(
-            user=user,
-            fs_main_head__in=asset_heads + liab_heads
+        # We fetch ALL heads that have data, then classify them in python
+        quarterly_data = TrialBalance.objects.filter(
+            user=user
         ).annotate(
             quarter=TruncQuarter('added_at')
         ).values('quarter', 'fs_main_head').annotate(
@@ -66,17 +61,16 @@ class DashboardAnalytics:
         ).order_by('quarter')
         
         # 3. Balance Sheet Mix (Doughnut)
-        bs_mix = TrialBalance.objects.filter(
-            user=user,
-            fs_main_head__in=asset_heads + liab_heads + ['Equity']
+        bs_data = TrialBalance.objects.filter(
+            user=user
         ).values('fs_main_head').annotate(
             total=Sum('amount')
         )
         
         return {
             "gl_variance": list(monthly_variance),
-            "quarterly_position": list(quarterly_pos),
-            "bs_mix": list(bs_mix),
+            "quarterly_position": list(quarterly_data),
+            "bs_mix": list(bs_data),
         }
 
     @staticmethod
@@ -112,23 +106,29 @@ class DashboardAnalytics:
     @staticmethod
     def get_pl_profitability(user):
         # 9. Revenue vs Expenses (Bar)
+        # Broad filter to catch 'Income', 'Revenue', 'Expenses', 'Tax', 'Cost of Goods'
         rev_exp = TrialBalance.objects.filter(
             user=user,
-            fs_main_head__in=['Revenue', 'Income', 'Expenses', 'Tax Expense']
+            fs_main_head__in=['Revenue', 'Income', 'Expenses', 'Tax Expense', 'Cost of Goods Sold']
         ).values('fs_main_head').annotate(total=Sum('amount'))
         
-        # 10. Expense Composition (Polar Area)
-        # Using fs_main_head filter for 'Expenses' or related
+        # If empty, try to get everything to debug
+        if not rev_exp:
+             rev_exp = TrialBalance.objects.filter(user=user).values('fs_main_head').annotate(total=Sum('amount'))[:5]
+
+        # 10. Expense Composition
+        exp_filter = Q(fs_main_head__icontains='Expense') | Q(fs_main_head__icontains='Cost')
         exp_comp = TrialBalance.objects.filter(
-            user=user,
-            fs_main_head__in=['Expenses', 'Tax Expense']
+            exp_filter,
+            user=user
         ).values('fs_sub_head').annotate(total=Sum('amount')).order_by('-total')[:8]
         
         # 11. Top Revenue Streams
+        rev_filter = Q(fs_main_head__icontains='Revenue') | Q(fs_main_head__icontains='Income')
         top_rev = TrialBalance.objects.filter(
-            user=user,
-            fs_main_head__in=['Revenue', 'Income']
-        ).values('gl_name').annotate(total=Sum('amount')).order_by('-total')[:5]
+            rev_filter,
+            user=user
+        ).values('gl_name', 'gl_code').annotate(total=Sum('amount')).order_by('-total')[:5]
         
         return {
             "rev_vs_exp": list(rev_exp),
@@ -138,47 +138,59 @@ class DashboardAnalytics:
 
     @staticmethod
     def get_risk_compliance(user):
-        # 13. Top Account Variances
-        # BalanceSheet has variance_percent as CharField (e.g. "5.2%", "Not Applicable", "Red")
-        # We fetch all and filter/clean in python to avoid complex regex logic in SQL for sqlite/other DBs
-        raw_bs = BalanceSheet.objects.exclude(variance_percent__isnull=True).values('gl_account_name', 'variance_percent', 'variance_percent')[:100]
+        # 13. Top Account Variances / Risk Flags
+        # We will attempt to get numeric variances. If not enough, we get distribution of flags.
         
-        # Clean data in Python
-        cleaned_bs = []
+        raw_bs = BalanceSheet.objects.exclude(variance_percent__isnull=True).values('gl_account_name', 'variance_percent')[:200]
+        
+        numeric_variances = []
+        flag_counts = {}
+        
         for item in raw_bs:
-            v_str = str(item['variance_percent']).replace('%', '').strip()
+            v_raw = item['variance_percent']
+            s_val = str(v_raw).strip()
+            
+            # Count flags
+            if s_val not in flag_counts:
+                flag_counts[s_val] = 0
+            flag_counts[s_val] += 1
+            
+            # Try parse numeric
+            s_clean = s_val.replace('%', '').strip()
             try:
-                val = float(v_str)
-                item['variance_val'] = val
-                cleaned_bs.append(item)
-            except ValueError:
-                continue
-                
-        # Sort by absolute variance
-        cleaned_bs.sort(key=lambda x: abs(x['variance_val']), reverse=True)
-        top_variances = cleaned_bs[:6]
+                val = float(s_clean)
+                numeric_variances.append({
+                    'gl_account_name': item['gl_account_name'],
+                    'variance_val': val
+                })
+            except:
+                pass
         
-        # 14. Reconciliation Progress
-        total_recon = BalanceSheet.objects.count()
-        completed_recon = BalanceSheet.objects.filter(recon_status__icontains='Completed').count()
+        # Sort numeric
+        numeric_variances.sort(key=lambda x: abs(x['variance_val']), reverse=True)
+        top_numeric = numeric_variances[:6]
         
-        # 15. Top Rejected Accounts
-        rejected = ReviewTrail.objects.filter(
-            action='Rejected'
-        ).values('gl_name').annotate(count=Count('id')).order_by('-count')[:5]
+        # 14. Recon Progress
+        total = BalanceSheet.objects.count()
+        completed = BalanceSheet.objects.filter(recon_status__icontains='Completed').count()
         
-        # 16. Documentation Hygiene
+        # 15. Top Rejected - Handle None gl_name
+        rejected_qs = ReviewTrail.objects.filter(action='Rejected').values('gl_name', 'gl_code').annotate(count=Count('id')).order_by('-count')[:5]
+        rejected_list = []
+        for r in rejected_qs:
+            name = r['gl_name'] or r['gl_code'] or 'Unknown GL'
+            rejected_list.append({'gl_name': name, 'count': r['count']})
+            
+        # 16. Doc Hygiene
         total_reviews = GLReview.objects.filter(trial_balance__user=user).count()
-        reviews_with_docs = GLReview.objects.filter(
-            trial_balance__user=user,
-            supporting_documents__isnull=False
-        ).distinct().count()
+        with_docs = GLReview.objects.filter(trial_balance__user=user, supporting_documents__isnull=False).distinct().count()
         
         return {
-            "top_variances": top_variances, 
-            "recon_progress": {"total": total_recon, "completed": completed_recon},
-            "top_rejected": list(rejected),
-            "doc_hygiene": {"total": total_reviews, "with_docs": reviews_with_docs}
+            "top_variances": top_numeric,
+            "variance_flags": flag_counts, # Fallback
+            "recon_progress": {"total": total, "completed": completed},
+            "top_rejected": rejected_list,
+            "doc_hygiene": {"total": total_reviews, "with_docs": with_docs}
         }
 
 

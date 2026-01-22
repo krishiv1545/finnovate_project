@@ -1822,53 +1822,6 @@
     <!-- Analytics/Charts Area -->
     <section class="content-area">
       {{ dashboard_data|json_script:"dashboard-data" }}
-
-      <!-- Row 1: Financial Health -->
-      <h4 style="margin: 0.5rem 0; color: #555; font-weight: 600;">Financial Health</h4>
-      <div class="content-row">
-        <!-- 1. GL Variance Trends -->
-        <div class="box">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <strong style="font-size: 14px; color: #222">GL Variance — Monthly</strong>
-            <small style="opacity: 0.7; color: #555">Net amount trend</small>
-          </div>
-          <div style="height: 250px; position: relative">
-            <canvas id="chart-gl-variance"></canvas>
-          </div>
-        </div>
-        <!-- 2. Assets vs Liabilities -->
-        <div class="box">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <strong style="font-size: 14px; color: #222">Assets vs Liabilities</strong>
-            <small style="opacity: 0.7; color: #555">Quarterly view</small>
-          </div>
-          <div style="height: 250px; position: relative">
-            <canvas id="chart-assets-liab"></canvas>
-          </div>
-        </div>
-        <!-- 3. Balance Sheet Mix -->
-        <div class="box">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <strong style="font-size: 14px; color: #222">Balance Sheet Mix</strong>
-            <small style="opacity: 0.7; color: #555">Current state</small>
-          </div>
-          <div style="height: 200px; position: relative; display: flex; justify-content: center;">
-            <canvas id="chart-bs-mix"></canvas>
-          </div>
-          <div id="liquidity-note" style="margin-top: 8px; font-size: 13px; color: #444; text-align: center;"></div>
-        </div>
-        <!-- 4. Net Asset Trend -->
-        <div class="box">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <strong style="font-size: 14px; color: #222">Net Asset Trend</strong>
-            <small style="opacity: 0.7; color: #555">Rolling 12 months</small>
-          </div>
-          <div style="height: 250px; position: relative">
-            <canvas id="chart-net-assets"></canvas>
-          </div>
-        </div>
-      </div>
-
       <!-- Row 2: Operational Efficiency -->
       <h4 style="margin: 1.5rem 0 0.5rem 0; color: #555; font-weight: 600;">Operational Efficiency</h4>
       <div class="content-row">
@@ -1892,15 +1845,13 @@
             <canvas id="chart-dept-workload"></canvas>
           </div>
         </div>
-        <!-- 7. My Pending Reviews -->
+        <!-- 15. Top Rejected Accounts -->
         <div class="box">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <strong style="font-size: 14px; color: #222">My Pending Reviews</strong>
+            <strong style="font-size: 14px; color: #222">Top Rejected Accounts</strong>
           </div>
-          <div
-            style="height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <div id="gauge-pending" style="font-size: 4rem; font-weight: 700; color: #d9376e;">--</div>
-            <div style="color: #666;">Action Items</div>
+          <div style="height: 250px; position: relative">
+            <canvas id="chart-top-rejected"></canvas>
           </div>
         </div>
         <!-- 8. Activity Timeline -->
@@ -1915,69 +1866,7 @@
         </div>
       </div>
 
-      <!-- Row 3: P&L & Profitability -->
-      <h4 style="margin: 1.5rem 0 0.5rem 0; color: #555; font-weight: 600;">P&L & Profitability</h4>
-      <div class="content-row">
-        <!-- 9. Revenue vs Expenses -->
-        <div class="box">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <strong style="font-size: 14px; color: #222">Revenue vs Expenses</strong>
-          </div>
-          <div style="height: 250px; position: relative">
-            <canvas id="chart-rev-exp"></canvas>
-          </div>
-        </div>
-        <!-- 10. Expense Composition -->
-        <div class="box">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <strong style="font-size: 14px; color: #222">Expense Composition</strong>
-          </div>
-          <div style="height: 200px; position: relative; display: flex; justify-content: center;">
-            <canvas id="chart-exp-comp"></canvas>
-          </div>
-        </div>
-        <!-- 11. Top Revenue Streams -->
-        <div class="box">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <strong style="font-size: 14px; color: #222">Top Revenue Streams</strong>
-          </div>
-          <div style="height: 250px; position: relative">
-            <canvas id="chart-top-rev"></canvas>
-          </div>
-        </div>
-      </div>
-
-      <!-- Row 4: Risk & Compliance -->
-      <h4 style="margin: 1.5rem 0 0.5rem 0; color: #555; font-weight: 600;">Risk & Compliance</h4>
-      <div class="content-row">
-        <!-- 13. Top Account Variances -->
-        <div class="box">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <strong style="font-size: 14px; color: #222">Top Account Variances</strong>
-            <small style="opacity: 0.7; color: #555">Sorted by %</small>
-          </div>
-          <div style="height: 250px; position: relative">
-            <canvas id="chart-top-variances"></canvas>
-          </div>
-        </div>
-        <!-- 14. Reconciliation Progress -->
-        <div class="box">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <strong style="font-size: 14px; color: #222">Reconciliation Progress</strong>
-          </div>
-          <div style="height: 200px; position: relative; display: flex; justify-content: center;">
-            <canvas id="chart-recon-progress"></canvas>
-          </div>
-        </div>
-        <!-- 15. Top Rejected Accounts -->
-        <div class="box">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <strong style="font-size: 14px; color: #222">Top Rejected Accounts</strong>
-          </div>
-          <div style="height: 250px; position: relative">
-            <canvas id="chart-top-rejected"></canvas>
-          </div>
-        </div>
+      
         <!-- 16. Doc Hygiene -->
         <div class="box">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
@@ -1988,7 +1877,6 @@
             <canvas id="chart-doc-hygiene"></canvas>
           </div>
         </div>
-      </div>
 
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script>

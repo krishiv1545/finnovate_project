@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core_APP',
+    'django_orm_cost',
 ]
 
 AUTH_USER_MODEL = 'core_APP.CustomUser'

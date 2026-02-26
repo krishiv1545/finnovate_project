@@ -1,7 +1,7 @@
 import math
 from elasticsearch import Elasticsearch
 from django.conf import settings
-import google.generativeai as genai
+# import google.generativeai as genai
 
 
 es = Elasticsearch(settings.ELASTIC_URL)

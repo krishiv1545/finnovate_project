@@ -18,7 +18,7 @@ from core_APP.models import (
     Conversation, Message, TrialBalance, BalanceSheet, 
     GLReview, ResponsibilityMatrix, ReviewTrail, Department, CustomUser
 )
-import google.generativeai as genai
+# import google.generativeai as genai
 
 
 logger = logging.getLogger(__name__)
